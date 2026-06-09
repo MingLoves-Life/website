@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg-primary: #0a0a0a;
+  --color-bg-secondary: #141414;
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #a0a0a0;
+  --color-accent: #c9a84c;
+  --color-accent-hover: #d4b45e;
+  --color-accent-red: #8b2020;
+  --font-sans: var(--font-geist-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

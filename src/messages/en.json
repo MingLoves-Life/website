@@ -1,0 +1,105 @@
+{
+  "Header": {
+    "services": "Services",
+    "about": "About",
+    "testimonials": "Testimonials",
+    "book": "Book Now"
+  },
+  "Hero": {
+    "title": "Unlock Your Destiny",
+    "subtitle": "Traditional Chinese metaphysics meets modern life guidance. Bazi, Zi Wei Dou Shu, Feng Shui, and Date Selection.",
+    "cta": "Book a Free Consultation"
+  },
+  "Services": {
+    "title": "Services",
+    "bazi": {"name": "Bazi Analysis", "description": "Decode your birth chart to understand personality, career, relationships, and life cycles."},
+    "ziwei": {"name": "Zi Wei Dou Shu", "description": "Purple Star Astrology for detailed life trajectory mapping and decision timing."},
+    "fengshui": {"name": "Feng Shui Consultation", "description": "Optimize your living and working spaces for harmony, health, and prosperity."},
+    "dateselection": {"name": "Date Selection", "description": "Choose auspicious dates for weddings, moves, business launches, and major decisions."},
+    "cta": "Learn More"
+  },
+  "About": {
+    "title": "About",
+    "bio": "With over a decade of study in traditional Chinese metaphysics, I blend classical wisdom with practical modern guidance. Trained in the lineage of authentic masters, I offer consultations that are insightful, actionable, and respectful of both Eastern traditions and Western lifestyles."
+  },
+  "Testimonials": {
+    "title": "Client Testimonials",
+    "items": [
+      {"name": "Sarah L.", "rating": 5, "text": "The Bazi reading was incredibly accurate. It helped me understand my career path and make a major decision with confidence."},
+      {"name": "David W.", "rating": 5, "text": "The Feng Shui consultation transformed our home. We noticed positive changes within weeks."},
+      {"name": "Lisa C.", "rating": 5, "text": "Professional, insightful, and practical. The date selection for our wedding gave us peace of mind."}
+    ]
+  },
+  "FooterCTA": {"title": "Begin Your Journey", "cta": "Book a Consultation"},
+  "Footer": {"email": "Email", "wechat": "WeChat", "whatsapp": "WhatsApp", "copyright": "All rights reserved.", "privacy": "Privacy Policy", "terms": "Terms of Service"},
+  "Privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: June 2026",
+    "collect": {
+      "title": "Information We Collect",
+      "content": "We collect personal information you voluntarily provide when booking a consultation, including your name, email address, date of birth, time of birth, and any additional notes. We also collect basic usage data through cookies to improve our website experience."
+    },
+    "use": {
+      "title": "How We Use Your Information",
+      "content": "Your personal information is used solely to provide consultation services, communicate with you about appointments, and improve our services. Birth data is used exclusively for metaphysics analysis and is never shared for marketing purposes."
+    },
+    "protect": {
+      "title": "Data Protection",
+      "content": "We implement appropriate security measures to protect your personal data. Birth date and time information is stored securely and accessible only to our consulting practitioners for the purpose of your reading."
+    },
+    "share": {
+      "title": "Information Sharing",
+      "content": "We do not sell, trade, or share your personal information with third parties. The only exception is service providers who assist in operating our website (e.g., email delivery), who are bound by confidentiality agreements."
+    },
+    "rights": {
+      "title": "Your Rights",
+      "content": "You have the right to access, correct, or delete your personal data at any time. To exercise these rights, contact us via email. We will respond to your request within 30 days."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "content": "If you have questions about this privacy policy or how we handle your data, please reach out to us at hello@example.com."
+    }
+  },
+  "Terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: June 2026",
+    "services": {
+      "title": "Services",
+      "content": "We provide Chinese metaphysics consultation services including Bazi analysis, Zi Wei Dou Shu readings, Feng Shui consultation, and date selection. All services are for informational and guidance purposes."
+    },
+    "booking": {
+      "title": "Booking & Appointments",
+      "content": "By submitting a booking form, you agree to provide accurate birth data and contact information. We will confirm your appointment via email within 24 hours of submission."
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "content": "Our consultations are based on traditional Chinese metaphysics and are intended for personal guidance only. They do not constitute medical, legal, financial, or psychological advice. You are solely responsible for decisions made based on consultation insights."
+    },
+    "payment": {
+      "title": "Payment",
+      "content": "Payment details and pricing are communicated during booking confirmation. Full payment is required before the consultation session takes place."
+    },
+    "cancellation": {
+      "title": "Cancellation & Refund",
+      "content": "Cancellations made at least 48 hours before the scheduled appointment are eligible for a full refund. Late cancellations or no-shows are non-refundable. Rescheduling is available subject to availability."
+    },
+    "liability": {
+      "title": "Limitation of Liability",
+      "content": "We are not liable for any actions taken or decisions made based on our consultation services. Our maximum liability shall not exceed the fee paid for the specific consultation in question."
+    },
+    "changes": {
+      "title": "Changes to Terms",
+      "content": "We reserve the right to update these terms at any time. Changes will be posted on this page with an updated date. Continued use of our services constitutes acceptance of the revised terms."
+    }
+  },
+  "Book": {
+    "title": "Book a Consultation",
+    "subtitle": "Fill out the form below and we'll respond within 24 hours.",
+    "name": "Full Name", "email": "Email", "birthdate": "Birth Date", "birthtime": "Birth Time (if known)",
+    "service": "Consultation Type",
+    "serviceOptions": {"bazi": "Bazi Analysis", "ziwei": "Zi Wei Dou Shu", "fengshui": "Feng Shui", "dateselection": "Date Selection", "other": "Other"},
+    "message": "Additional Notes (optional)", "submit": "Submit",
+    "success": "Thank you! We've received your request and will respond within 24 hours.",
+    "error": "Something went wrong. Please try again or contact us directly."
+  }
+}
