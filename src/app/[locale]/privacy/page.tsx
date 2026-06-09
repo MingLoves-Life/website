@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { siteConfig } from '../../../config/site';
 
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -16,7 +17,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
           {sections.map((key) => (
             <section key={key}>
               <h2 className="text-lg font-semibold text-text-primary mb-2">{t(`${key}.title`)}</h2>
-              <p className="text-text-secondary leading-relaxed">{t(`${key}.content`)}</p>
+              <p className="text-text-secondary leading-relaxed">{t(`${key}.content`, { email: siteConfig.contact.email })}</p>
             </section>
           ))}
         </div>

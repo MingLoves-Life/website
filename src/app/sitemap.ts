@@ -4,7 +4,7 @@ const BASE_URL = process.env.SITE_URL || 'https://example.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ['en', 'zh'];
-  const routes = ['', '/book'];
+  const routes = ['', '/book', '/free-reading', '/links'];
 
   return locales.flatMap((locale) =>
     routes.map((route) => ({

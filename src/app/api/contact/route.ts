@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getResend } from '../../../lib/resend';
+import { siteConfig } from '../../../config/site';
 
 export async function POST(request: Request) {
   const body = await request.json();
@@ -12,7 +13,7 @@ export async function POST(request: Request) {
   try {
     await getResend().emails.send({
       from: 'Destiny Site <onboarding@resend.dev>',
-      to: process.env.NOTIFICATION_EMAIL || 'hello@example.com',
+      to: process.env.NOTIFICATION_EMAIL || siteConfig.contact.email,
       subject: `New Consultation Request: ${service} - ${name}`,
       html: `
         <h2>New Consultation Request</h2>

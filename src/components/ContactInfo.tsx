@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { siteConfig } from '../config/site';
 
 export default function ContactInfo() {
   const t = useTranslations('Footer');
@@ -11,15 +12,15 @@ export default function ContactInfo() {
       <div className="space-y-4 text-text-secondary">
         <div>
           <p className="text-sm text-text-secondary/70 mb-1">{t('email')}</p>
-          <p>hello@example.com</p>
+          <p>{siteConfig.contact.email}</p>
         </div>
         <div>
           <p className="text-sm text-text-secondary/70 mb-1">{t('wechat')}</p>
-          <p>destiny_consult</p>
+          <p>{siteConfig.contact.wechat}</p>
         </div>
         <div>
           <p className="text-sm text-text-secondary/70 mb-1">{t('whatsapp')}</p>
-          <p>+1 (555) 000-0000</p>
+          <p>{siteConfig.contact.whatsapp}</p>
         </div>
       </div>
     </div>

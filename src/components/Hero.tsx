@@ -44,7 +44,7 @@ export default function Hero() {
           {t('subtitle')}
         </p>
         <div ref={ctaRef} className="mt-12 opacity-0">
-          <Link href={`/${locale}/book`} className="inline-block px-8 py-4 bg-accent text-bg-primary font-medium text-lg rounded hover:bg-accent-hover transition-colors">
+          <Link href={`/${locale}/free-reading`} className="inline-block px-8 py-4 bg-accent text-bg-primary font-medium text-lg rounded hover:bg-accent-hover transition-colors">
             {t('cta')}
           </Link>
         </div>

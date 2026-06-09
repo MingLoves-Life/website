@@ -1,7 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
-import BookingForm from '../../../components/BookingForm';
-import ContactInfo from '../../../components/ContactInfo';
+import { siteConfig } from '../../../config/site';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -18,18 +17,31 @@ export default async function BookPage({ params }: { params: Promise<{ locale: s
 
   return (
     <main className="pt-24 pb-16 px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-light mb-4">{t('title')}</h1>
-          <p className="text-text-secondary text-lg">{t('subtitle')}</p>
+      <div className="max-w-2xl mx-auto text-center">
+        <h1 className="text-4xl md:text-5xl font-light mb-4">{t('title')}</h1>
+        <p className="text-text-secondary text-lg mb-16">{t('subtitle')}</p>
+
+        <div className="space-y-4">
+          <a
+            href={siteConfig.contact.whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full py-4 bg-[#25D366] text-white font-medium text-lg rounded-lg hover:bg-[#20bd5a] transition-colors"
+          >
+            WhatsApp {t('chat')}
+          </a>
+
+          <a
+            href={`mailto:${siteConfig.contact.email}`}
+            className="block w-full py-4 border border-white/10 text-text-primary font-medium text-lg rounded-lg hover:border-accent/30 transition-colors"
+          >
+            {t('emailMe')}
+          </a>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          <div className="md:col-span-2">
-            <BookingForm />
-          </div>
-          <div>
-            <ContactInfo />
-          </div>
+
+        <div className="mt-16 p-8 bg-bg-secondary rounded-lg border border-white/5">
+          <p className="text-sm text-text-secondary mb-4">{t('wechatLabel')}</p>
+          <p className="text-2xl text-text-primary font-mono">{siteConfig.contact.wechat}</p>
         </div>
       </div>
     </main>

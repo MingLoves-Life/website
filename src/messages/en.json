@@ -1,14 +1,16 @@
 {
   "Header": {
     "services": "Services",
+    "pricing": "Pricing",
     "about": "About",
     "testimonials": "Testimonials",
+    "faq": "FAQ",
     "book": "Book Now"
   },
   "Hero": {
     "title": "Unlock Your Destiny",
     "subtitle": "Traditional Chinese metaphysics meets modern life guidance. Bazi, Zi Wei Dou Shu, Feng Shui, and Date Selection.",
-    "cta": "Book a Free Consultation"
+    "cta": "Get Your Free Reading"
   },
   "Services": {
     "title": "Services",
@@ -17,6 +19,30 @@
     "fengshui": {"name": "Feng Shui Consultation", "description": "Optimize your living and working spaces for harmony, health, and prosperity."},
     "dateselection": {"name": "Date Selection", "description": "Choose auspicious dates for weddings, moves, business launches, and major decisions."},
     "cta": "Learn More"
+  },
+  "Pricing": {
+    "title": "Pricing",
+    "subtitle": "Choose the level of insight that's right for you.",
+    "popular": "Most Popular",
+    "cta": "Book Now",
+    "basic": {
+      "name": "Basic Reading",
+      "price": "$49",
+      "description": "A concise overview of your birth chart with key personality and life insights.",
+      "features": ["Birth chart summary", "Core personality traits", "Key life themes"]
+    },
+    "detailed": {
+      "name": "Detailed Analysis",
+      "price": "$99",
+      "description": "In-depth analysis covering career, relationships, and life cycles with actionable guidance.",
+      "features": ["Full birth chart analysis", "Career & relationship insights", "10-year cycle forecast", "One follow-up question included"]
+    },
+    "private": {
+      "name": "Private Consultation",
+      "price": "$199",
+      "description": "One-on-one private session with personalized guidance and Q&A.",
+      "features": ["All Detailed Analysis features", "Unlimited Q&A during session", "Priority scheduling"]
+    }
   },
   "About": {
     "title": "About",
@@ -27,11 +53,54 @@
     "items": [
       {"name": "Sarah L.", "rating": 5, "text": "The Bazi reading was incredibly accurate. It helped me understand my career path and make a major decision with confidence."},
       {"name": "David W.", "rating": 5, "text": "The Feng Shui consultation transformed our home. We noticed positive changes within weeks."},
-      {"name": "Lisa C.", "rating": 5, "text": "Professional, insightful, and practical. The date selection for our wedding gave us peace of mind."}
+      {"name": "Lisa C.", "rating": 5, "text": "Professional, insightful, and practical. The date selection for our wedding gave us peace of mind."},
+      {"name": "Michael R.", "rating": 5, "text": "I was skeptical at first, but the detailed analysis was spot-on about my career challenges. The advice was actionable and I've already seen improvements."},
+      {"name": "Jennifer T.", "rating": 5, "text": "The private consultation was worth every penny. Having a full hour to discuss my chart and ask questions gave me so much clarity."},
+      {"name": "Kevin H.", "rating": 5, "text": "I've had readings before but nothing this thorough. The 10-year forecast has become my go-to reference for planning major life decisions."}
     ]
+  },
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "what": {
+      "q": "What is Bazi / Chinese Astrology?",
+      "a": "Bazi (Four Pillars of Destiny) is a system of Chinese metaphysics that maps your life path using your birth date and time. Unlike Western astrology which focuses on planetary positions, Bazi uses the Chinese calendar's Heavenly Stems and Earthly Branches to reveal personality traits, life cycles, and optimal timing for decisions."
+    },
+    "process": {
+      "q": "How does a consultation work?",
+      "a": "After booking, you'll provide your birth date, time (if known), and any specific questions. I'll analyze your chart and deliver your personalized reading. For private consultations, we'll have a live session where I walk through your chart and answer all your questions."
+    },
+    "deliverable": {
+      "q": "What will I receive?",
+      "a": "All readings include a professionally written analysis tailored to your specific questions. Private Consultations add a live interactive session for deeper exploration and unlimited Q&A."
+    },
+    "privacy": {
+      "q": "Is my birth data kept private?",
+      "a": "Absolutely. Your personal information and birth data are never shared with third parties. Data is stored securely and used solely for your consultation. You can request deletion at any time."
+    },
+    "refund": {
+      "q": "What is your cancellation policy?",
+      "a": "You can cancel or reschedule your consultation at any time before the session begins. I want you to feel comfortable and confident in your decision."
+    }
   },
   "FooterCTA": {"title": "Begin Your Journey", "cta": "Book a Consultation"},
   "Footer": {"email": "Email", "wechat": "WeChat", "whatsapp": "WhatsApp", "copyright": "All rights reserved.", "privacy": "Privacy Policy", "terms": "Terms of Service"},
+  "FreeReading": {
+    "title": "Discover Your Element",
+    "subtitle": "Enter your birth date to reveal your core elemental energy and personality traits.",
+    "label": "Date of Birth",
+    "submit": "Reveal My Element",
+    "resultTitle": "Your Day Pillar",
+    "teaser": "This is just a glimpse. A full reading reveals your complete Four Pillars, 10-year cycles, career path, relationships, and optimal timing for major decisions.",
+    "cta": "Get Your Full Reading",
+    "tryAgain": "Try another date"
+  },
+  "Links": {
+    "title": "Destiny Consultation",
+    "subtitle": "Traditional Chinese metaphysics for modern life guidance",
+    "freeReading": "✦ Free Element Reading",
+    "book": "Book a Consultation",
+    "home": "Visit Website"
+  },
   "Privacy": {
     "title": "Privacy Policy",
     "lastUpdated": "Last updated: June 2026",
@@ -57,7 +126,7 @@
     },
     "contact": {
       "title": "Contact Us",
-      "content": "If you have questions about this privacy policy or how we handle your data, please reach out to us at hello@example.com."
+      "content": "If you have questions about this privacy policy or how we handle your data, please reach out to us at {email}."
     }
   },
   "Terms": {
@@ -80,8 +149,8 @@
       "content": "Payment details and pricing are communicated during booking confirmation. Full payment is required before the consultation session takes place."
     },
     "cancellation": {
-      "title": "Cancellation & Refund",
-      "content": "Cancellations made at least 48 hours before the scheduled appointment are eligible for a full refund. Late cancellations or no-shows are non-refundable. Rescheduling is available subject to availability."
+      "title": "Cancellation & Rescheduling",
+      "content": "You may cancel or reschedule at any time before the session begins. Rescheduling is available subject to availability."
     },
     "liability": {
       "title": "Limitation of Liability",
@@ -94,12 +163,9 @@
   },
   "Book": {
     "title": "Book a Consultation",
-    "subtitle": "Fill out the form below and we'll respond within 24 hours.",
-    "name": "Full Name", "email": "Email", "birthdate": "Birth Date", "birthtime": "Birth Time (if known)",
-    "service": "Consultation Type",
-    "serviceOptions": {"bazi": "Bazi Analysis", "ziwei": "Zi Wei Dou Shu", "fengshui": "Feng Shui", "dateselection": "Date Selection", "other": "Other"},
-    "message": "Additional Notes (optional)", "submit": "Submit",
-    "success": "Thank you! We've received your request and will respond within 24 hours.",
-    "error": "Something went wrong. Please try again or contact us directly."
+    "subtitle": "Reach out to start your personalized reading.",
+    "chat": "Chat Now",
+    "emailMe": "Send Email",
+    "wechatLabel": "Or add me on WeChat"
   }
 }

@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import Hero from '../../components/Hero';
 import Services from '../../components/Services';
+import Pricing from '../../components/Pricing';
 import About from '../../components/About';
 import Testimonials from '../../components/Testimonials';
+import FAQ from '../../components/FAQ';
 import FooterCTA from '../../components/FooterCTA';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -26,8 +28,10 @@ export default function HomePage() {
     <main>
       <Hero />
       <Services />
+      <Pricing />
       <About />
       <Testimonials />
+      <FAQ />
       <FooterCTA />
     </main>
   );
