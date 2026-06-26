@@ -1,16 +1,16 @@
-const HEAVENLY_STEMS = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'] as const;
-const EARTHLY_BRANCHES = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'] as const;
+export const HEAVENLY_STEMS = ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'] as const;
+export const EARTHLY_BRANCHES = ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'] as const;
 
-const STEMS_EN = ['Jiǎ', 'Yǐ', 'Bǐng', 'Dīng', 'Wù', 'Jǐ', 'Gēng', 'Xīn', 'Rén', 'Guǐ'] as const;
-const BRANCHES_EN = ['Zǐ', 'Chǒu', 'Yín', 'Mǎo', 'Chén', 'Sì', 'Wǔ', 'Wèi', 'Shēn', 'Yǒu', 'Xū', 'Hài'] as const;
+export const STEMS_EN = ['Jiǎ', 'Yǐ', 'Bǐng', 'Dīng', 'Wù', 'Jǐ', 'Gēng', 'Xīn', 'Rén', 'Guǐ'] as const;
+export const BRANCHES_EN = ['Zǐ', 'Chǒu', 'Yín', 'Mǎo', 'Chén', 'Sì', 'Wǔ', 'Wèi', 'Shēn', 'Yǒu', 'Xū', 'Hài'] as const;
 
-const STEM_ELEMENTS = ['Wood', 'Wood', 'Fire', 'Fire', 'Earth', 'Earth', 'Metal', 'Metal', 'Water', 'Water'] as const;
-const BRANCH_ELEMENTS = ['Water', 'Earth', 'Wood', 'Wood', 'Earth', 'Fire', 'Fire', 'Earth', 'Metal', 'Metal', 'Earth', 'Water'] as const;
+export const STEM_ELEMENTS = ['Wood', 'Wood', 'Fire', 'Fire', 'Earth', 'Earth', 'Metal', 'Metal', 'Water', 'Water'] as const;
+export const BRANCH_ELEMENTS = ['Water', 'Earth', 'Wood', 'Wood', 'Earth', 'Fire', 'Fire', 'Earth', 'Metal', 'Metal', 'Earth', 'Water'] as const;
 
-const ZODIAC_EN = ['Rat', 'Ox', 'Tiger', 'Rabbit', 'Dragon', 'Snake', 'Horse', 'Goat', 'Monkey', 'Rooster', 'Dog', 'Pig'] as const;
-const ZODIAC_ZH = ['鼠', '牛', '虎', '兔', '龙', '蛇', '马', '羊', '猴', '鸡', '狗', '猪'] as const;
+export const ZODIAC_EN = ['Rat', 'Ox', 'Tiger', 'Rabbit', 'Dragon', 'Snake', 'Horse', 'Goat', 'Monkey', 'Rooster', 'Dog', 'Pig'] as const;
+export const ZODIAC_ZH = ['鼠', '牛', '虎', '兔', '龙', '蛇', '马', '羊', '猴', '鸡', '狗', '猪'] as const;
 
-const NAYIN_ZH = [
+export const NAYIN_ZH = [
   '海中金', '海中金', '炉中火', '炉中火', '大林木', '大林木',
   '路旁土', '路旁土', '剑锋金', '剑锋金', '山头火', '山头火',
   '涧下水', '涧下水', '城头土', '城头土', '白蜡金', '白蜡金',
@@ -23,7 +23,7 @@ const NAYIN_ZH = [
   '天上火', '天上火', '石榴木', '石榴木', '大海水', '大海水',
 ] as const;
 
-const NAYIN_EN = [
+export const NAYIN_EN = [
   'Gold in the Sea', 'Gold in the Sea', 'Fire in the Furnace', 'Fire in the Furnace', 'Wood of the Forest', 'Wood of the Forest',
   'Earth by the Road', 'Earth by the Road', 'Metal of the Sword', 'Metal of the Sword', 'Fire on the Mountain', 'Fire on the Mountain',
   'Water in the Stream', 'Water in the Stream', 'Earth of the City Wall', 'Earth of the City Wall', 'White Wax Metal', 'White Wax Metal',
@@ -36,13 +36,13 @@ const NAYIN_EN = [
   'Fire in the Sky', 'Fire in the Sky', 'Pomegranate Wood', 'Pomegranate Wood', 'Water of the Great Sea', 'Water of the Great Sea',
 ] as const;
 
-const NAYIN_ELEMENT_ZH = ['金', '金', '火', '火', '木', '木', '土', '土', '金', '金', '火', '火', '水', '水', '土', '土', '金', '金', '木', '木', '水', '水', '土', '土', '火', '火', '木', '木', '水', '水', '金', '金', '火', '火', '木', '木', '土', '土', '金', '金', '火', '火', '水', '水', '土', '土', '金', '金', '木', '木', '水', '水', '土', '土', '火', '火', '木', '木', '水', '水'] as const;
-const NAYIN_ELEMENT_EN = ['Metal', 'Metal', 'Fire', 'Fire', 'Wood', 'Wood', 'Earth', 'Earth', 'Metal', 'Metal', 'Fire', 'Fire', 'Water', 'Water', 'Earth', 'Earth', 'Metal', 'Metal', 'Wood', 'Wood', 'Water', 'Water', 'Earth', 'Earth', 'Fire', 'Fire', 'Wood', 'Wood', 'Water', 'Water', 'Metal', 'Metal', 'Fire', 'Fire', 'Wood', 'Wood', 'Earth', 'Earth', 'Metal', 'Metal', 'Fire', 'Fire', 'Water', 'Water', 'Earth', 'Earth', 'Metal', 'Metal', 'Wood', 'Wood', 'Water', 'Water', 'Earth', 'Earth', 'Fire', 'Fire', 'Wood', 'Wood', 'Water', 'Water'] as const;
+export const NAYIN_ELEMENT_ZH = ['金', '金', '火', '火', '木', '木', '土', '土', '金', '金', '火', '火', '水', '水', '土', '土', '金', '金', '木', '木', '水', '水', '土', '土', '火', '火', '木', '木', '水', '水', '金', '金', '火', '火', '木', '木', '土', '土', '金', '金', '火', '火', '水', '水', '土', '土', '金', '金', '木', '木', '水', '水', '土', '土', '火', '火', '木', '木', '水', '水'] as const;
+export const NAYIN_ELEMENT_EN = ['Metal', 'Metal', 'Fire', 'Fire', 'Wood', 'Wood', 'Earth', 'Earth', 'Metal', 'Metal', 'Fire', 'Fire', 'Water', 'Water', 'Earth', 'Earth', 'Metal', 'Metal', 'Wood', 'Wood', 'Water', 'Water', 'Earth', 'Earth', 'Fire', 'Fire', 'Wood', 'Wood', 'Water', 'Water', 'Metal', 'Metal', 'Fire', 'Fire', 'Wood', 'Wood', 'Earth', 'Earth', 'Metal', 'Metal', 'Fire', 'Fire', 'Water', 'Water', 'Earth', 'Earth', 'Metal', 'Metal', 'Wood', 'Wood', 'Water', 'Water', 'Earth', 'Earth', 'Fire', 'Fire', 'Wood', 'Wood', 'Water', 'Water'] as const;
 
 // 月柱天干推算：根据年干确定正月天干起点
 const MONTH_STEM_START = [2, 4, 6, 8, 0, 2, 4, 6, 8, 0] as const; // 甲己年起丙寅，乙庚年起戊寅...
 
-function getStemBranch(stemIdx: number, branchIdx: number, locale: 'en' | 'zh') {
+export function getStemBranch(stemIdx: number, branchIdx: number, locale: 'en' | 'zh') {
   if (locale === 'zh') return `${HEAVENLY_STEMS[stemIdx]}${EARTHLY_BRANCHES[branchIdx]}`;
   return `${STEMS_EN[stemIdx]} ${BRANCHES_EN[branchIdx]}`;
 }
@@ -104,9 +104,9 @@ export interface BaziResult {
 }
 
 const ELEMENT_LABELS_EN: Record<string, string> = { Wood: 'Wood', Fire: 'Fire', Earth: 'Earth', Metal: 'Metal', Water: 'Water' };
-const ELEMENT_LABELS_ZH: Record<string, string> = { Wood: '木', Fire: '火', Earth: '土', Metal: '金', Water: '水' };
+export const ELEMENT_LABELS_ZH: Record<string, string> = { Wood: '木', Fire: '火', Earth: '土', Metal: '金', Water: '水' };
 
-const TRAITS_EN: Record<string, string> = {
+export const TRAITS_EN: Record<string, string> = {
   Wood: 'Your dominant element is Wood — you are creative, growth-oriented, and compassionate. You thrive on expansion and new beginnings, with a natural ability to inspire others.',
   Fire: 'Your dominant element is Fire — you are passionate, charismatic, and full of energy. You light up any room and have a natural gift for leadership and expression.',
   Earth: 'Your dominant element is Earth — you are grounded, reliable, and nurturing. People gravitate to your stability and practical wisdom in times of uncertainty.',
@@ -114,7 +114,7 @@ const TRAITS_EN: Record<string, string> = {
   Water: 'Your dominant element is Water — you are intuitive, adaptive, and deeply wise. You navigate complexity with ease and see what others miss.',
 };
 
-const TRAITS_ZH: Record<string, string> = {
+export const TRAITS_ZH: Record<string, string> = {
   Wood: '你的主导五行为木——富有创造力，追求成长，心怀慈悲。你善于开拓新局面，天生具有感召他人的力量。',
   Fire: '你的主导五行为火——热情洋溢，魅力四射，精力充沛。你在任何场合都能成为焦点，天生具备领导力和表达天赋。',
   Earth: '你的主导五行为土——脚踏实地，值得信赖，善于关怀。在不确定的时刻，人们自然而然地向你寻求稳定与智慧。',
@@ -122,7 +122,7 @@ const TRAITS_ZH: Record<string, string> = {
   Water: '你的主导五行为水——直觉敏锐，适应力强，智慧深邃。你能轻松驾驭复杂局面，看到他人看不到的东西。',
 };
 
-const MISSING_EN: Record<string, string> = {
+export const MISSING_EN: Record<string, string> = {
   Wood: 'Wood (creativity, growth)',
   Fire: 'Fire (passion, action)',
   Earth: 'Earth (stability, trust)',
@@ -130,7 +130,7 @@ const MISSING_EN: Record<string, string> = {
   Water: 'Water (wisdom, adaptability)',
 };
 
-const MISSING_ZH: Record<string, string> = {
+export const MISSING_ZH: Record<string, string> = {
   Wood: '木（创造力、成长）',
   Fire: '火（热情、行动力）',
   Earth: '土（稳定、信任）',
