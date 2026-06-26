@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { useState } from 'react';
 import Link from 'next/link';
 import { getReading, type ReadingResult } from '../../../lib/reading';
+import { track } from '../../../lib/analytics';
 
 export default function FreeReadingPage() {
   const t = useTranslations('FreeReading');
@@ -22,6 +23,7 @@ export default function FreeReadingPage() {
       year: Number(year), month: Number(month), day: Number(day),
       timeIndex: Number(timeIndex), gender, locale,
     }));
+    track('reading_completed', { gender, timeIndex: Number(timeIndex) });
   }
 
   return (
@@ -181,6 +183,7 @@ export default function FreeReadingPage() {
             <div className="text-center">
               <Link
                 href={`/${locale}/book`}
+                onClick={() => track('reading_cta_click')}
                 className="inline-block px-8 py-3 bg-accent text-bg-primary font-medium rounded-lg hover:bg-accent-hover transition-colors"
               >
                 {t('cta')}
