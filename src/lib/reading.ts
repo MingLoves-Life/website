@@ -1,4 +1,4 @@
-import { astro } from 'iztro';
+import type { astro } from 'iztro';
 import {
   STEM_ELEMENTS, BRANCH_ELEMENTS, HEAVENLY_STEMS, EARTHLY_BRANCHES,
   STEMS_EN, BRANCHES_EN, ZODIAC_EN, ZODIAC_ZH,
@@ -69,10 +69,12 @@ function sexagenaryIndex(stemIdx: number, branchIdx: number): number {
   return 0;
 }
 
-export function getReading(input: ReadingInput): ReadingResult {
+export async function getReading(input: ReadingInput): Promise<ReadingResult> {
   const { year, month, day, timeIndex, gender, locale } = input;
   const solar = `${year}-${month}-${day}`;
   const genderZh = gender === 'male' ? '男' : '女';
+  // Lazily load iztro so it stays out of the route's first-load bundle.
+  const { astro } = await import('iztro');
   // Always request 'zh-CN' so stem/branch strings match the bazi.ts tables.
   const astrolabe = astro.bySolar(solar, timeIndex, genderZh, true, 'zh-CN');
   const p = pillarIndices(astrolabe);

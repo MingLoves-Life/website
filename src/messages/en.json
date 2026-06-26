@@ -94,6 +94,7 @@
     "hourLabel": "Birth Hour",
     "hourUnknown": "Not sure / around midday",
     "hours": ["23:00–01:00","01:00–03:00","03:00–05:00","05:00–07:00","07:00–09:00","09:00–11:00","11:00–13:00","13:00–15:00","15:00–17:00","17:00–19:00","19:00–21:00","21:00–23:00"],
+    "dateError": "Please enter a valid birth date.",
     "submit": "Reveal My Element",
     "resultTitle": "Your Four Pillars",
     "hook": "Your dominant energy is {element}, and the {missing} pattern in your chart is exactly what shapes your career and relationships this year — a full reading shows you how to work with it.",

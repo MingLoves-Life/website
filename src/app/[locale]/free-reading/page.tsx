@@ -15,15 +15,26 @@ export default function FreeReadingPage() {
   const [timeIndex, setTimeIndex] = useState('6'); // default 午时 (midday) for "unknown"
   const [gender, setGender] = useState<'male' | 'female'>('female');
   const [result, setResult] = useState<ReadingResult | null>(null);
+  const [error, setError] = useState('');
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setError('');
     if (!year || !month || !day) return;
-    setResult(getReading({
-      year: Number(year), month: Number(month), day: Number(day),
-      timeIndex: Number(timeIndex), gender, locale,
-    }));
-    track('reading_completed', { gender, timeIndex: Number(timeIndex) });
+    if (Number(month) < 1 || Number(month) > 12 || Number(day) < 1 || Number(day) > 31) {
+      setError(t('dateError'));
+      return;
+    }
+    try {
+      const r = await getReading({
+        year: Number(year), month: Number(month), day: Number(day),
+        timeIndex: Number(timeIndex), gender, locale,
+      });
+      setResult(r);
+      track('reading_completed', { gender, timeIndex: Number(timeIndex) });
+    } catch {
+      setError(t('dateError'));
+    }
   }
 
   return (
@@ -84,11 +95,15 @@ export default function FreeReadingPage() {
                 <label className="block text-sm text-text-secondary mb-2">{t('hourLabel')}</label>
                 <select value={timeIndex} onChange={(e) => setTimeIndex(e.target.value)}
                   className="w-full px-4 py-3 bg-bg-secondary border border-white/10 rounded-lg text-text-primary focus:outline-none focus:border-accent/50">
+                  <option value="6">{t('hourUnknown')}</option>
                   {(t.raw('hours') as string[]).map((h, i) => (
                     <option key={i} value={i}>{h}</option>
                   ))}
                 </select>
               </div>
+              {error && (
+                <p className="text-sm text-accent-red text-center">{error}</p>
+              )}
               <button
                 type="submit"
                 className="w-full py-3 bg-accent text-bg-primary font-medium rounded-lg hover:bg-accent-hover transition-colors"
@@ -172,7 +187,7 @@ export default function FreeReadingPage() {
             {/* Personalized hook */}
             <p className="text-text-secondary leading-relaxed mb-10 text-center">
               {result.missing.length > 0
-                ? t('hook', { element: result.strongest, missing: result.missing.join(locale === 'zh' ? '、' : ' & ') })
+                ? t('hook', { element: result.strongest, missing: result.missing.map(m => m.split(' (')[0].trim()).join(locale === 'zh' ? '、' : ' & ') })
                 : t('hookComplete')}
             </p>
 
