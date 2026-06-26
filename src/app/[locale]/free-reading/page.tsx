@@ -95,7 +95,8 @@ export default function FreeReadingPage() {
                 <label className="block text-sm text-text-secondary mb-2">{t('hourLabel')}</label>
                 <select value={timeIndex} onChange={(e) => setTimeIndex(e.target.value)}
                   className="w-full px-4 py-3 bg-bg-secondary border border-white/10 rounded-lg text-text-primary focus:outline-none focus:border-accent/50">
-                  <option value="6">{t('hourUnknown')}</option>
+                  <option value="6">{t('hourUnknownDay')}</option>
+                  <option value="0">{t('hourUnknownNight')}</option>
                   {(t.raw('hours') as string[]).map((h, i) => (
                     <option key={i} value={i}>{h}</option>
                   ))}
