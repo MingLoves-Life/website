@@ -2,6 +2,7 @@
 
 import { useTranslations, useLocale } from 'next-intl';
 import { useState, useEffect } from 'react';
+import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { getReading, type ReadingResult } from '../../../lib/reading';
 import { track } from '../../../lib/analytics';
@@ -11,15 +12,32 @@ import { deriveFakeReading, type ReadingData } from '../../../lib/reading-data';
 export default function FreeReadingPage() {
   const t = useTranslations('FreeReading');
   const locale = useLocale() as 'en' | 'zh';
-  const [year, setYear] = useState('');
-  const [month, setMonth] = useState('');
-  const [day, setDay] = useState('');
-  const [timeIndex, setTimeIndex] = useState('6'); // default 午时 (midday) for "unknown"
-  const [gender, setGender] = useState<'male' | 'female'>('female');
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  const [year, setYear] = useState(searchParams.get('y') || '');
+  const [month, setMonth] = useState(searchParams.get('m') || '');
+  const [day, setDay] = useState(searchParams.get('d') || '');
+  const [timeIndex, setTimeIndex] = useState(searchParams.get('t') || '6');
+  const [gender, setGender] = useState<'male' | 'female'>((searchParams.get('g') as 'male' | 'female') || 'female');
   const [result, setResult] = useState<ReadingResult | null>(null);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [realReading, setRealReading] = useState<ReadingData | null>(null);
   const revealed = useRevealed();
+
+  useEffect(() => {
+    if (!searchParams.get('y')) return;
+    const y = searchParams.get('y')!;
+    const m = searchParams.get('m')!;
+    const d = searchParams.get('d')!;
+    const ti = searchParams.get('t') || '6';
+    const g = (searchParams.get('g') as 'male' | 'female') || 'female';
+    setYear(y); setMonth(m); setDay(d); setTimeIndex(ti); setGender(g);
+    getReading({ year: Number(y), month: Number(m), day: Number(d), timeIndex: Number(ti), gender: g, locale })
+      .then(r => setResult(r))
+      .catch(() => {});
+  }, [locale, searchParams]);
 
   useEffect(() => {
     if (!revealed || !result || !year || !month || !day) return;
@@ -39,22 +57,43 @@ export default function FreeReadingPage() {
       setError(t('dateError'));
       return;
     }
+    setLoading(true);
     try {
       const r = await getReading({
         year: Number(year), month: Number(month), day: Number(day),
         timeIndex: Number(timeIndex), gender, locale,
       });
+      await new Promise(resolve => setTimeout(resolve, 1500));
       setResult(r);
+      const params = new URLSearchParams(searchParams.toString());
+      params.set('y', year); params.set('m', month); params.set('d', day);
+      params.set('t', timeIndex); params.set('g', gender);
+      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
       track('reading_completed', { gender, timeIndex: Number(timeIndex) });
     } catch {
       setError(t('dateError'));
+    } finally {
+      setLoading(false);
     }
   }
 
   return (
     <main className="min-h-screen flex items-center justify-center px-6 py-32">
       <div className="max-w-lg w-full">
-        {!result ? (
+        {loading ? (
+          <div className="flex flex-col items-center justify-center py-20">
+            <div className="relative w-16 h-16 mb-6">
+              <div className="absolute inset-0 border-2 border-accent/20 rounded-full" />
+              <div className="absolute inset-0 border-2 border-transparent border-t-accent rounded-full animate-spin" />
+            </div>
+            <p className="text-text-primary text-lg font-light mb-2">
+              {locale === 'zh' ? '正在推算命盘...' : 'Calculating your chart...'}
+            </p>
+            <p className="text-text-secondary text-sm">
+              {locale === 'zh' ? '结合八字与五行，为你生成专属解读' : 'Analyzing your BaZi and Five Elements'}
+            </p>
+          </div>
+        ) : !result ? (
           <>
             <h1 className="text-3xl md:text-5xl font-light mb-4 text-center">{t('title')}</h1>
             <p className="text-text-secondary text-center mb-12">{t('subtitle')}</p>
@@ -271,6 +310,28 @@ export default function FreeReadingPage() {
                   </Blur>
                 </div>
 
+                {/* Inline CTA — hidden when revealed */}
+                <PaywallOverlay>
+                  <div className="my-2 p-4 bg-accent/5 border border-accent/20 rounded-lg text-center">
+                    <p className="text-sm text-text-primary mb-1">
+                      {locale === 'zh'
+                        ? `你的五行${result.missing.length > 0 ? '缺' + result.missing.map(m => m.split(/[( （]/)[0].trim()).join('、') : '偏' + result.strongest}，对事业和感情意味着什么？`
+                        : `Your ${result.missing.length > 0 ? 'missing ' + result.missing.map(m => m.split(/[( （]/)[0].trim()).join(' & ') : 'dominant ' + result.strongest} — what does it mean for career & love?`}
+                    </p>
+                    <p className="text-xs text-text-secondary mb-3">
+                      {locale === 'zh' ? '完整解读包含事业方位、桃花月份、健康提醒等8个维度' : 'Full reading covers career direction, romance timing, health alerts & 5 more dimensions'}
+                    </p>
+                    <Link
+                      href={`/${locale}/book`}
+                      onClick={() => track('reading_inline_cta_click')}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 bg-accent text-bg-primary text-sm font-medium rounded-lg hover:bg-accent-hover transition-colors"
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                      {locale === 'zh' ? '找老师解读完整命盘' : 'Get full reading from the master'}
+                    </Link>
+                  </div>
+                </PaywallOverlay>
+
                 {/* 4. 事业与财运 */}
                 <div>
                   <p className="text-sm font-medium text-accent mb-1">{locale === 'zh' ? '事业与财运' : 'Career & Wealth'}</p>
@@ -376,29 +437,30 @@ export default function FreeReadingPage() {
               </div>
                 );
               })()}
-              {/* Gradient fade & lock CTA — hidden when revealed */}
-              <PaywallOverlay>
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg-primary to-transparent" />
-                <div className="absolute inset-0 flex items-end justify-center pb-12">
-                  <Link
-                    href={`/${locale}/book`}
-                    onClick={() => track('reading_cta_click')}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-bg-primary font-medium rounded-lg hover:bg-accent-hover transition-colors shadow-lg"
-                  >
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                    {t('cta')}
-                  </Link>
-                </div>
-              </PaywallOverlay>
             </div>
             <div className="text-center">
               <button
-                onClick={() => { setResult(null); setYear(''); setMonth(''); setDay(''); }}
+                onClick={() => { setResult(null); setYear(''); setMonth(''); setDay(''); router.replace(pathname, { scroll: false }); }}
                 className="block mx-auto mt-4 text-sm text-text-secondary hover:text-text-primary transition-colors"
               >
                 {t('tryAgain')}
               </button>
             </div>
+            {/* Sticky bottom CTA — hidden when revealed */}
+            <PaywallOverlay>
+              <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-t from-bg-primary via-bg-primary/95 to-transparent">
+                <div className="max-w-lg mx-auto">
+                  <Link
+                    href={`/${locale}/book`}
+                    onClick={() => track('reading_cta_click')}
+                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-accent text-bg-primary font-medium rounded-lg hover:bg-accent-hover transition-colors shadow-lg"
+                  >
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+                    {locale === 'zh' ? '找老师看完整命盘' : 'Get your full reading from the master'}
+                  </Link>
+                </div>
+              </div>
+            </PaywallOverlay>
           </div>
         )}
       </div>
