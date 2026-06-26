@@ -39,40 +39,9 @@ export const NAYIN_EN = [
 export const NAYIN_ELEMENT_ZH = ['金', '金', '火', '火', '木', '木', '土', '土', '金', '金', '火', '火', '水', '水', '土', '土', '金', '金', '木', '木', '水', '水', '土', '土', '火', '火', '木', '木', '水', '水', '金', '金', '火', '火', '木', '木', '土', '土', '金', '金', '火', '火', '水', '水', '土', '土', '金', '金', '木', '木', '水', '水', '土', '土', '火', '火', '木', '木', '水', '水'] as const;
 export const NAYIN_ELEMENT_EN = ['Metal', 'Metal', 'Fire', 'Fire', 'Wood', 'Wood', 'Earth', 'Earth', 'Metal', 'Metal', 'Fire', 'Fire', 'Water', 'Water', 'Earth', 'Earth', 'Metal', 'Metal', 'Wood', 'Wood', 'Water', 'Water', 'Earth', 'Earth', 'Fire', 'Fire', 'Wood', 'Wood', 'Water', 'Water', 'Metal', 'Metal', 'Fire', 'Fire', 'Wood', 'Wood', 'Earth', 'Earth', 'Metal', 'Metal', 'Fire', 'Fire', 'Water', 'Water', 'Earth', 'Earth', 'Metal', 'Metal', 'Wood', 'Wood', 'Water', 'Water', 'Earth', 'Earth', 'Fire', 'Fire', 'Wood', 'Wood', 'Water', 'Water'] as const;
 
-// 月柱天干推算：根据年干确定正月天干起点
-const MONTH_STEM_START = [2, 4, 6, 8, 0, 2, 4, 6, 8, 0] as const; // 甲己年起丙寅，乙庚年起戊寅...
-
 export function getStemBranch(stemIdx: number, branchIdx: number, locale: 'en' | 'zh') {
   if (locale === 'zh') return `${HEAVENLY_STEMS[stemIdx]}${EARTHLY_BRANCHES[branchIdx]}`;
   return `${STEMS_EN[stemIdx]} ${BRANCHES_EN[branchIdx]}`;
-}
-
-function getDiffDays(year: number, month: number, day: number): number {
-  const baseDate = new Date(1900, 0, 1);
-  const targetDate = new Date(year, month - 1, day);
-  return Math.floor((targetDate.getTime() - baseDate.getTime()) / 86400000);
-}
-
-function getYearPillar(year: number) {
-  const stemIdx = (year - 4) % 10;
-  const branchIdx = (year - 4) % 12;
-  return { stemIdx, branchIdx, jiazi: ((year - 4) % 60 + 60) % 60 };
-}
-
-function getMonthPillar(yearStemIdx: number, month: number) {
-  const startStem = MONTH_STEM_START[yearStemIdx];
-  const stemIdx = (startStem + month - 1) % 10;
-  const branchIdx = (month + 1) % 12; // 正月=寅(index 2)
-  return { stemIdx, branchIdx };
-}
-
-function getDayPillar(year: number, month: number, day: number) {
-  const diffDays = getDiffDays(year, month, day);
-  // 1900-01-01 is 甲子日 (index 0 for both)
-  const stemIdx = ((diffDays % 10) + 10) % 10;
-  const branchIdx = ((diffDays % 12) + 12) % 12;
-  const jiazi = ((diffDays % 60) + 60) % 60;
-  return { stemIdx, branchIdx, jiazi };
 }
 
 export interface Pillar {
@@ -103,7 +72,6 @@ export interface BaziResult {
   trait: string;
 }
 
-const ELEMENT_LABELS_EN: Record<string, string> = { Wood: 'Wood', Fire: 'Fire', Earth: 'Earth', Metal: 'Metal', Water: 'Water' };
 export const ELEMENT_LABELS_ZH: Record<string, string> = { Wood: '木', Fire: '火', Earth: '土', Metal: '金', Water: '水' };
 
 export const TRAITS_EN: Record<string, string> = {
@@ -137,67 +105,3 @@ export const MISSING_ZH: Record<string, string> = {
   Metal: '金（纪律、清晰）',
   Water: '水（智慧、适应力）',
 };
-
-export function getBasicReading(year: number, month: number, day: number, locale: 'en' | 'zh'): BaziResult {
-  const yp = getYearPillar(year);
-  const mp = getMonthPillar(yp.stemIdx, month);
-  const dp = getDayPillar(year, month, day);
-
-  const yearPillar: Pillar = {
-    stem: locale === 'zh' ? HEAVENLY_STEMS[yp.stemIdx] : STEMS_EN[yp.stemIdx],
-    branch: locale === 'zh' ? EARTHLY_BRANCHES[yp.branchIdx] : BRANCHES_EN[yp.branchIdx],
-    full: getStemBranch(yp.stemIdx, yp.branchIdx, locale),
-  };
-  const monthPillar: Pillar = {
-    stem: locale === 'zh' ? HEAVENLY_STEMS[mp.stemIdx] : STEMS_EN[mp.stemIdx],
-    branch: locale === 'zh' ? EARTHLY_BRANCHES[mp.branchIdx] : BRANCHES_EN[mp.branchIdx],
-    full: getStemBranch(mp.stemIdx, mp.branchIdx, locale),
-  };
-  const dayPillar: Pillar = {
-    stem: locale === 'zh' ? HEAVENLY_STEMS[dp.stemIdx] : STEMS_EN[dp.stemIdx],
-    branch: locale === 'zh' ? EARTHLY_BRANCHES[dp.branchIdx] : BRANCHES_EN[dp.branchIdx],
-    full: getStemBranch(dp.stemIdx, dp.branchIdx, locale),
-  };
-
-  const zodiac = locale === 'zh' ? ZODIAC_ZH[yp.branchIdx] : ZODIAC_EN[yp.branchIdx];
-  const nayin = locale === 'zh' ? NAYIN_ZH[dp.jiazi] : NAYIN_EN[dp.jiazi];
-  const nayinElement = locale === 'zh' ? NAYIN_ELEMENT_ZH[dp.jiazi] : NAYIN_ELEMENT_EN[dp.jiazi];
-  const dayElement = STEM_ELEMENTS[dp.stemIdx];
-
-  // Calculate element balance from all 6 stem/branch positions
-  const allElements = [
-    STEM_ELEMENTS[yp.stemIdx], BRANCH_ELEMENTS[yp.branchIdx],
-    STEM_ELEMENTS[mp.stemIdx], BRANCH_ELEMENTS[mp.branchIdx],
-    STEM_ELEMENTS[dp.stemIdx], BRANCH_ELEMENTS[dp.branchIdx],
-  ];
-
-  const balance: ElementBalance = { wood: 0, fire: 0, earth: 0, metal: 0, water: 0 };
-  for (const el of allElements) {
-    balance[el.toLowerCase() as keyof ElementBalance]++;
-  }
-
-  const elements = ['Wood', 'Fire', 'Earth', 'Metal', 'Water'] as const;
-  const missing = elements.filter(e => balance[e.toLowerCase() as keyof ElementBalance] === 0);
-  const strongest = elements.reduce((a, b) =>
-    balance[a.toLowerCase() as keyof ElementBalance] >= balance[b.toLowerCase() as keyof ElementBalance] ? a : b
-  );
-
-  const labels = locale === 'zh' ? MISSING_ZH : MISSING_EN;
-  const missingLabels = missing.map(e => labels[e]);
-
-  const trait = locale === 'zh' ? TRAITS_ZH[strongest] : TRAITS_EN[strongest];
-
-  return {
-    yearPillar,
-    monthPillar,
-    dayPillar,
-    zodiac,
-    nayin,
-    nayinElement,
-    dayElement: locale === 'zh' ? ELEMENT_LABELS_ZH[dayElement] : dayElement,
-    balance,
-    missing: missingLabels,
-    strongest: locale === 'zh' ? ELEMENT_LABELS_ZH[strongest] : strongest,
-    trait,
-  };
-}
