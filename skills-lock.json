@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "命理解读师": {
+      "source": "learnwithu/mingli-master",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "cd0498839a8206bc7d453dd495f7d2fc466dd80d3358b1668b6b37f0f5dff3b6"
+    }
+  }
+}
