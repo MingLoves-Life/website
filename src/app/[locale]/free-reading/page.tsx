@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { useState } from 'react';
 import Link from 'next/link';
-import { getBasicReading, type BaziResult } from '../../../lib/bazi';
+import { getReading, type ReadingResult } from '../../../lib/reading';
 
 export default function FreeReadingPage() {
   const t = useTranslations('FreeReading');
@@ -11,12 +11,17 @@ export default function FreeReadingPage() {
   const [year, setYear] = useState('');
   const [month, setMonth] = useState('');
   const [day, setDay] = useState('');
-  const [result, setResult] = useState<BaziResult | null>(null);
+  const [timeIndex, setTimeIndex] = useState('6'); // default 午时 (midday) for "unknown"
+  const [gender, setGender] = useState<'male' | 'female'>('female');
+  const [result, setResult] = useState<ReadingResult | null>(null);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!year || !month || !day) return;
-    setResult(getBasicReading(Number(year), Number(month), Number(day), locale));
+    setResult(getReading({
+      year: Number(year), month: Number(month), day: Number(day),
+      timeIndex: Number(timeIndex), gender, locale,
+    }));
   }
 
   return (
@@ -61,6 +66,26 @@ export default function FreeReadingPage() {
                     className="w-full px-4 py-3 bg-bg-secondary border border-white/10 rounded-lg text-text-primary focus:outline-none focus:border-accent/50 text-center"
                   />
                 </div>
+              </div>
+              <div>
+                <label className="block text-sm text-text-secondary mb-2">{t('genderLabel')}</label>
+                <div className="grid grid-cols-2 gap-3">
+                  {(['female', 'male'] as const).map((g) => (
+                    <button key={g} type="button" onClick={() => setGender(g)}
+                      className={`py-3 rounded-lg border transition-colors ${gender === g ? 'border-accent text-accent' : 'border-white/10 text-text-secondary'}`}>
+                      {t(g === 'male' ? 'genderMale' : 'genderFemale')}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm text-text-secondary mb-2">{t('hourLabel')}</label>
+                <select value={timeIndex} onChange={(e) => setTimeIndex(e.target.value)}
+                  className="w-full px-4 py-3 bg-bg-secondary border border-white/10 rounded-lg text-text-primary focus:outline-none focus:border-accent/50">
+                  {(t.raw('hours') as string[]).map((h, i) => (
+                    <option key={i} value={i}>{h}</option>
+                  ))}
+                </select>
               </div>
               <button
                 type="submit"
