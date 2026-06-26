@@ -187,7 +187,7 @@ export default function FreeReadingPage() {
             {/* Personalized hook */}
             <p className="text-text-secondary leading-relaxed mb-10 text-center">
               {result.missing.length > 0
-                ? t('hook', { element: result.strongest, missing: result.missing.map(m => m.split(' (')[0].trim()).join(locale === 'zh' ? '、' : ' & ') })
+                ? t('hook', { element: result.strongest, missing: result.missing.map(m => m.split(/ \(|（/)[0].trim()).join(locale === 'zh' ? '、' : ' & ') })
                 : t('hookComplete')}
             </p>
 
