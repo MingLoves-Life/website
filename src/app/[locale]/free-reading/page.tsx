@@ -1,11 +1,12 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getReading, type ReadingResult } from '../../../lib/reading';
 import { track } from '../../../lib/analytics';
-import { Blur, PaywallOverlay } from '../../../components/Blur';
+import { Blur, PaywallOverlay, useRevealed } from '../../../components/Blur';
+import { deriveFakeReading, type ReadingData } from '../../../lib/reading-data';
 
 export default function FreeReadingPage() {
   const t = useTranslations('FreeReading');
@@ -17,6 +18,18 @@ export default function FreeReadingPage() {
   const [gender, setGender] = useState<'male' | 'female'>('female');
   const [result, setResult] = useState<ReadingResult | null>(null);
   const [error, setError] = useState('');
+  const [realReading, setRealReading] = useState<ReadingData | null>(null);
+  const revealed = useRevealed();
+
+  useEffect(() => {
+    if (!revealed || !result || !year || !month || !day) return;
+    const pad = (n: number) => String(n).padStart(2, '0');
+    const key = `${year}-${pad(Number(month))}-${pad(Number(day))}-${gender[0]}-${timeIndex}`;
+    fetch(`/readings/${key}.json`)
+      .then(res => res.ok ? res.json() : null)
+      .then(data => { if (data?.reading) setRealReading(data.reading); })
+      .catch(() => {});
+  }, [revealed, result, year, month, day, gender, timeIndex]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -195,6 +208,10 @@ export default function FreeReadingPage() {
 
             {/* Blurred paywall preview */}
             <div className="relative mb-8 overflow-hidden rounded-lg">
+              {(() => {
+                const readingData = realReading || deriveFakeReading(result, locale, Number(month));
+                const stars = (n: number) => '★'.repeat(n) + '☆'.repeat(5 - n);
+                return (
               <div className="space-y-6 p-5 bg-bg-secondary border border-white/5">
 
                 {/* 1. 命格总评 */}
@@ -202,11 +219,12 @@ export default function FreeReadingPage() {
                   <p className="text-sm font-medium text-accent mb-1">{locale === 'zh' ? '命格总评' : 'Destiny Overview'}</p>
                   <p className="text-xs text-text-secondary mb-2">{locale === 'zh' ? '基于日主强弱与格局，解读你的先天命格特征' : 'Interpretation of your innate destiny based on Day Master strength & chart structure'}</p>
                   <Blur>
-                    <p className="text-sm text-text-primary leading-relaxed">
-                      {locale === 'zh'
-                        ? '日主丙火生于酉月，火势受金克制，喜木来生扶。命局偏财格，性格果断但需防冲动决策。整体格局中上，中年后运势渐入佳境，宜把握贵人相助之机。'
-                        : 'Day Master Bing Fire born in the Month of You. Fire is restrained by Metal, Wood support is favorable. Partial Wealth structure indicates decisiveness but beware impulsive choices. Overall destiny ranks above average with improving fortune after mid-life.'}
-                    </p>
+                    <div className="flex gap-2 flex-wrap mb-2">
+                      {readingData.overview.keywords.map((kw) => (
+                        <span key={kw} className="text-xs px-2 py-0.5 bg-accent/10 text-accent rounded">{kw}</span>
+                      ))}
+                    </div>
+                    <p className="text-sm text-text-primary leading-relaxed">{readingData.overview.body}</p>
                   </Blur>
                 </div>
 
@@ -215,18 +233,15 @@ export default function FreeReadingPage() {
                   <p className="text-sm font-medium text-accent mb-1">{locale === 'zh' ? '十年大运' : 'Decade Forecast'}</p>
                   <p className="text-xs text-text-secondary mb-2">{locale === 'zh' ? '每十年一步大运，揭示人生各阶段的运势起伏' : 'Each decade brings a major luck shift — see the arc of your life phases'}</p>
                   <div className="space-y-2">
-                    {(locale === 'zh'
-                      ? [['第一步运', '蛰伏蓄力期', 45], ['第二步运', '贵人助力期', 78], ['第三步运', '事业巅峰期', 92], ['第四步运', '收获稳定期', 70]]
-                      : [['Phase 1', 'Building foundation', 45], ['Phase 2', 'Mentor support period', 78], ['Phase 3', 'Career peak', 92], ['Phase 4', 'Harvest & stability', 70]]
-                    ).map(([label, desc, pct]) => (
-                      <div key={label as string} className="flex items-center gap-3">
-                        <span className="text-xs text-text-primary w-16 shrink-0">{label}</span>
+                    {readingData.decades.map((d) => (
+                      <div key={d.label} className="flex items-center gap-3">
+                        <span className="text-xs text-text-primary w-16 shrink-0">{d.label}</span>
                         <Blur className="flex-1">
                           <div className="flex justify-between text-xs text-text-secondary mb-0.5">
-                            <span>{desc}</span>
+                            <span>{d.theme}</span>
                           </div>
                           <div className="h-2 bg-accent/20 rounded-full">
-                            <div className="h-full bg-accent rounded-full" style={{ width: `${pct}%` }} />
+                            <div className="h-full bg-accent rounded-full" style={{ width: `${d.score}%` }} />
                           </div>
                         </Blur>
                       </div>
@@ -242,16 +257,16 @@ export default function FreeReadingPage() {
                     <div className="grid grid-cols-2 gap-3">
                       <div className="p-3 bg-white/5 rounded">
                         <p className="text-xs text-text-secondary mb-1">{locale === 'zh' ? '上半年' : 'First Half'}</p>
-                        <p className="text-sm text-text-primary">{locale === 'zh' ? '运势上扬，三月有突破机遇' : 'Rising momentum, breakthrough in March'}</p>
+                        <p className="text-sm text-text-primary">{readingData.annual.firstHalf}</p>
                       </div>
                       <div className="p-3 bg-white/5 rounded">
                         <p className="text-xs text-text-secondary mb-1">{locale === 'zh' ? '下半年' : 'Second Half'}</p>
-                        <p className="text-sm text-text-primary">{locale === 'zh' ? '稳中有进，九月贵人显现' : 'Steady growth, mentor appears in September'}</p>
+                        <p className="text-sm text-text-primary">{readingData.annual.secondHalf}</p>
                       </div>
                     </div>
                     <div className="mt-2 p-2 bg-white/5 rounded text-center">
                       <p className="text-xs text-text-secondary">{locale === 'zh' ? '关键月份' : 'Key Months'}</p>
-                      <p className="text-sm text-accent">{locale === 'zh' ? '三月 · 六月 · 九月' : 'March · June · September'}</p>
+                      <p className="text-sm text-accent">{readingData.annual.keyMonths.join(' · ')}</p>
                     </div>
                   </Blur>
                 </div>
@@ -264,18 +279,18 @@ export default function FreeReadingPage() {
                     <div className="grid grid-cols-2 gap-3">
                       <div className="p-3 bg-white/5 rounded">
                         <p className="text-xs text-text-secondary">{locale === 'zh' ? '事业评分' : 'Career'}</p>
-                        <p className="text-sm text-text-primary">★★★★☆</p>
-                        <p className="text-xs text-text-secondary mt-1">{locale === 'zh' ? '适合求变，不宜守旧' : 'Embrace change, avoid stagnation'}</p>
+                        <p className="text-sm text-text-primary">{stars(readingData.career.rating)}</p>
+                        <p className="text-xs text-text-secondary mt-1">{readingData.career.advice}</p>
                       </div>
                       <div className="p-3 bg-white/5 rounded">
                         <p className="text-xs text-text-secondary">{locale === 'zh' ? '财运评分' : 'Wealth'}</p>
-                        <p className="text-sm text-text-primary">★★★★★</p>
-                        <p className="text-xs text-text-secondary mt-1">{locale === 'zh' ? '偏财旺，投资运佳' : 'Windfall luck strong, invest wisely'}</p>
+                        <p className="text-sm text-text-primary">{stars(readingData.wealth.rating)}</p>
+                        <p className="text-xs text-text-secondary mt-1">{readingData.wealth.mode}</p>
                       </div>
                     </div>
                     <div className="mt-2 p-2 bg-white/5 rounded text-center">
                       <p className="text-xs text-text-secondary">{locale === 'zh' ? '最佳方位 · 旺财月份' : 'Best Direction · Wealth Months'}</p>
-                      <p className="text-xs text-text-primary">{locale === 'zh' ? '东南 · 三月、八月' : 'Southeast · Mar, Aug'}</p>
+                      <p className="text-xs text-text-primary">{readingData.career.direction} · {readingData.wealth.bestMonths.join(locale === 'zh' ? '、' : ', ')}</p>
                     </div>
                   </Blur>
                 </div>
@@ -288,15 +303,15 @@ export default function FreeReadingPage() {
                     <div className="grid grid-cols-2 gap-3">
                       <div className="p-3 bg-white/5 rounded">
                         <p className="text-xs text-text-secondary">{locale === 'zh' ? '桃花指数' : 'Romance Index'}</p>
-                        <p className="text-sm text-text-primary">★★★★☆</p>
+                        <p className="text-sm text-text-primary">{stars(readingData.love.rating)}</p>
                         <p className="text-xs text-text-secondary mt-1">{locale === 'zh' ? '桃花月' : 'Romance months'}</p>
-                        <p className="text-xs text-text-primary">{locale === 'zh' ? '四月、七月' : 'Apr, Jul'}</p>
+                        <p className="text-xs text-text-primary">{readingData.love.romanceMonths.join(locale === 'zh' ? '、' : ', ')}</p>
                       </div>
                       <div className="p-3 bg-white/5 rounded">
                         <p className="text-xs text-text-secondary">{locale === 'zh' ? '正缘特征' : 'Soulmate Traits'}</p>
-                        <p className="text-sm text-text-primary">{locale === 'zh' ? '年长 · 属兔' : 'Older · Rabbit sign'}</p>
+                        <p className="text-sm text-text-primary">{readingData.love.soulmate}</p>
                         <p className="text-xs text-text-secondary mt-1">{locale === 'zh' ? '方位' : 'Direction'}</p>
-                        <p className="text-xs text-text-primary">{locale === 'zh' ? '正北方' : 'North'}</p>
+                        <p className="text-xs text-text-primary">{readingData.love.direction}</p>
                       </div>
                     </div>
                   </Blur>
@@ -310,15 +325,15 @@ export default function FreeReadingPage() {
                     <div className="grid grid-cols-3 gap-2">
                       <div className="p-2 bg-white/5 rounded text-center">
                         <p className="text-xs text-text-secondary">{locale === 'zh' ? '注意部位' : 'Watch'}</p>
-                        <p className="text-xs text-text-primary mt-1">{locale === 'zh' ? '心血管' : 'Heart'}</p>
+                        <p className="text-xs text-text-primary mt-1">{readingData.health.areas.join(locale === 'zh' ? '、' : ', ')}</p>
                       </div>
                       <div className="p-2 bg-white/5 rounded text-center">
                         <p className="text-xs text-text-secondary">{locale === 'zh' ? '易犯月份' : 'Months'}</p>
-                        <p className="text-xs text-text-primary mt-1">{locale === 'zh' ? '五月、十一月' : 'May, Nov'}</p>
+                        <p className="text-xs text-text-primary mt-1">{readingData.health.vulnerableMonths.join(locale === 'zh' ? '、' : ', ')}</p>
                       </div>
                       <div className="p-2 bg-white/5 rounded text-center">
                         <p className="text-xs text-text-secondary">{locale === 'zh' ? '调理方向' : 'Remedy'}</p>
-                        <p className="text-xs text-text-primary mt-1">{locale === 'zh' ? '养脾胃' : 'Digestion'}</p>
+                        <p className="text-xs text-text-primary mt-1">{readingData.health.remedy}</p>
                       </div>
                     </div>
                   </Blur>
@@ -332,11 +347,11 @@ export default function FreeReadingPage() {
                     <div className="grid grid-cols-2 gap-3">
                       <div className="p-3 bg-white/5 rounded text-center">
                         <p className="text-xs text-text-secondary">{locale === 'zh' ? '贵人生肖' : 'Ally Signs'}</p>
-                        <p className="text-sm text-text-primary">{locale === 'zh' ? '属牛 · 属蛇' : 'Ox · Snake'}</p>
+                        <p className="text-sm text-text-primary">{readingData.allies.helpful.join(' · ')}</p>
                       </div>
                       <div className="p-3 bg-white/5 rounded text-center">
                         <p className="text-xs text-text-secondary">{locale === 'zh' ? '小人生肖' : 'Rival Signs'}</p>
-                        <p className="text-sm text-text-primary">{locale === 'zh' ? '属鼠 · 属马' : 'Rat · Horse'}</p>
+                        <p className="text-sm text-text-primary">{readingData.allies.harmful.join(' · ')}</p>
                       </div>
                     </div>
                   </Blur>
@@ -348,13 +363,10 @@ export default function FreeReadingPage() {
                   <p className="text-xs text-text-secondary mb-2">{locale === 'zh' ? '跳槽、签约、搬家、表白——每件大事的最佳月份' : 'Job change, signing deals, moving, confessing — the best month for each'}</p>
                   <Blur>
                     <div className="grid grid-cols-2 gap-2">
-                      {(locale === 'zh'
-                        ? [['跳槽', '三月'], ['签约', '六月'], ['搬家', '八月'], ['表白', '四月']]
-                        : [['Job change', 'March'], ['Signing deals', 'June'], ['Moving', 'August'], ['Confessing love', 'April']]
-                      ).map(([action, month]) => (
+                      {Object.entries(readingData.timing).map(([action, m]) => (
                         <div key={action} className="p-2 bg-white/5 rounded flex justify-between text-xs">
                           <span className="text-text-secondary">{action}</span>
-                          <span className="text-accent">{month}</span>
+                          <span className="text-accent">{m}</span>
                         </div>
                       ))}
                     </div>
@@ -362,6 +374,8 @@ export default function FreeReadingPage() {
                 </div>
 
               </div>
+                );
+              })()}
               {/* Gradient fade & lock CTA — hidden when revealed */}
               <PaywallOverlay>
                 <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg-primary to-transparent" />
