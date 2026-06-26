@@ -95,8 +95,10 @@
     "hourUnknown": "Not sure / around midday",
     "hours": ["23:00–01:00","01:00–03:00","03:00–05:00","05:00–07:00","07:00–09:00","09:00–11:00","11:00–13:00","13:00–15:00","15:00–17:00","17:00–19:00","19:00–21:00","21:00–23:00"],
     "submit": "Reveal My Element",
-    "resultTitle": "Your Day Pillar",
-    "teaser": "This is just a glimpse. A full reading reveals your complete Four Pillars, 10-year cycles, career path, relationships, and optimal timing for major decisions.",
+    "resultTitle": "Your Four Pillars",
+    "hook": "Your dominant energy is {element}, and the {missing} pattern in your chart is exactly what shapes your career and relationships this year — a full reading shows you how to work with it.",
+    "hookComplete": "Your elements are relatively balanced — but what really drives your fortune is the timing of your 10-year cycles. A full reading reveals which cycle you are in right now.",
+    "teaser": "The free version shows only the skeleton of your chart. A full reading includes: all Four Pillars decoded, your 10-year luck cycles, this year's forecast, career & relationship directions, and timing for major decisions.",
     "cta": "Get Your Full Reading",
     "tryAgain": "Try another date"
   },

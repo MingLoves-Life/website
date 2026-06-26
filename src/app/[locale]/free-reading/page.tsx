@@ -99,19 +99,23 @@ export default function FreeReadingPage() {
           <div>
             <h2 className="text-2xl md:text-4xl font-light mb-8 text-center">{t('resultTitle')}</h2>
 
-            {/* Three Pillars */}
-            <div className="grid grid-cols-3 gap-3 mb-8">
-              <div className="text-center p-4 bg-bg-secondary rounded-lg border border-white/5">
+            {/* Four Pillars */}
+            <div className="grid grid-cols-4 gap-2 mb-8">
+              <div className="text-center p-3 bg-bg-secondary rounded-lg border border-white/5">
                 <p className="text-xs text-text-secondary mb-2">{locale === 'zh' ? '年柱' : 'Year'}</p>
                 <p className="text-lg text-accent font-medium">{result.yearPillar.full}</p>
               </div>
-              <div className="text-center p-4 bg-bg-secondary rounded-lg border border-white/5">
+              <div className="text-center p-3 bg-bg-secondary rounded-lg border border-white/5">
                 <p className="text-xs text-text-secondary mb-2">{locale === 'zh' ? '月柱' : 'Month'}</p>
                 <p className="text-lg text-accent font-medium">{result.monthPillar.full}</p>
               </div>
-              <div className="text-center p-4 bg-bg-secondary rounded-lg border border-white/5">
+              <div className="text-center p-3 bg-bg-secondary rounded-lg border border-white/5">
                 <p className="text-xs text-text-secondary mb-2">{locale === 'zh' ? '日柱' : 'Day'}</p>
                 <p className="text-lg text-accent font-medium">{result.dayPillar.full}</p>
+              </div>
+              <div className="text-center p-3 bg-bg-secondary rounded-lg border border-white/5">
+                <p className="text-xs text-text-secondary mb-2">{locale === 'zh' ? '时柱' : 'Hour'}</p>
+                <p className="text-lg text-accent font-medium">{result.hourPillar.full}</p>
               </div>
             </div>
 
@@ -163,8 +167,12 @@ export default function FreeReadingPage() {
               </div>
             )}
 
-            {/* Personality */}
-            <p className="text-text-secondary leading-relaxed mb-10 text-center">{result.trait}</p>
+            {/* Personalized hook */}
+            <p className="text-text-secondary leading-relaxed mb-10 text-center">
+              {result.missing.length > 0
+                ? t('hook', { element: result.strongest, missing: result.missing.join(locale === 'zh' ? '、' : ' & ') })
+                : t('hookComplete')}
+            </p>
 
             {/* CTA */}
             <div className="p-6 bg-bg-secondary rounded-lg border border-accent/20 mb-8 text-center">
