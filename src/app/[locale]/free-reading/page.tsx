@@ -267,7 +267,7 @@ export default function FreeReadingPage() {
                   </Blur>
                   {readingData.overview.detailed && (
                     <DeepBlur>
-                      <p className="text-sm text-text-primary leading-relaxed mt-3 pt-3 border-t border-white/5">{readingData.overview.detailed}</p>
+                      <p className="text-sm text-text-primary leading-relaxed mt-3 pt-3 border-t border-white/5 whitespace-pre-line">{readingData.overview.detailed}</p>
                     </DeepBlur>
                   )}
                 </div>
@@ -289,7 +289,7 @@ export default function FreeReadingPage() {
                           </div>
                           {d.detailed && (
                             <DeepBlur>
-                              <p className="text-xs text-text-secondary mt-1">{d.detailed}</p>
+                              <p className="text-xs text-text-secondary mt-1 whitespace-pre-line">{d.detailed}</p>
                             </DeepBlur>
                           )}
                         </Blur>
@@ -319,7 +319,7 @@ export default function FreeReadingPage() {
                     </div>
                     {readingData.annual.detailed && (
                       <DeepBlur>
-                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5">{readingData.annual.detailed}</p>
+                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5 whitespace-pre-line">{readingData.annual.detailed}</p>
                       </DeepBlur>
                     )}
                   </Blur>
@@ -370,12 +370,12 @@ export default function FreeReadingPage() {
                     </div>
                     {readingData.career.detailed && (
                       <DeepBlur>
-                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5">{readingData.career.detailed}</p>
+                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5 whitespace-pre-line">{readingData.career.detailed}</p>
                       </DeepBlur>
                     )}
                     {readingData.wealth.detailed && (
                       <DeepBlur>
-                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5">{readingData.wealth.detailed}</p>
+                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5 whitespace-pre-line">{readingData.wealth.detailed}</p>
                       </DeepBlur>
                     )}
                   </Blur>
@@ -402,7 +402,7 @@ export default function FreeReadingPage() {
                     </div>
                     {readingData.love.detailed && (
                       <DeepBlur>
-                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5">{readingData.love.detailed}</p>
+                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5 whitespace-pre-line">{readingData.love.detailed}</p>
                       </DeepBlur>
                     )}
                   </Blur>
@@ -429,7 +429,7 @@ export default function FreeReadingPage() {
                     </div>
                     {readingData.health.detailed && (
                       <DeepBlur>
-                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5">{readingData.health.detailed}</p>
+                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5 whitespace-pre-line">{readingData.health.detailed}</p>
                       </DeepBlur>
                     )}
                   </Blur>
@@ -452,7 +452,7 @@ export default function FreeReadingPage() {
                     </div>
                     {readingData.allies.detailed && (
                       <DeepBlur>
-                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5">{readingData.allies.detailed}</p>
+                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5 whitespace-pre-line">{readingData.allies.detailed}</p>
                       </DeepBlur>
                     )}
                   </Blur>
@@ -473,7 +473,7 @@ export default function FreeReadingPage() {
                     </div>
                     {readingData.timing.detailed && (
                       <DeepBlur>
-                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5">{readingData.timing.detailed}</p>
+                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5 whitespace-pre-line">{readingData.timing.detailed}</p>
                       </DeepBlur>
                     )}
                   </Blur>
