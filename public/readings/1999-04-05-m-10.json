@@ -1,0 +1,161 @@
+{
+  "locale": "zh",
+  "birthInfo": {
+    "year": 1999,
+    "month": 4,
+    "day": 5,
+    "timeIndex": 10,
+    "gender": "male"
+  },
+  "bazi": {
+    "yearPillar": "己卯",
+    "monthPillar": "丁卯",
+    "dayPillar": "丁亥",
+    "hourPillar": "庚戌",
+    "zodiac": "兔",
+    "nayin": "屋上土",
+    "dayElement": "Fire",
+    "strongest": "Wood",
+    "missing": []
+  },
+  "reading": {
+    "overview": {
+      "keywords": [
+        { "zh": "敏锐", "en": "Sharp-minded" },
+        { "zh": "刚柔并济", "en": "Balanced strength" },
+        { "zh": "潜力深厚", "en": "Deep potential" }
+      ],
+      "body": {
+        "zh": "日主丁火，如灯烛之光，温和而富有韧性。生于卯月木旺之时，木能生火，日主得令有根。年柱己卯、月柱丁卯，双卯木旺相助，火有充足的薪柴。时柱庚戌，金土在时上出现，形成食伤生财的格局。丁亥日柱坐正官，为人有责任心，处事讲原则。整体格局属于'内秀外刚型'——外表温和低调，内心却目标清晰、执行力强。五行齐全无缺，流通性好，属于先天条件较优的命格。",
+        "en": "Your Day Master is Ding Fire — like lamplight, gentle yet enduring. Born in the Wood-dominant Mao month, Wood feeds Fire, giving your Day Master seasonal strength. The double Mao in Year and Month pillars provides abundant fuel. Your Hour Pillar Geng-Xu (Metal-Earth) creates a productive Output-generates-Wealth pattern. Sitting on the Hai (Officer star), you carry natural responsibility and principled conduct. Overall, yours is the 'refined inside, strong outside' type — outwardly calm and understated, inwardly clear-headed with strong execution. With all five elements present and flowing well, this is a chart with excellent innate foundations."
+      },
+      "detailed": {
+        "zh": "从八字结构深入来看，丁火日主生于仲春卯月，正值木气最旺之时。双卯为正印，代表母爱深厚、学识丰富、贵人运强。丁火得双印相生，如同学者得良师——思维敏捷，善于吸收知识并转化为自己的东西。\n\n亥水正官坐于日支，说明你对自己要求严格，有较强的自律性和道德感。官星为用，适合在体制内或需要信用和资质的行业发展。庚金正财透时干，说明晚年财运渐佳，中年之后事业和财富会有明显的上升。\n\n己土食神在年干，食神制杀不见杀，反成聪明秀气之象。你天生有创意天赋，表达能力好，适合从事需要创造力和沟通能力的工作。五行流转顺畅：木生火、火生土、土生金、金生水，形成一个完整的生克循环，说明你的人生各方面能够相互支撑，不会出现某一方面严重失衡的情况。",
+        "en": "Looking deeper into the BaZi structure, Ding Fire Day Master born in mid-spring Mao month enjoys peak Wood energy. The double Mao represents Resource stars (Zheng Yin) — signifying deep maternal support, rich academic aptitude, and strong benefactor luck. Ding Fire receiving dual Resource support is like a scholar blessed with great mentors — quick-thinking, excellent at absorbing knowledge and making it your own.\n\nHai Water (Direct Officer) seated at the Day Branch indicates high self-discipline, strong moral standards, and structured thinking. With the Officer star as a useful god, you're well-suited for institutional careers or industries requiring credentials and trust. Geng Metal (Direct Wealth) appearing at the Hour Stem suggests improving finances from middle age onward, with career and wealth showing marked growth.\n\nJi Earth (Eating God) at the Year Stem, with no Killing star present, creates an image of intelligence and refinement. You possess natural creative talent, strong communication skills, and are suited for work requiring innovation and articulation. The five-element cycle flows smoothly: Wood feeds Fire, Fire produces Earth, Earth generates Metal, Metal produces Water — forming a complete productive cycle, meaning different life areas support each other without severe imbalance."
+      }
+    },
+    "decades": [
+      {
+        "label": { "zh": "第一步运（8-18岁）", "en": "Phase 1 (Age 8-18)" },
+        "theme": { "zh": "学业奠基期", "en": "Academic foundation" },
+        "score": 72,
+        "detail": { "zh": "印星当令，学业运势良好", "en": "Resource stars dominate, academic fortune is strong" },
+        "detailed": { "zh": "此运走丙寅大运，丙火比肩帮身，寅木为偏印。火木两旺，精力充沛，学习能力强。这十年是打基础的关键期，适合广泛涉猎、培养兴趣。寅卯同气，贵人运旺，容易遇到好老师和好同学。需注意的是木火太旺容易心浮气躁，要培养耐心和专注力。建议参加体育运动消耗多余精力，同时有利于身体发育。", "en": "This phase runs the Bing-Yin (Fire-Wood) luck cycle. Bing Fire as Shoulder helps the Day Master, Yin Wood as Indirect Resource adds support. Strong Fire-Wood energy means abundant vitality and learning capacity. These ten years are critical for building foundations — explore broadly and cultivate interests. Yin-Mao same-phase energy brings strong benefactor luck, attracting good teachers and peers. Watch for restlessness from excessive Wood-Fire; cultivate patience and focus. Sports are recommended to channel surplus energy while supporting physical development." }
+      },
+      {
+        "label": { "zh": "第二步运（18-28岁）", "en": "Phase 2 (Age 18-28)" },
+        "theme": { "zh": "事业起步期", "en": "Career launch" },
+        "score": 68,
+        "detail": { "zh": "食伤生财，创意变现能力强", "en": "Output generates Wealth — strong ability to monetize creativity" },
+        "detailed": { "zh": "此运走乙丑大运，乙木偏印、丑土伤官。伤官配印，聪明绝顶但也容易恃才傲物。丑土中藏辛金偏财，暗示可能通过副业或非传统渠道获得第一桶金。这十年适合大胆尝试、积累经验，允许自己犯错和探索。感情方面可能遇到心动对象，但丑未相冲，恋爱容易有波折。建议把重心放在能力积累上，不要急于求稳。创业意愿强的话可以小规模试水。", "en": "This phase runs the Yi-Chou (Wood-Earth) luck cycle. Yi Wood as Indirect Resource plus Chou Earth as Hurting Officer creates the classic 'Hurting Officer with Resource' pattern — extremely sharp but prone to intellectual arrogance. Hidden Xin Metal (Indirect Wealth) in Chou suggests earning your first pot of gold through side ventures or unconventional channels. These ten years favor bold experimentation and experience accumulation — allow yourself mistakes. Romance may spark, but Chou-Wei clash means love could be turbulent. Focus on skill-building over stability-seeking. If entrepreneurially inclined, start small-scale tests." }
+      },
+      {
+        "label": { "zh": "第三步运（28-38岁）", "en": "Phase 3 (Age 28-38)" },
+        "theme": { "zh": "事业上升期", "en": "Career ascent" },
+        "score": 82,
+        "detail": { "zh": "官印相生，仕途或职场晋升顺利", "en": "Officer-Resource synergy, smooth promotions" },
+        "detailed": { "zh": "此运走甲子大运，甲木正印、子水正官。官印相生是最佳组合之一，代表得领导赏识、有晋升机会。子亥同为水气，官星力量增强，适合在大平台、大组织中发展。这十年是事业的黄金上升期，要抓住机会往上走。甲木透干代表学历或资质方面可能还会有提升（如在职深造、考证）。感情方面，子水桃花入命，单身者容易遇到正缘。已婚者注意工作太忙忽略家庭。", "en": "This phase runs the Jia-Zi (Wood-Water) luck cycle. Jia Wood as Direct Resource plus Zi Water as Direct Officer — Officer-Resource mutual production is one of the best combinations, representing leadership recognition and promotion opportunities. Zi-Hai both being Water strengthens the Officer star, favoring development within large platforms and organizations. These ten years are the golden period for career ascent — seize opportunities to advance. Jia Wood appearing openly suggests potential academic upgrades (continuing education, certifications). For romance, Zi Water brings Peach Blossom energy — singles may meet their destined partner. Those married should guard against work consuming family time." }
+      },
+      {
+        "label": { "zh": "第四步运（38-48岁）", "en": "Phase 4 (Age 38-48)" },
+        "theme": { "zh": "巅峰收获期", "en": "Peak harvest" },
+        "score": 88,
+        "detail": { "zh": "财官两旺，事业与财富双丰收", "en": "Wealth and Officer both strong, dual harvest of career and money" },
+        "detailed": { "zh": "此运走癸亥大运，癸水偏官、亥水正官。双官（杀）并临，权力欲望强，适合承担更大的责任和管理角色。亥为日支本气，大运与日支伏吟，工作压力大但成就也大。这十年是人生的高峰期，之前的积累会在此阶段集中兑现。财运方面，水旺生木、木旺生火，五行流通顺畅，正财偏财皆有机会。健康方面需注意用眼过度和心血管保养，工作强度大要注意劳逸结合。", "en": "This phase runs the Gui-Hai (Water-Water) luck cycle. Gui Water as Seven Killing plus Hai Water as Direct Officer — dual authority stars bring strong drive for power, suited for taking on greater responsibility and leadership roles. Hai being the Day Branch's native element means the luck period echoes the Day Pillar — high work pressure but equally high achievement. These ten years represent life's peak: prior accumulation crystallizes here. Financially, Water nourishes Wood which feeds Fire, five elements flow smoothly with both direct and indirect wealth opportunities. Health-wise, watch for eye strain and cardiovascular care; maintain work-life balance despite high intensity." }
+      }
+    ],
+    "annual": {
+      "firstHalf": { "zh": "上半年运势稳中有升，三月和五月有突破性机遇，适合主动出击争取项目或职位", "en": "First half sees steady rising momentum — March and May bring breakthrough opportunities, ideal for proactively pursuing projects or positions" },
+      "secondHalf": { "zh": "下半年贵人运旺，九月有重要合作机会，十一月适合签约和确定长期方向", "en": "Second half brings strong benefactor luck — September offers important collaboration opportunities, November suits signing deals and confirming long-term direction" },
+      "keyMonths": [
+        { "zh": "三月", "en": "March" },
+        { "zh": "五月", "en": "May" },
+        { "zh": "九月", "en": "September" }
+      ],
+      "rating": 4,
+      "detailed": {
+        "zh": "2026年为丙午年，丙火比肩、午火为羊刃。对于丁火日主来说，比劫帮身，精力旺盛，竞争意识强。上半年寅卯月木旺生火，事业动力十足，尤其三月卯月印星当令，有贵人提拔或重要学习机会。五月午火当令，自身能量最强，适合做重要决定或发起项目。下半年申酉月金旺，财星显现，收入有望提升。九月戌月土旺，食伤生财格局形成，适合谈合作。十一月子月官星出现，适合确定职业方向或签署正式合约。全年需注意的是午火羊刃容易冲动行事，重大决策前务必冷静分析。",
+        "en": "2026 is the Bing-Wu (Fire-Fire) year — Bing Fire as Shoulder, Wu Fire as Blade. For a Ding Fire Day Master, peer energy abounds with heightened vitality and competitive drive. First half: Yin-Mao (Wood) months fuel Fire strongly; March (Mao month) with Resource stars at peak brings mentor promotion or key learning opportunities. May (Wu month) at peak self-energy is ideal for major decisions or launching projects. Second half: Shen-You (Metal) months activate Wealth stars, income likely to increase. September (Xu month) forms Output-generates-Wealth pattern — excellent for partnerships. November (Zi month) brings Officer star — ideal for confirming career direction or signing formal contracts. Year-round caution: Wu Fire Blade energy can trigger impulsive action; always analyze calmly before major decisions."
+      }
+    },
+    "career": {
+      "rating": 4,
+      "advice": { "zh": "适合创意策划、教育培训、媒体传播等需要思维活跃度的行业", "en": "Suited for creative planning, education, media — industries requiring mental agility" },
+      "direction": { "zh": "正南", "en": "South" },
+      "bestMonths": [
+        { "zh": "三月", "en": "March" },
+        { "zh": "九月", "en": "September" }
+      ],
+      "detailed": {
+        "zh": "从八字格局看，日主丁火以印星（木）为核心用神，食伤（土）为辅助用神。印星主学识、资质、文凭，食伤主创意、表达、技术。因此你最适合的行业方向是：\n\n1. 教育培训类：教师、培训师、课程设计、知识付费\n2. 文化传媒类：编辑、策划、内容创作、自媒体\n3. 技术创新类：产品设计、用户体验、技术研发\n4. 咨询顾问类：管理咨询、心理咨询、法律顾问\n\n发展节奏建议：25岁前广泛探索确定方向，25-30岁深耕专业建立口碑，30-35岁可以考虑带团队或独立创业。正南方为火之本位，办公朝南或向南发展有利于事业运。避免纯体力劳动或过于机械重复的工作，会压制你的创造力。",
+        "en": "Based on your BaZi structure, Ding Fire Day Master relies on Resource (Wood) as primary useful god, with Output (Earth) as secondary. Resource governs knowledge, credentials, and academic achievement; Output governs creativity, expression, and technical skill. Your optimal career directions:\n\n1. Education & Training: Teaching, coaching, course design, knowledge economy\n2. Culture & Media: Editing, content planning, creation, independent media\n3. Tech & Innovation: Product design, UX, R&D\n4. Consulting & Advisory: Management consulting, counseling, legal advisory\n\nDevelopment rhythm: Before 25, explore broadly to find direction. 25-30, deepen expertise and build reputation. 30-35, consider leading teams or independent ventures. South is Fire's home direction — a south-facing office or southward career expansion benefits you. Avoid purely physical labor or overly mechanical repetitive work, which suppresses your creativity."
+      }
+    },
+    "wealth": {
+      "rating": 3,
+      "mode": { "zh": "正财为主，偏财为辅", "en": "Steady income primary, windfalls secondary" },
+      "advice": { "zh": "适合稳健型投资，靠专业能力持续获得收入增长", "en": "Favor steady investments, grow income through professional expertise" },
+      "bestMonths": [
+        { "zh": "五月", "en": "May" },
+        { "zh": "九月", "en": "September" }
+      ],
+      "detailed": {
+        "zh": "庚金正财透于时柱，说明财运属于'越老越有钱'的类型。年轻时收入增长可能较慢，但随着专业能力的积累，中年以后会有明显的财富跃升。正财为主的人适合靠工资、专业服务费、版权收入等'凭本事赚钱'的方式。\n\n投资方面，不建议高风险投机（如加密货币、期货），更适合指数基金定投、优质房产、知识产权类资产。食神生财的格局说明你的财富来源于创意和技术输出——写书、做课程、知识付费、专利技术等都是适合你的财富路径。\n\n需注意的年份：逢金旺之年（如庚、辛年）财运较好；逢水旺之年开支可能增大。建议养成记账习惯，控制冲动消费。",
+        "en": "Geng Metal (Direct Wealth) appearing at the Hour Pillar indicates a 'richer with age' wealth pattern. Income growth may be slow in youth, but professional accumulation will bring obvious wealth jumps from middle age onward. Direct Wealth-dominant people do best earning through salary, professional fees, royalties — 'earning by skill.'\n\nFor investment, avoid high-risk speculation (crypto, futures); favor index fund DCA, quality real estate, and intellectual property assets. The Eating God-generates-Wealth pattern means your wealth flows from creative and technical output — writing books, creating courses, knowledge products, and patents are all suitable wealth paths.\n\nYears to note: Metal-dominant years (Geng, Xin stems) bring better financial luck; Water-dominant years may increase expenses. Develop a budgeting habit and control impulse spending."
+      }
+    },
+    "love": {
+      "rating": 4,
+      "romanceMonths": [
+        { "zh": "三月", "en": "March" },
+        { "zh": "十一月", "en": "November" }
+      ],
+      "soulmate": { "zh": "温柔知性型", "en": "Gentle & intellectual" },
+      "direction": { "zh": "正北", "en": "North" },
+      "advice": { "zh": "感情中真诚专注，适合找有内涵、能精神共鸣的伴侣", "en": "Sincere and focused in love — seek a partner with depth who resonates intellectually" },
+      "detailed": {
+        "zh": "丁亥日柱，亥水正官坐日支，代表配偶星在'家'的位置——婚姻宫。正官为正缘，说明你的婚姻观比较传统正统，倾向于一对一的稳定关系。亥中藏壬水偏财和甲木正印，说明理想伴侣类型是：有主见（壬水）、有学识（甲木）、温柔而有深度。\n\n正缘画像：对方可能从事教育、文化、医疗等需要专业资质的行业。性格温和但有自己的坚持，外表可能不是最抢眼的但越相处越有味道。年龄差距不宜太大，相差1-3岁为佳。\n\n恋爱课题：丁火日主容易因为太在意对方感受而压抑自己的需求。学会在关系中表达真实想法很重要。另外双卯印星太重，可能有'妈宝'倾向或对伴侣期待过高（把对方当妈妈），需要建立独立的亲密关系模式。\n\n桃花方位在正北（子水），社交活动朝北方发展或北方来的异性缘分较深。",
+        "en": "Ding-Hai Day Pillar: Hai Water (Direct Officer) sits at the Day Branch — the spouse palace. Direct Officer as relationship star indicates traditional relationship values, favoring stable one-on-one partnerships. Hidden within Hai are Ren Water (Indirect Wealth) and Jia Wood (Direct Resource), painting an ideal partner: opinionated (Ren), knowledgeable (Jia), gentle yet deep.\n\nSoulmate profile: Likely works in education, culture, healthcare, or credential-required fields. Personality is gentle but firm in their convictions; may not be the most eye-catching but grows more attractive over time. Age gap ideally 1-3 years.\n\nRelationship lessons: Ding Fire Day Masters tend to suppress their own needs from over-considering their partner's feelings. Learning to express authentic thoughts in relationships is crucial. Also, heavy double-Mao Resource energy may create dependency patterns or unrealistically high expectations of partners — build an independent intimacy model.\n\nPeach Blossom direction is North (Zi Water) — social activities northward or connections from the north carry stronger romantic potential."
+      }
+    },
+    "health": {
+      "areas": [
+        { "zh": "心脏", "en": "Heart" },
+        { "zh": "眼睛", "en": "Eyes" }
+      ],
+      "vulnerableMonths": [
+        { "zh": "六月", "en": "June" },
+        { "zh": "十二月", "en": "December" }
+      ],
+      "remedy": { "zh": "养心安神，注意用眼卫生，避免熬夜", "en": "Nurture heart health, protect eye hygiene, avoid staying up late" },
+      "detailed": {
+        "zh": "丁火日主，火主心脏和眼睛。日主偏旺时，火气上炎，容易出现心悸、失眠、眼睛干涩疲劳等问题。尤其是在火旺的夏季（午月、未月），以及工作压力大的时期。\n\n具体调养方案：\n1. 心血管：保持有氧运动习惯（跑步、游泳），每周3-4次，每次30分钟以上\n2. 眼睛：执行20-20-20法则（每20分钟看20英尺远处20秒），控制屏幕时间\n3. 睡眠：11点前入睡，子时（23-1点）是心经修复时间\n4. 饮食：多食黑色食物补肾水（黑芝麻、黑豆、蓝莓），以水制火\n5. 情绪：火旺之人容易急躁，建议练习冥想或太极，培养沉静心态\n\n高危时段：农历五月（午火月）心火最旺时、农历十一月（子水月）水火相冲时。这两个月份尤其要注意作息规律和情绪管理。",
+        "en": "Ding Fire Day Master: Fire governs the heart and eyes. When the Day Master runs strong, Fire flares upward, easily causing palpitations, insomnia, and eye dryness/fatigue — especially during Fire-dominant summer months (Wu, Wei) and high-stress work periods.\n\nSpecific wellness plan:\n1. Cardiovascular: Maintain aerobic exercise (running, swimming), 3-4 times weekly, 30+ minutes each\n2. Eyes: Practice the 20-20-20 rule (every 20 min, look 20 feet away for 20 sec), limit screen time\n3. Sleep: In bed by 11pm — Zi hour (11pm-1am) is heart meridian repair time\n4. Diet: Eat black foods to nourish Kidney Water (black sesame, black beans, blueberries) — Water controls Fire\n5. Emotions: Fire-strong people tend toward irritability; practice meditation or tai chi to cultivate calm\n\nHigh-risk periods: Lunar 5th month (Wu Fire month) when heart fire peaks; Lunar 11th month (Zi Water month) when Water-Fire clash. These months especially require regulated routine and emotional management."
+      }
+    },
+    "allies": {
+      "helpful": [
+        { "zh": "羊", "en": "Goat" },
+        { "zh": "猪", "en": "Pig" }
+      ],
+      "harmful": [
+        { "zh": "鸡", "en": "Rooster" },
+        { "zh": "龙", "en": "Dragon" }
+      ],
+      "detailed": {
+        "zh": "贵人分析：卯兔与未羊三合（卯未半合木局），与亥猪三合（亥卯未合木局）。属羊和属猪的人是你天然的贵人——他们能补充你需要的能量，在关键时刻助你一臂之力。\n\n具体应用：合作伙伴、上司、重要客户中如有属羊或属猪的人，可以多亲近。招聘团队成员时，这两个属相的人与你配合默契度更高。\n\n小人分析：卯酉相冲，属鸡的人容易与你产生正面冲突或竞争关系。辰卯相害，属龙的人可能表面友好实则暗中使绊。遇到这两个属相的人不必刻意回避，但重要合作和金钱往来要多留一个心眼，保留书面记录。\n\n注意：属相只是参考因素之一，实际人际关系还需看完整八字配合。",
+        "en": "Benefactor analysis: Mao (Rabbit) forms a half-combination with Wei (Goat) for Wood, and a full three-harmony with Hai (Pig) — Hai-Mao-Wei Wood frame. Goat and Pig zodiac people are your natural benefactors — they supplement your needed energy and assist at critical moments.\n\nPractical application: Among business partners, superiors, or key clients, those born in Goat or Pig years deserve closer cultivation. When building teams, these zodiacs harmonize best with you.\n\nChallenger analysis: Mao-You (Rabbit-Rooster) clash means Rooster people easily create direct conflict or competition. Chen-Mao (Dragon-Rabbit) harm means Dragon people may appear friendly while undermining subtly. No need to deliberately avoid these zodiacs, but for important collaborations and financial dealings, stay vigilant and keep written records.\n\nNote: Zodiac is only one reference factor — actual interpersonal dynamics require full BaZi compatibility analysis."
+      }
+    },
+    "timing": {
+      "跳槽": { "zh": "三月、九月", "en": "March, September" },
+      "签约": { "zh": "五月、十一月", "en": "May, November" },
+      "搬家": { "zh": "八月", "en": "August" },
+      "表白": { "zh": "三月、十一月", "en": "March, November" },
+      "detailed": {
+        "zh": "择时依据：\n- 跳槽：三月卯月印星旺，贵人运强，容易得到新机会的引荐；九月戌月食伤生财，适合谈薪资和新岗位条件\n- 签约：五月午火比肩旺，自身底气足，谈判有利；十一月子水官星现，合约具有正式效力和长期稳定性\n- 搬家：八月申月驿马星动，天然适合搬迁和位置变动\n- 表白：三月桃花月，异性缘最旺；十一月正官桃花，适合确定正式关系\n\n注意事项：避开六月午未月交界和十二月丑月——前者火气太旺容易冲动做错决定，后者丑土晦火，行动力不足容易拖延。",
+        "en": "Timing rationale:\n- Job change: March (Mao month) — Resource star peaks, benefactor luck strong, easily receive referrals; September (Xu month) — Output-generates-Wealth pattern, good for negotiating salary and terms\n- Signing deals: May (Wu month) — Shoulder star strong, high confidence benefits negotiations; November (Zi month) — Officer star appears, contracts carry formal authority and long-term stability\n- Moving: August (Shen month) — Travel star activates, naturally suited for relocation\n- Confessing love: March — Peach Blossom month, strongest romantic energy; November — Officer Peach Blossom, suited for formalizing relationships\n\nCautions: Avoid June (Wu-Wei month transition) and December (Chou month) — the former's excessive Fire triggers impulsive decisions, the latter's Earth-dimming-Fire causes low motivation and procrastination."
+      }
+    }
+  }
+}

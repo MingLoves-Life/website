@@ -78,24 +78,32 @@ const yearInput = page.locator('input[type="number"]').nth(0);
 const monthInput = page.locator('input[type="number"]').nth(1);
 const dayInput = page.locator('input[type="number"]').nth(2);
 
-await yearInput.fill(args.year);
+await yearInput.click();
+await page.waitForTimeout(300);
+await yearInput.pressSequentially(args.year, { delay: 120 });
+await page.waitForTimeout(600);
+
+await monthInput.click();
 await page.waitForTimeout(200);
-await monthInput.fill(args.month);
+await monthInput.pressSequentially(args.month, { delay: 120 });
+await page.waitForTimeout(600);
+
+await dayInput.click();
 await page.waitForTimeout(200);
-await dayInput.fill(args.day);
-await page.waitForTimeout(200);
+await dayInput.pressSequentially(args.day, { delay: 120 });
+await page.waitForTimeout(800);
 
 // Select gender
 if (args.gender === 'male') {
   const genderButtons = page.locator('button[type="button"]');
   await genderButtons.nth(1).click();
-  await page.waitForTimeout(200);
+  await page.waitForTimeout(700);
 }
 
 // Select time
 const timeSelect = page.locator('select');
 await timeSelect.selectOption(args.time);
-await page.waitForTimeout(200);
+await page.waitForTimeout(700);
 
 // Scroll submit button into view and click
 console.log('Submitting...');
@@ -107,41 +115,39 @@ console.log('Submit button clicked');
 
 // Wait for loading animation (1.5s) + result render
 console.log('Waiting for result...');
-await page.waitForTimeout(5000);
+await page.waitForTimeout(3000);
 console.log('Result loaded');
 
-// Extra time for reading JSON fetch
-await page.waitForTimeout(1500);
-
-// Smooth pixel-by-pixel scroll until "换一个日期试试" is visible near bottom of viewport
+// Smooth scroll until "换一个日期试试" button is visible in viewport
 console.log('Scrolling to bottom...');
-const tryAgainButton = page.locator('button', { hasText: /换一个日期|tryAgain|Try/ });
-const totalDistance = await tryAgainButton.evaluate(el => {
-  const rect = el.getBoundingClientRect();
-  // Scroll until this element is ~80% down the viewport
-  return rect.top - window.innerHeight * 0.8;
+await page.evaluate(() => {
+  return new Promise(resolve => {
+    const pxPerFrame = 2;
+    const interval = 16;
+
+    function isTargetVisible() {
+      const buttons = Array.from(document.querySelectorAll('button'));
+      const target = buttons.find(b => b.textContent?.includes('换一个日期') || b.textContent?.includes('Try another'));
+      if (!target) return false;
+      const rect = target.getBoundingClientRect();
+      return rect.top < window.innerHeight * 0.85 && rect.bottom > 0;
+    }
+
+    const timer = setInterval(() => {
+      if (isTargetVisible()) {
+        clearInterval(timer);
+        resolve();
+        return;
+      }
+      window.scrollBy(0, pxPerFrame);
+      // Safety: stop at page bottom
+      if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight - 10) {
+        clearInterval(timer);
+        resolve();
+      }
+    }, interval);
+  });
 });
-
-if (totalDistance > 0) {
-  const pixelsPerFrame = 2;
-  const frameInterval = 16; // ~60fps
-  const totalFrames = Math.ceil(totalDistance / pixelsPerFrame);
-
-  await page.evaluate(({ distance, pxPerFrame, interval }) => {
-    return new Promise(resolve => {
-      let scrolled = 0;
-      const timer = setInterval(() => {
-        const step = Math.min(pxPerFrame, distance - scrolled);
-        window.scrollBy(0, step);
-        scrolled += step;
-        if (scrolled >= distance) {
-          clearInterval(timer);
-          resolve();
-        }
-      }, interval);
-    });
-  }, { distance: totalDistance, pxPerFrame: pixelsPerFrame, interval: frameInterval });
-}
 
 // Brief pause at the end
 await page.waitForTimeout(1500);
