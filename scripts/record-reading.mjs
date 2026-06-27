@@ -78,15 +78,10 @@ const yearInput = page.locator('input[type="number"]').nth(0);
 const monthInput = page.locator('input[type="number"]').nth(1);
 const dayInput = page.locator('input[type="number"]').nth(2);
 
-await yearInput.click();
 await yearInput.fill(args.year);
 await page.waitForTimeout(300);
-
-await monthInput.click();
 await monthInput.fill(args.month);
 await page.waitForTimeout(300);
-
-await dayInput.click();
 await dayInput.fill(args.day);
 await page.waitForTimeout(300);
 
@@ -102,26 +97,20 @@ const timeSelect = page.locator('select');
 await timeSelect.selectOption(args.time);
 await page.waitForTimeout(300);
 
-// Submit form
+// Scroll submit button into view and tap it
 console.log('Submitting...');
 const submitButton = page.locator('button[type="submit"]');
+await submitButton.scrollIntoViewIfNeeded();
+await page.waitForTimeout(800);
 await submitButton.click();
+console.log('Submit button clicked');
 
-// Wait for loading animation to finish (~1.5s built-in delay) and result to render
-console.log('Waiting for loading animation...');
-// The loading state takes ~1.5s, then result renders
+// Wait for loading animation (1.5s) + result render
+console.log('Waiting for result...');
 await page.waitForTimeout(5000);
-// Verify result appeared by checking for the four-pillar section
-const hasResult = await page.evaluate(() => {
-  return document.body.innerText.length > 500;
-});
-if (!hasResult) {
-  // Fallback: wait more
-  await page.waitForTimeout(5000);
-}
 console.log('Result loaded');
 
-// Extra wait for reading JSON to be fetched and rendered (when reveal=true)
+// Extra time for reading JSON fetch
 await page.waitForTimeout(2000);
 
 // Slow scroll to bottom to capture the full reading
