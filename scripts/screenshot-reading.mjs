@@ -30,13 +30,13 @@ const { values: args } = parseArgs({
     locale: { type: 'string', default: 'zh' },
     reveal: { type: 'string', default: 'full' },
     'base-url': { type: 'string', default: 'http://localhost:3000' },
-    output: { type: 'string', default: './screenshots' },
+    output: { type: 'string', default: './recordings' },
   },
 });
 
 const pad = (n) => String(n).padStart(2, '0');
-const name = `${args.year}-${pad(args.month)}-${pad(args.day)}-${args.gender[0]}-${args.time}-${args.locale}`;
-const outputDir = args.output;
+const folderName = `${args.year}-${pad(args.month)}-${pad(args.day)}-${args.gender[0]}-${args.time}`;
+const outputDir = join(args.output, folderName);
 mkdirSync(outputDir, { recursive: true });
 
 const baseUrl = args['base-url'];
@@ -44,7 +44,7 @@ const locale = args.locale;
 const revealParam = args.reveal && args.reveal !== 'false' ? `&reveal=${args.reveal}` : '';
 const url = `${baseUrl}/${locale}/free-reading?y=${args.year}&m=${args.month}&d=${args.day}&t=${args.time}&g=${args.gender}${revealParam}`;
 
-console.log(`Screenshotting: ${name}`);
+console.log(`Screenshotting: ${folderName}/${args.locale}`);
 console.log(`URL: ${url}`);
 
 const browser = await chromium.launch();
@@ -60,7 +60,7 @@ const page = await context.newPage();
 await page.goto(url, { waitUntil: 'domcontentloaded' });
 await page.waitForTimeout(3000);
 
-const outputPath = join(outputDir, `${name}.png`);
+const outputPath = join(outputDir, `${args.locale}.png`);
 await page.screenshot({ fullPage: true, path: outputPath });
 
 await page.close();

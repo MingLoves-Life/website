@@ -39,13 +39,13 @@ if (!args.year || !args.month || !args.day) {
   process.exit(1);
 }
 
-const outputDir = resolve(args.output);
-if (!existsSync(outputDir)) mkdirSync(outputDir, { recursive: true });
-
 const pad = (n) => String(n).padStart(2, '0');
-const videoName = `${args.year}-${pad(args.month)}-${pad(args.day)}-${args.gender[0]}-${args.time}-${args.locale}`;
+const folderName = `${args.year}-${pad(args.month)}-${pad(args.day)}-${args.gender[0]}-${args.time}`;
+const videoName = args.locale;
+const outputDir = resolve(args.output, folderName);
+mkdirSync(outputDir, { recursive: true });
 
-console.log(`Recording reading for: ${videoName}`);
+console.log(`Recording: ${folderName}/${videoName}`);
 console.log(`Output: ${outputDir}`);
 
 const browser = await chromium.launch({ headless: true });
