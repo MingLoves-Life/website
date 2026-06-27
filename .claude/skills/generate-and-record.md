@@ -50,26 +50,42 @@ JSON 结构：
 - `?reveal=full`：全部可见（付费用户）
 - `?reveal=true`（向后兼容）= basic
 
-### 第二阶段：自动录制
+### 第二阶段：录制视频（中文+英文）
 
 1. 确保 dev server 正在运行（`npm run dev`），如未运行则启动
-2. 执行录制脚本：
+2. 录制中文视频：
 ```bash
 node scripts/record-reading.mjs \
   --year {YYYY} --month {M} --day {D} \
   --gender {gender} --time {timeIndex} \
-  --locale zh --reveal true \
+  --locale zh --reveal full \
   --output ./recordings
 ```
-3. 脚本会在移动端视口（390x844, iPhone 14 Pro）下：
-   - 打开 free-reading 页面
-   - 填写出生年月日、选择性别、选择时辰
-   - 点击提交按钮
-   - 等待加载动画结束、结果显示
-   - 添加 `?reveal=true` 展示完整解读内容（无模糊）
-   - 缓慢滚动到页面最底部
-   - 全程录制视频
-4. 视频保存在 `./recordings/{YYYY}-{MM}-{DD}-{g}-{timeIndex}.webm`
+3. 录制英文视频：
+```bash
+node scripts/record-reading.mjs \
+  --year {YYYY} --month {M} --day {D} \
+  --gender {gender} --time {timeIndex} \
+  --locale en --reveal full \
+  --output ./recordings
+```
+4. 视频保存在 `./recordings/{YYYY}-{MM}-{DD}-{g}-{timeIndex}-{locale}.webm`
+
+### 第三阶段：截取长图（中文+英文）
+
+```bash
+node scripts/screenshot-reading.mjs \
+  --year {YYYY} --month {M} --day {D} \
+  --gender {gender} --time {timeIndex} \
+  --locale zh --reveal full
+
+node scripts/screenshot-reading.mjs \
+  --year {YYYY} --month {M} --day {D} \
+  --gender {gender} --time {timeIndex} \
+  --locale en --reveal full
+```
+
+长图保存在 `./screenshots/{YYYY}-{MM}-{DD}-{g}-{timeIndex}-{locale}.png`
 
 ## 注意事项
 

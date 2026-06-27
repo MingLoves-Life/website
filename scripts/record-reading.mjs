@@ -43,7 +43,7 @@ const outputDir = resolve(args.output);
 if (!existsSync(outputDir)) mkdirSync(outputDir, { recursive: true });
 
 const pad = (n) => String(n).padStart(2, '0');
-const videoName = `${args.year}-${pad(args.month)}-${pad(args.day)}-${args.gender[0]}-${args.time}`;
+const videoName = `${args.year}-${pad(args.month)}-${pad(args.day)}-${args.gender[0]}-${args.time}-${args.locale}`;
 
 console.log(`Recording reading for: ${videoName}`);
 console.log(`Output: ${outputDir}`);
