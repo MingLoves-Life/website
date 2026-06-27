@@ -54,14 +54,14 @@ export default function Pricing() {
                 ))}
               </ul>
               <Link
-                href={`/${locale}/book`}
+                href={plan === 'private' ? `/${locale}/links` : `/${locale}/book`}
                 className={`block text-center py-3 px-6 rounded text-sm font-medium transition-colors ${
                   plan === 'detailed'
                     ? 'bg-accent text-bg-primary hover:bg-accent-hover'
                     : 'border border-accent/30 text-accent hover:bg-accent/10'
                 }`}
               >
-                {t('cta')}
+                {plan === 'private' ? t('ctaPrivate') : t('cta')}
               </Link>
             </div>
           ))}

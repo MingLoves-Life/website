@@ -25,6 +25,7 @@
     "subtitle": "Choose the level of insight that's right for you.",
     "popular": "Most Popular",
     "cta": "Book Now",
+    "ctaPrivate": "Contact Master",
     "basic": {
       "name": "Basic Reading",
       "price": "$49",
@@ -39,9 +40,9 @@
     },
     "private": {
       "name": "Private Consultation",
-      "price": "$199",
-      "description": "One-on-one private session with personalized guidance and Q&A.",
-      "features": ["All Detailed Analysis features", "Unlimited Q&A during session", "Priority scheduling"]
+      "price": "Custom",
+      "description": "One-on-one private session with a tailored reading plan based on your specific needs.",
+      "features": ["All Detailed Analysis features", "Unlimited Q&A during session", "Priority scheduling", "Depth customized to your needs"]
     }
   },
   "About": {
