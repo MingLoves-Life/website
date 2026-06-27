@@ -10,7 +10,7 @@
  *   --gender                 male | female (default: female)
  *   --time                   Time index 0-12 (default: 6 = unknown/day)
  *   --locale                 zh | en (default: zh)
- *   --reveal                 Add ?reveal=true to show unblurred content (default: true)
+ *   --reveal                 Reveal level: full | basic | false (default: full)
  *   --base-url               Dev server URL (default: http://localhost:3000)
  *   --output                 Output directory for video (default: ./recordings)
  */
@@ -28,7 +28,7 @@ const { values: args } = parseArgs({
     gender: { type: 'string', default: 'female' },
     time: { type: 'string', default: '6' },
     locale: { type: 'string', default: 'zh' },
-    reveal: { type: 'string', default: 'true' },
+    reveal: { type: 'string', default: 'full' },
     'base-url': { type: 'string', default: 'http://localhost:3000' },
     output: { type: 'string', default: './recordings' },
   },
@@ -65,7 +65,7 @@ const page = await context.newPage();
 
 const baseUrl = args['base-url'];
 const locale = args.locale;
-const revealParam = args.reveal === 'true' ? '?reveal=true' : '';
+const revealParam = args.reveal && args.reveal !== 'false' ? `?reveal=${args.reveal}` : '';
 const url = `${baseUrl}/${locale}/free-reading${revealParam}`;
 
 console.log(`Navigating to: ${url}`);
