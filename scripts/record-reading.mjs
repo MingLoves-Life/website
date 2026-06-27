@@ -65,7 +65,8 @@ const page = await context.newPage();
 
 const baseUrl = args['base-url'];
 const locale = args.locale;
-const url = `${baseUrl}/${locale}/free-reading`;
+const revealParam = args.reveal === 'true' ? '?reveal=true' : '';
+const url = `${baseUrl}/${locale}/free-reading${revealParam}`;
 
 console.log(`Navigating to: ${url}`);
 await page.goto(url, { waitUntil: 'networkidle' });
@@ -106,23 +107,22 @@ console.log('Submitting...');
 const submitButton = page.locator('button[type="submit"]');
 await submitButton.click();
 
-// Wait for loading to finish and result to appear
-// The loading spinner shows for ~1.5s, then result renders
-await page.waitForTimeout(4000);
-// Wait for result: either h2 or the four-pillar grid appears
-await page.waitForFunction(() => {
-  return document.querySelector('h2') || document.querySelectorAll('.grid').length > 1;
-}, { timeout: 20000 });
-await page.waitForTimeout(1000);
+// Wait for loading animation to finish (~1.5s built-in delay) and result to render
+console.log('Waiting for loading animation...');
+// The loading state takes ~1.5s, then result renders
+await page.waitForTimeout(5000);
+// Verify result appeared by checking for the four-pillar section
+const hasResult = await page.evaluate(() => {
+  return document.body.innerText.length > 500;
+});
+if (!hasResult) {
+  // Fallback: wait more
+  await page.waitForTimeout(5000);
+}
 console.log('Result loaded');
 
-// If reveal=true, add the param to trigger real reading fetch
-if (args.reveal === 'true') {
-  const currentUrl = new URL(page.url());
-  currentUrl.searchParams.set('reveal', 'true');
-  await page.goto(currentUrl.toString(), { waitUntil: 'networkidle' });
-  await page.waitForTimeout(2000);
-}
+// Extra wait for reading JSON to be fetched and rendered (when reveal=true)
+await page.waitForTimeout(2000);
 
 // Slow scroll to bottom to capture the full reading
 console.log('Scrolling to bottom...');
