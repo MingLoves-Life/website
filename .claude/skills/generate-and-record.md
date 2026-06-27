@@ -87,6 +87,48 @@ node scripts/screenshot-reading.mjs \
 
 长图保存在 `./screenshots/{YYYY}-{MM}-{DD}-{g}-{timeIndex}-{locale}.png`
 
+### 第四阶段：生成 TikTok 发布文案
+
+在子目录下生成 `tiktok.md`，内容包含 Title、Caption、Hashtags。
+
+**文案策略（TikTok美区增长转化）：**
+
+1. **Title（视频标题）**：英文，15字以内，制造悬念/好奇心。从 reading 中提取最吸引人的一个点：
+   - 缺某元素 → "You're missing Water — here's why you overthink"
+   - 高分模块 → "Career score 5/5 — born to lead"
+   - 大运阶段 → "Born in 88? Age 34-44 is your PEAK"
+   - 桃花月 → "Your soulmate month is November 👀"
+
+2. **Caption（正文描述）**：英文，2-3句。结构：
+   - Hook扩展（1句解释标题的悬念）
+   - 价值点（1句告诉观众他们能获得什么）
+   - CTA（引导到 bio link 做免费测算）
+
+3. **Hashtags**：10-15个，混合：
+   - 高流量：#astrology #zodiac #spiritualtiktok #fyp #manifest
+   - 精准：#chineseastrology #bazi #birthchart #fiveelement #destinyreading
+   - 场景：#careeradvice #lovelife #2026predictions
+
+4. **个性化规则**：每次根据实际 reading 数据提取不同亮点，不要用模板化文案。优先选择最有反差感/意外感的数据点。
+
+输出文件：`./recordings/{YYYY}-{MM}-{DD}-{g}-{timeIndex}/tiktok.md`
+
+格式示例：
+```markdown
+# TikTok Post
+
+## Title
+Born in 1988? Age 34-44 is your POWER decade 🔥
+
+## Caption
+Your BaZi chart shows a rare "Eating God controls Killing" pattern forming right now — meaning this is when raw talent finally meets strategic power. Most people peak once. Your chart says you're just getting started.
+
+👉 Link in bio for your free Five Element reading
+
+## Hashtags
+#chineseastrology #bazi #birthchart #astrology #zodiac #fyp #spiritualtiktok #manifest #fiveelement #destinyreading #careeradvice #2026predictions #peakera
+```
+
 ## 注意事项
 
 - timeIndex 映射：子(0) 丑(1) 寅(2) 卯(3) 辰(4) 巳(5) 午(6) 未(7) 申(8) 酉(9) 戌(10) 亥(11) 子夜(12)
