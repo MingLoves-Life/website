@@ -2,22 +2,42 @@
 
 import { useSearchParams } from 'next/navigation';
 
-export function useRevealed() {
+export type RevealLevel = 'none' | 'basic' | 'full';
+
+export function useRevealLevel(): RevealLevel {
   const searchParams = useSearchParams();
-  return searchParams.get('reveal') === 'true';
+  const val = searchParams.get('reveal');
+  if (val === 'full') return 'full';
+  if (val === 'true' || val === 'basic') return 'basic';
+  return 'none';
+}
+
+export function useRevealed() {
+  return useRevealLevel() !== 'none';
 }
 
 export function Blur({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  const revealed = useRevealed();
+  const level = useRevealLevel();
+  const blurred = level === 'none';
   return (
-    <div className={`${revealed ? '' : 'blur-[5px] select-none pointer-events-none'} ${className}`}>
+    <div className={`${blurred ? 'blur-[5px] select-none pointer-events-none' : ''} ${className}`}>
+      {children}
+    </div>
+  );
+}
+
+export function DeepBlur({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  const level = useRevealLevel();
+  const blurred = level !== 'full';
+  return (
+    <div className={`${blurred ? 'blur-[5px] select-none pointer-events-none' : ''} ${className}`}>
       {children}
     </div>
   );
 }
 
 export function PaywallOverlay({ children }: { children: React.ReactNode }) {
-  const revealed = useRevealed();
-  if (revealed) return null;
+  const level = useRevealLevel();
+  if (level === 'full') return null;
   return <>{children}</>;
 }

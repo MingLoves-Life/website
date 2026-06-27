@@ -6,8 +6,8 @@ import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { getReading, type ReadingResult } from '../../../lib/reading';
 import { track } from '../../../lib/analytics';
-import { Blur, PaywallOverlay, useRevealed } from '../../../components/Blur';
-import { deriveFakeReading, type ReadingData } from '../../../lib/reading-data';
+import { Blur, DeepBlur, PaywallOverlay, useRevealed } from '../../../components/Blur';
+import { deriveFakeReading, localizeReading, type ReadingData, type LocalizedReadingData } from '../../../lib/reading-data';
 
 export default function FreeReadingPage() {
   const t = useTranslations('FreeReading');
@@ -248,7 +248,7 @@ export default function FreeReadingPage() {
             {/* Blurred paywall preview */}
             <div className="relative mb-8 overflow-hidden rounded-lg">
               {(() => {
-                const readingData = realReading || deriveFakeReading(result, locale, Number(month));
+                const readingData = realReading ? localizeReading(realReading, locale) : deriveFakeReading(result, locale, Number(month));
                 const stars = (n: number) => '★'.repeat(n) + '☆'.repeat(5 - n);
                 return (
               <div className="space-y-6 p-5 bg-bg-secondary border border-white/5">
@@ -265,6 +265,11 @@ export default function FreeReadingPage() {
                     </div>
                     <p className="text-sm text-text-primary leading-relaxed">{readingData.overview.body}</p>
                   </Blur>
+                  {readingData.overview.detailed && (
+                    <DeepBlur>
+                      <p className="text-sm text-text-primary leading-relaxed mt-3 pt-3 border-t border-white/5">{readingData.overview.detailed}</p>
+                    </DeepBlur>
+                  )}
                 </div>
 
                 {/* 2. 十年大运 */}
@@ -282,6 +287,11 @@ export default function FreeReadingPage() {
                           <div className="h-2 bg-accent/20 rounded-full">
                             <div className="h-full bg-accent rounded-full" style={{ width: `${d.score}%` }} />
                           </div>
+                          {d.detailed && (
+                            <DeepBlur>
+                              <p className="text-xs text-text-secondary mt-1">{d.detailed}</p>
+                            </DeepBlur>
+                          )}
                         </Blur>
                       </div>
                     ))}
@@ -307,6 +317,11 @@ export default function FreeReadingPage() {
                       <p className="text-xs text-text-secondary">{locale === 'zh' ? '关键月份' : 'Key Months'}</p>
                       <p className="text-sm text-accent">{readingData.annual.keyMonths.join(' · ')}</p>
                     </div>
+                    {readingData.annual.detailed && (
+                      <DeepBlur>
+                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5">{readingData.annual.detailed}</p>
+                      </DeepBlur>
+                    )}
                   </Blur>
                 </div>
 
@@ -353,6 +368,16 @@ export default function FreeReadingPage() {
                       <p className="text-xs text-text-secondary">{locale === 'zh' ? '最佳方位 · 旺财月份' : 'Best Direction · Wealth Months'}</p>
                       <p className="text-xs text-text-primary">{readingData.career.direction} · {readingData.wealth.bestMonths.join(locale === 'zh' ? '、' : ', ')}</p>
                     </div>
+                    {readingData.career.detailed && (
+                      <DeepBlur>
+                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5">{readingData.career.detailed}</p>
+                      </DeepBlur>
+                    )}
+                    {readingData.wealth.detailed && (
+                      <DeepBlur>
+                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5">{readingData.wealth.detailed}</p>
+                      </DeepBlur>
+                    )}
                   </Blur>
                 </div>
 
@@ -375,6 +400,11 @@ export default function FreeReadingPage() {
                         <p className="text-xs text-text-primary">{readingData.love.direction}</p>
                       </div>
                     </div>
+                    {readingData.love.detailed && (
+                      <DeepBlur>
+                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5">{readingData.love.detailed}</p>
+                      </DeepBlur>
+                    )}
                   </Blur>
                 </div>
 
@@ -397,6 +427,11 @@ export default function FreeReadingPage() {
                         <p className="text-xs text-text-primary mt-1">{readingData.health.remedy}</p>
                       </div>
                     </div>
+                    {readingData.health.detailed && (
+                      <DeepBlur>
+                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5">{readingData.health.detailed}</p>
+                      </DeepBlur>
+                    )}
                   </Blur>
                 </div>
 
@@ -415,6 +450,11 @@ export default function FreeReadingPage() {
                         <p className="text-sm text-text-primary">{readingData.allies.harmful.join(' · ')}</p>
                       </div>
                     </div>
+                    {readingData.allies.detailed && (
+                      <DeepBlur>
+                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5">{readingData.allies.detailed}</p>
+                      </DeepBlur>
+                    )}
                   </Blur>
                 </div>
 
@@ -424,13 +464,18 @@ export default function FreeReadingPage() {
                   <p className="text-xs text-text-secondary mb-2">{locale === 'zh' ? '跳槽、签约、搬家、表白——每件大事的最佳月份' : 'Job change, signing deals, moving, confessing — the best month for each'}</p>
                   <Blur>
                     <div className="grid grid-cols-2 gap-2">
-                      {Object.entries(readingData.timing).map(([action, m]) => (
+                      {Object.entries(readingData.timing).filter(([k]) => k !== 'detailed').map(([action, m]) => (
                         <div key={action} className="p-2 bg-white/5 rounded flex justify-between text-xs">
                           <span className="text-text-secondary">{action}</span>
                           <span className="text-accent">{m}</span>
                         </div>
                       ))}
                     </div>
+                    {readingData.timing.detailed && (
+                      <DeepBlur>
+                        <p className="text-xs text-text-primary leading-relaxed mt-2 pt-2 border-t border-white/5">{readingData.timing.detailed}</p>
+                      </DeepBlur>
+                    )}
                   </Blur>
                 </div>
 

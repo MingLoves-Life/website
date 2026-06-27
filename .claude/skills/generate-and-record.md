@@ -28,18 +28,25 @@ JSON 结构：
   "birthInfo": { "year": 2000, "month": 4, "day": 19, "timeIndex": 8, "gender": "female" },
   "bazi": { "yearPillar": "...", "monthPillar": "...", "dayPillar": "...", "hourPillar": "...", "zodiac": "...", "nayin": "...", "dayElement": "...", "strongest": "...", "missing": [] },
   "reading": {
-    "overview": { "keywords": [...], "body": "..." },
-    "decades": [{ "label": "...", "theme": "...", "score": N, "detail": "..." }, ...],
-    "annual": { "firstHalf": "...", "secondHalf": "...", "keyMonths": [...], "rating": N },
-    "career": { "rating": N, "advice": "...", "direction": "...", "bestMonths": [...] },
-    "wealth": { "rating": N, "mode": "...", "advice": "...", "bestMonths": [...] },
-    "love": { "rating": N, "romanceMonths": [...], "soulmate": "...", "direction": "...", "advice": "..." },
-    "health": { "areas": [...], "vulnerableMonths": [...], "remedy": "..." },
-    "allies": { "helpful": [...], "harmful": [...] },
-    "timing": { "跳槽": "...", "签约": "...", "搬家": "...", "表白": "..." }
+    "overview": { "keywords": [...], "body": "简要概述", "detailed": "2-3段深度命格分析" },
+    "decades": [{ "label": "...", "theme": "...", "score": N, "detail": "一句话概述", "detailed": "该步运的详细分析、具体建议、注意事项" }, ...],
+    "annual": { "firstHalf": "...", "secondHalf": "...", "keyMonths": [...], "rating": N, "detailed": "流年详细分析，含月份级建议" },
+    "career": { "rating": N, "advice": "简要建议", "direction": "...", "bestMonths": [...], "detailed": "详细行业分析、发展节奏、具体行动建议" },
+    "wealth": { "rating": N, "mode": "...", "advice": "简要建议", "bestMonths": [...], "detailed": "详细财运分析、投资方向、理财策略" },
+    "love": { "rating": N, "romanceMonths": [...], "soulmate": "...", "direction": "...", "advice": "简要建议", "detailed": "详细正缘画像、恋爱课题、具体择偶建议" },
+    "health": { "areas": [...], "vulnerableMonths": [...], "remedy": "简要调理方向", "detailed": "详细健康分析、高危时段、具体调养方案" },
+    "allies": { "helpful": [...], "harmful": [...], "detailed": "详细贵人/小人分析、实际应用建议" },
+    "timing": { "跳槽": "...", "签约": "...", "搬家": "...", "表白": "...", "detailed": "每个时间点的详细择时依据和注意事项" }
   }
 }
 ```
+
+### 页面展示三级模式
+
+- `?reveal=` 无参数：全部模糊（访客）
+- `?reveal=basic`：简单字段可见，detailed 模糊（免费用户）
+- `?reveal=full`：全部可见（付费用户）
+- `?reveal=true`（向后兼容）= basic
 
 ### 第二阶段：自动录制
 

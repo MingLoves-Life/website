@@ -20,54 +20,124 @@
   },
   "reading": {
     "overview": {
-      "keywords": ["细腻", "坚韧", "内敛有光"],
-      "body": "日主丁火，如烛火星光，温润而不灼人。生于辰月土旺之时，火气被泄，加之庚金双透克伐木源，日主偏弱。好在丁未日柱自坐燥土，根气未绝。你天生有一种沉静的力量——不张扬，但在关键时刻总能发出属于自己的光。格局倾向于'暗处发力型'，适合需要耐心和细腻观察力的领域。需要注意的是，土金太旺容易让你陷入过度思虑、给自己太大压力的模式。"
+      "keywords": [
+        { "zh": "细腻", "en": "Perceptive" },
+        { "zh": "坚韧", "en": "Resilient" },
+        { "zh": "内敛有光", "en": "Quietly radiant" }
+      ],
+      "body": {
+        "zh": "日主丁火，如烛火星光，温润而不灼人。生于辰月土旺之时，火气被泄，加之庚金双透克伐木源，日主偏弱。好在丁未日柱自坐燥土，根气未绝。你天生有一种沉静的力量——不张扬，但在关键时刻总能发出属于自己的光。格局倾向于'暗处发力型'，适合需要耐心和细腻观察力的领域。需要注意的是，土金太旺容易让你陷入过度思虑、给自己太大压力的模式。",
+        "en": "Your Day Master is Ding Fire — like candlelight or starlight, warm without burning. Born in the Earth-dominant Chen month, your fire energy is drained, and with double Geng Metal exposed attacking your Wood sources, the Day Master leans weak. Fortunately, your Ding-Wei day pillar sits on dry earth, keeping your root alive. You possess a quiet inner strength — not showy, but at critical moments you always find your light. Your chart favors the 'power from the shadows' type, suited for fields requiring patience and keen observation. Be mindful that excessive Earth-Metal energy can trap you in overthinking and self-imposed pressure."
+      },
+      "detailed": {
+        "zh": "从紫微斗数来看，你的命宫主星天机独坐，对宫巨门，形成'机巨同临'的格局变体。天机星赋予你极强的分析能力和学习天赋，但也带来容易焦虑、想太多的特质。身宫落在财帛宫，说明你这辈子的核心课题和'钱'有关——不是赚不到，而是要学会和金钱建立健康的关系，不被匮乏感驱动。\n\n你的四化中，化禄落在迁移宫，意味着外出发展、换城市、出国都对你有利；化忌落在夫妻宫，提示感情是你这辈子最需要修炼的课题——不是遇不到好人，而是要学会信任和放手。建议25岁之后再认真考虑长期关系，之前的感情经历更多是'练习'。\n\n整体格局属于中上，关键在于能否在28-35岁之间抓住木运带来的上升机遇。这个阶段如果能克服'怕犯错所以不行动'的心态，事业和财运都会有质的飞跃。",
+        "en": "From the Zi Wei Dou Shu perspective, your Ming Palace features Tian Ji (Heavenly Machine) star sitting alone, with Ju Men (Giant Gate) in the opposite palace — forming a variant of the 'Ji-Ju concurrent' pattern. Tian Ji grants you exceptional analytical ability and learning talent, but also brings a tendency toward anxiety and overthinking. Your Body Palace falls in the Wealth Palace, indicating your life's core lesson relates to money — not that you can't earn it, but that you need to build a healthy relationship with wealth without being driven by scarcity.\n\nIn your Four Transformations, Hua Lu (Prosperity) lands in your Travel Palace, meaning relocating, changing cities, or going abroad all favor you; Hua Ji (Obstruction) lands in your Spouse Palace, highlighting that intimate relationships are your greatest growth area — not that you won't meet good people, but that you need to learn trust and letting go. Consider serious long-term relationships only after 25; earlier experiences are more 'practice.'\n\nYour overall chart configuration is above average. The key lies in whether you can seize the Wood-cycle opportunities between ages 28-35. If you can overcome the 'afraid of making mistakes so I don't act' mindset during this phase, both career and finances will see a qualitative leap."
+      }
     },
     "decades": [
-      { "label": "第一步运", "theme": "蛰伏蓄力期", "score": 42, "detail": "早年运走金水之地，日主偏弱阶段需要积累学识与人脉。" },
-      { "label": "第二步运", "theme": "转折突破期", "score": 68, "detail": "木运来临，生扶日主，开始有明显的上升通道和机遇。" },
-      { "label": "第三步运", "theme": "贵人助力期", "score": 82, "detail": "火木并行，日主得力，事业和感情都进入收获期。" },
-      { "label": "第四步运", "theme": "巅峰收获期", "score": 88, "detail": "运势最旺的阶段，多年积累开始变现，注意守成。" }
+      {
+        "label": { "zh": "第一步运", "en": "Phase 1" },
+        "theme": { "zh": "蛰伏蓄力期", "en": "Foundation building" },
+        "score": 42,
+        "detail": { "zh": "早年运走金水之地，日主偏弱阶段需要积累学识与人脉。", "en": "Early luck cycles through Metal-Water territory; during this weaker phase, focus on building knowledge and connections." },
+        "detailed": { "zh": "0-15岁走辛巳、壬午大限，金水运势对日主丁火有压制作用。这个阶段容易感到不自信、被环境限制。但这恰恰是积累内功的黄金期——学业上的投入会在后面的大运中加倍回报。如果你回忆这段时间，可能会发现自己比同龄人更早熟、更敏感，这其实是天机星早慧的体现。", "en": "Ages 0-15 traverse the Xin-Si and Ren-Wu major limits, where Metal-Water energy suppresses your Ding Fire Day Master. This phase often brings self-doubt and environmental constraints. But it's precisely the golden period for building internal strength — academic investments here will pay double returns in later cycles. Looking back, you likely found yourself more mature and sensitive than peers — this reflects Tian Ji star's early wisdom." }
+      },
+      {
+        "label": { "zh": "第二步运", "en": "Phase 2" },
+        "theme": { "zh": "转折突破期", "en": "Breakthrough phase" },
+        "score": 68,
+        "detail": { "zh": "木运来临，生扶日主，开始有明显的上升通道和机遇。", "en": "Wood luck arrives, nurturing your Day Master — clear upward channels and opportunities begin to emerge." },
+        "detailed": { "zh": "15-25岁走甲申大限，甲木透出生火，是你命局最需要的五行。这步运你会明显感觉到'被看见'的机会变多了，社交圈扩大，自信心逐步建立。需要特别注意的是申金冲克甲木，说明机遇伴随着压力和竞争——不要因为害怕失败就退缩，这步运的核心课题就是'在压力中成长'。", "en": "Ages 15-25 traverse the Jia-Shen major limit. Jia Wood emerges to nourish your fire — the element your chart needs most. During this phase you'll noticeably feel more 'seen,' your social circle expands, and confidence builds gradually. Note that Shen Metal clashes with Jia Wood, meaning opportunities come with pressure and competition — don't retreat from fear of failure. This phase's core lesson is 'growing under pressure.'" }
+      },
+      {
+        "label": { "zh": "第三步运", "en": "Phase 3" },
+        "theme": { "zh": "贵人助力期", "en": "Mentor & harvest" },
+        "score": 82,
+        "detail": { "zh": "火木并行，日主得力，事业和感情都进入收获期。", "en": "Fire and Wood run together, empowering your Day Master — both career and relationships enter harvest mode." },
+        "detailed": { "zh": "25-35岁走乙酉、丙戌大限，先木后火，日主从偏弱走向中和。这是你人生最关键的十年——事业上会遇到真正的贵人（很可能是年长女性或属鸡的人），感情上也容易确定终身伴侣。建议在28-30岁之间做重大的职业方向决定，这个窗口期的选择会影响后面20年的走向。", "en": "Ages 25-35 traverse Yi-You and Bing-Xu limits — Wood then Fire, bringing your Day Master from weak toward balance. This is your most critical decade — you'll meet true career mentors (likely an older woman or someone born in Rooster year), and emotionally you're likely to confirm a life partner. Make major career direction decisions between 28-30; choices in this window affect the next 20 years." }
+      },
+      {
+        "label": { "zh": "第四步运", "en": "Phase 4" },
+        "theme": { "zh": "巅峰收获期", "en": "Peak harvest" },
+        "score": 88,
+        "detail": { "zh": "运势最旺的阶段，多年积累开始变现，注意守成。", "en": "Your strongest luck phase — years of accumulation begin to pay off. Focus on consolidating gains." },
+        "detailed": { "zh": "35-45岁走丁亥大限，天干比肩帮身、地支亥水财星，形成'身旺任财'的理想格局。之前所有的积累——技能、人脉、经验——在这步运全面变现。财运进入最旺阶段，适合投资、置业、扩大事业版图。唯一要注意的是不要过度扩张，因为下一步运会转弱，需要为'守成期'做好准备。", "en": "Ages 35-45 traverse the Ding-Hai limit — Heavenly Stem companion strengthens you, Earthly Branch Hai Water brings wealth stars, forming the ideal 'strong body managing wealth' configuration. All prior accumulation — skills, connections, experience — fully monetizes in this phase. Wealth luck peaks; suitable for investment, property acquisition, and business expansion. The only caution: don't overextend, as the next phase weakens — prepare for consolidation." }
+      }
     ],
     "annual": {
-      "firstHalf": "上半年运势偏平稳，三月前后有一次小突破的机会，适合主动出击尝试新事物",
-      "secondHalf": "下半年运势渐强，八月后有贵人出现，可能带来关键的合作或资源",
-      "keyMonths": ["三月", "六月", "八月"],
-      "rating": 4
+      "firstHalf": { "zh": "上半年运势偏平稳，三月前后有一次小突破的机会，适合主动出击尝试新事物", "en": "First half is relatively steady; around March there's a small breakthrough opportunity — take initiative and try new things" },
+      "secondHalf": { "zh": "下半年运势渐强，八月后有贵人出现，可能带来关键的合作或资源", "en": "Second half momentum builds; after August a mentor figure appears, potentially bringing key partnerships or resources" },
+      "keyMonths": [
+        { "zh": "三月", "en": "March" },
+        { "zh": "六月", "en": "June" },
+        { "zh": "八月", "en": "August" }
+      ],
+      "rating": 4,
+      "detailed": {
+        "zh": "2026丙午年，流年天干丙火为日主丁火的劫财，地支午火为丁火帝旺之地。整体来看，今年你的精力和行动力明显提升，但'劫财'也意味着容易冲动消费或被朋友借钱——上半年三月寅木月，木生火旺，适合启动新项目或跳槽；六月未土月注意脾胃健康，也是签约的好时机（未中有丁火本气，做决定时判断力最强）；八月申金月，偏财星活跃，可能有意外收入或投资回报，但也可能有突发支出。下半年整体比上半年顺，尤其九月酉金月桃花旺，单身的话社交活动不要推。",
+        "en": "2026 is a Bing-Wu (Fire Horse) year. The annual Heavenly Stem Bing Fire is your Day Master's 'Rob Wealth' star, while Wu Fire in the Branch is Ding Fire's 'Emperor' position. Overall, your energy and drive notably increase this year, but 'Rob Wealth' also means impulse spending or friends borrowing money. First half: March (Yin-Wood month) — Wood feeds Fire, ideal for launching new projects or job changes. June (Wei-Earth month) — watch digestive health; also good for signing contracts (Wei contains your Ding Fire root, sharpening judgment). August (Shen-Metal month) — indirect wealth star activates, possible unexpected income or investment returns, but also sudden expenses. Second half runs smoother overall, especially September (You-Metal month) when romance peaks — if single, don't skip social events."
+      }
     },
     "career": {
       "rating": 4,
-      "advice": "适合需要耐心和洞察力的工作——教育、心理咨询、设计、内容创作。你的优势不在硬冲，而在于能看到别人看不到的细节。管理岗位也适合，但建议搭配一个执行力强的搭档。",
-      "direction": "正南",
-      "bestMonths": ["三月", "八月"]
+      "advice": { "zh": "适合需要耐心和洞察力的工作——教育、心理咨询、设计、内容创作。你的优势不在硬冲，而在于能看到别人看不到的细节。管理岗位也适合，但建议搭配一个执行力强的搭档。", "en": "Suited for work requiring patience and insight — education, counseling, design, content creation. Your advantage isn't brute force but seeing details others miss. Management roles also work, but pair with a strong executor." },
+      "direction": { "zh": "正南", "en": "South" },
+      "bestMonths": [{ "zh": "三月", "en": "March" }, { "zh": "八月", "en": "August" }],
+      "detailed": {
+        "zh": "从官禄宫来看，太阳星落陷，说明你不太适合在传统体制内或强层级管理的环境中发展——你需要的是能发挥创造力和自主性的工作。最适合的行业方向：1）内容/创意类（写作、设计、短视频策划）——天机星的分析力+丁火的美感，非常适合需要'洞察人心'的内容工作；2）咨询/教育类——你天生善于倾听和拆解问题，帮别人理清思路是你的天赋；3）心理/疗愈类——命局缺木缺水，反而让你对情绪特别敏感，这种敏感用在助人的领域是巨大的优势。\n\n事业发展节奏建议：25岁前多试错、积累技能；25-28岁确定主方向；28-32岁全力深耕一个领域建立专业壁垒；32岁以后可以考虑创业或独立执业。方位上正南方（火位）对你的事业最有利——办公桌朝南坐，或选择在南方城市发展。",
+        "en": "Looking at your Career Palace: the Sun star is in a fallen position, suggesting you're not well-suited for traditional institutional or heavily hierarchical environments — you need work that allows creativity and autonomy. Best industry directions: 1) Content/Creative (writing, design, short-video planning) — Tian Ji's analytical power + Ding Fire's aesthetic sense perfectly suit 'insight into human hearts' content work; 2) Consulting/Education — you're naturally gifted at listening and deconstructing problems, helping others find clarity; 3) Psychology/Healing — your chart lacking Wood and Water actually makes you emotionally hypersensitive, which becomes a massive advantage in helping professions.\n\nCareer development rhythm: Before 25, experiment widely and build skills; 25-28, lock in your primary direction; 28-32, go all-in on one field to build professional moats; after 32, consider entrepreneurship or independent practice. Directionally, due South (Fire position) is most favorable for your career — face south at your desk, or choose to develop in southern cities."
+      }
     },
     "wealth": {
       "rating": 3,
-      "mode": "正财稳健",
-      "advice": "财运属于稳扎稳打型，不适合高风险投机。适合通过专业技能和长期积累创造财富。土金旺的格局意味着你有'攒钱'的天赋，但要注意不要过于保守而错过增值机会。",
-      "bestMonths": ["三月", "九月"]
+      "mode": { "zh": "正财稳健", "en": "Steady earned income" },
+      "advice": { "zh": "财运属于稳扎稳打型，不适合高风险投机。适合通过专业技能和长期积累创造财富。土金旺的格局意味着你有'攒钱'的天赋，但要注意不要过于保守而错过增值机会。", "en": "Your wealth pattern favors steady accumulation — not suited for high-risk speculation. Build wealth through professional skills and long-term growth. Your strong Earth-Metal configuration gives you a natural 'saving' talent, but don't be so conservative that you miss growth opportunities." },
+      "bestMonths": [{ "zh": "三月", "en": "March" }, { "zh": "九月", "en": "September" }],
+      "detailed": {
+        "zh": "财帛宫天府星独坐，这是一颗'库星'——意味着你有天生的存钱体质，花钱谨慎，理财保守。好处是不容易破财；坏处是可能错过需要'花钱换机会'的关键时刻。\n\n你的财运特点：1）正财为主，靠专业技能和稳定收入积累；2）偏财运在35岁以后才会明显（丁亥大限），之前不建议做高风险投资；3）土金旺的格局适合投资不动产或黄金等'实物资产'，不太适合股票等波动大的标的。\n\n具体建议：每月收入建议按 60%生活 / 20%储蓄 / 20%投资 的比例分配。投资方向首选定投基金或REITs，等35岁以后再考虑单笔大额投资。旺财方位正南，可以在南方放一盆绿植（木生火、火生土），形成'生财链'。",
+        "en": "Your Wealth Palace features Tian Fu (Emperor's Vault) star sitting alone — a 'treasury star' meaning you're born with a saving constitution: cautious spending, conservative with money. The upside is you rarely lose money; the downside is potentially missing moments when 'spending money to gain opportunity' is required.\n\nYour wealth characteristics: 1) Primary income-driven — accumulate through professional skills and stable earnings; 2) Windfall luck only becomes significant after 35 (Ding-Hai limit), so avoid high-risk investments before then; 3) Your strong Earth-Metal configuration suits tangible asset investment (real estate, gold) rather than volatile instruments like stocks.\n\nSpecific advice: Allocate monthly income as 60% living / 20% savings / 20% investment. Prioritize index fund DCA or REITs; save large single investments for after 35. Wealth-boosting direction is due South — place a green plant there (Wood feeds Fire, Fire feeds Earth) to create a 'wealth generation chain.'"
+      }
     },
     "love": {
       "rating": 4,
-      "romanceMonths": ["四月", "九月"],
-      "soulmate": "温暖主动型，最好是木火属性偏旺的人——性格开朗、有行动力，能带动你走出舒适区",
-      "direction": "正南",
-      "advice": "丁火女命感情细腻但容易闷在心里不表达。你的正缘倾向于比你外向、主动的类型。感情中最大的课题是：学会在对方面前展露脆弱，而不是什么都自己扛。"
+      "romanceMonths": [{ "zh": "四月", "en": "April" }, { "zh": "九月", "en": "September" }],
+      "soulmate": { "zh": "温暖主动型，最好是木火属性偏旺的人——性格开朗、有行动力，能带动你走出舒适区", "en": "Warm and proactive type — ideally someone with strong Wood-Fire energy: outgoing, action-oriented, able to draw you out of your comfort zone" },
+      "direction": { "zh": "正南", "en": "South" },
+      "advice": { "zh": "丁火女命感情细腻但容易闷在心里不表达。你的正缘倾向于比你外向、主动的类型。感情中最大的课题是：学会在对方面前展露脆弱，而不是什么都自己扛。", "en": "As a Ding Fire woman, you're emotionally delicate but tend to keep feelings bottled up. Your destined partner tends to be more outgoing and proactive than you. Your biggest relationship lesson: learn to show vulnerability to your partner instead of shouldering everything alone." },
+      "detailed": {
+        "zh": "夫妻宫化忌，这是感情中最需要注意的配置——不是说感情不好，而是说你会在亲密关系中体验到最深的成长和最大的挑战。具体表现：1）容易吸引'需要你照顾'的对象，要警惕变成感情中的'妈妈角色'；2）可能有一段让你刻骨铭心但最终分开的感情，这段经历是为了让你学会'什么是真正适合你的人'；3）正缘出现的时间大概率在26-30岁之间。\n\n你的正缘画像：木火属性偏旺的人——实际表现为性格阳光、行动力强、爱运动或户外活动、说话直接不绕弯的类型。生肖上属鸡或属鼠的人和你缘分最深。年龄上大你2-4岁最佳（偏财代夫，偏财主年长）。\n\n桃花月份：四月（辰月桃花）和九月（酉月正桃花）是遇到新对象概率最高的月份。如果目前有暧昧对象，九月表白最有利。恋爱中的建议：练习'示弱'——不是装，而是真的让对方看到你的脆弱面。你的命局显示越是逞强，感情越容易出问题。",
+        "en": "Your Spouse Palace carries Hua Ji (Obstruction) — the configuration requiring most attention in love. This doesn't mean bad relationships, but rather that intimate relationships bring your deepest growth and greatest challenges. Specifically: 1) You tend to attract partners who 'need caring for' — beware becoming the 'mother figure' in relationships; 2) You may have one deeply memorable relationship that ultimately ends, teaching you 'what truly suits you'; 3) Your destined partner most likely appears between ages 26-30.\n\nYour soulmate profile: someone with strong Wood-Fire energy — manifesting as sunny personality, strong initiative, loves sports or outdoor activities, speaks directly without beating around the bush. Zodiac-wise, Rooster or Rat people have the deepest affinity with you. Age-wise, 2-4 years older is ideal.\n\nRomance months: April (Chen month peach blossom) and September (You month primary peach blossom) have the highest probability of meeting someone new. If you currently have someone ambiguous, September is most favorable for confessing. Dating advice: practice 'showing vulnerability' — not faking it, but genuinely letting your partner see your fragile side. Your chart shows that the more you play strong, the more relationship problems arise."
+      }
     },
     "health": {
-      "areas": ["肝胆（缺木）", "肾与泌尿系统（缺水）"],
-      "vulnerableMonths": ["六月", "十二月"],
-      "remedy": "补木补水为主——多接触绿色植物和自然环境，保持充足饮水，避免熬夜伤肝。春天是你最佳的调养季节。"
+      "areas": [
+        { "zh": "肝胆（缺木）", "en": "Liver & gallbladder (Wood deficiency)" },
+        { "zh": "肾与泌尿系统（缺水）", "en": "Kidneys & urinary system (Water deficiency)" }
+      ],
+      "vulnerableMonths": [{ "zh": "六月", "en": "June" }, { "zh": "十二月", "en": "December" }],
+      "remedy": { "zh": "补木补水为主——多接触绿色植物和自然环境，保持充足饮水，避免熬夜伤肝。春天是你最佳的调养季节。", "en": "Focus on supplementing Wood and Water — spend time around green plants and nature, stay well-hydrated, avoid late nights that damage the liver. Spring is your best season for wellness." },
+      "detailed": {
+        "zh": "命局缺木缺水，反映在身体上：1）肝胆系统——木主肝，缺木的人容易肝气不舒、情绪压抑转化为身体症状（如偏头痛、肋骨胀痛、眼睛干涩）。尤其在压力大的时候，肝胆问题会先冒出来。建议：每天晚上11点前入睡（子丑时是肝胆经运行时间），春天多做伸展运动；2）肾与泌尿系统——水主肾，缺水的人容易腰膝酸软、手脚冰凉、冬天特别怕冷。女性还要注意妇科（肾主生殖）。建议：每天喝够2000ml水，冬天用热水泡脚，避免吃太咸的食物。\n\n高危月份：六月（未土旺，克水更甚）注意泌尿系统感染；十二月（丑土旺，寒湿）注意关节和肾脏保暖。调养优先级：养肝 > 补肾 > 健脾。具体方案：枸杞+菊花茶（养肝明目）、黑芝麻+核桃（补肾）、每周2-3次有氧运动（疏肝气）。",
+        "en": "Your chart lacking Wood and Water manifests physically: 1) Liver & gallbladder — Wood governs the liver; Wood-deficient people easily develop liver qi stagnation, where suppressed emotions convert to physical symptoms (migraines, rib pain, dry eyes). Under stress, liver-gallbladder issues surface first. Advice: sleep before 11pm (Zi-Chou hours are liver-gallbladder meridian active time), do stretching exercises in spring; 2) Kidneys & urinary — Water governs kidneys; Water-deficient people experience lower back weakness, cold extremities, and are especially cold-sensitive in winter. Women should also watch gynecological health (kidneys govern reproduction). Advice: drink 2000ml water daily, soak feet in hot water in winter, avoid overly salty food.\n\nHigh-risk months: June (Wei Earth dominates, further suppressing Water) — watch for urinary infections; December (Chou Earth dominates, cold-damp) — protect joints and kidneys from cold. Wellness priority: nourish liver > supplement kidneys > strengthen spleen. Specific regimen: goji + chrysanthemum tea (liver & eyes), black sesame + walnuts (kidneys), 2-3x weekly cardio (move liver qi)."
+      }
     },
     "allies": {
-      "helpful": ["属鸡", "属鼠"],
-      "harmful": ["属狗", "属兔"]
+      "helpful": [{ "zh": "属鸡", "en": "Rooster" }, { "zh": "属鼠", "en": "Rat" }],
+      "harmful": [{ "zh": "属狗", "en": "Dog" }, { "zh": "属兔", "en": "Rabbit" }],
+      "detailed": {
+        "zh": "贵人分析基于三合、六合关系：辰龙与酉鸡六合（你的第一贵人），与申猴、子鼠三合水局（第二贵人群）。具体来说：1）属鸡的人是你的'六合贵人'——和ta在一起时你会感到特别舒服、不用装，ta也最愿意帮你。工作中如果有属鸡的前辈/领导，主动亲近；2）属鼠的人是你的'三合贵人'——合作关系特别好，一起做事效率高、默契度高。\n\n需要注意的人：属狗（辰戌冲）——和你'对冲'，容易产生正面冲突和意见不合，不是说不能来往，而是合作时需要第三方缓冲；属兔（卯辰害）——表面和气但暗中消耗你的能量，尤其在职场中要小心属兔的同事背后的小动作。\n\n实际应用：重要合伙人/结婚对象优先考虑属鸡或属鼠；面试时如果面试官是这两个属相，录取概率更高；谈判时避免和属狗的人正面对峙，找中间人更有利。",
+        "en": "Ally analysis is based on Three Harmonies and Six Harmonies: Chen Dragon and You Rooster form a Six Harmony (your primary ally), while Shen Monkey and Zi Rat form the Three Harmony Water Bureau (secondary ally group). Specifically: 1) Rooster people are your 'Six Harmony allies' — you feel completely comfortable around them, no pretense needed, and they're most willing to help. If there's a Rooster-year senior or leader at work, proactively build that relationship; 2) Rat people are your 'Three Harmony allies' — partnerships work exceptionally well, high efficiency and natural chemistry.\n\nPeople to watch: Dog (Chen-Xu clash) — directly opposing you, prone to open conflict and disagreements. Not that you can't interact, but partnerships need a third-party buffer; Rabbit (Mao-Chen harm) — superficially pleasant but quietly draining your energy, especially watch for Rabbit-year colleagues' behind-the-scenes moves at work.\n\nPractical applications: Prioritize Rooster or Rat people for important partners/marriage prospects; if your interviewer is one of these signs, acceptance probability is higher; in negotiations, avoid direct confrontation with Dog people — use intermediaries instead."
+      }
     },
     "timing": {
-      "跳槽": "三月",
-      "签约": "六月",
-      "搬家": "八月",
-      "表白": "九月"
+      "跳槽": { "zh": "三月", "en": "March" },
+      "签约": { "zh": "六月", "en": "June" },
+      "搬家": { "zh": "八月", "en": "August" },
+      "表白": { "zh": "九月", "en": "September" },
+      "detailed": {
+        "zh": "择时依据——三月（寅月）：木旺生火，日主得力，精力和判断力处于年度高点，最适合做需要勇气的决定如跳槽、创业启动；六月（未月）：未中藏丁火本气，你的'主场月份'，签约、谈判、做重大承诺时判断力最准；八月（申月）：驿马星动，适合所有'动'的事情——搬家、出差、开始新旅程；九月（酉月）：正桃花月，酉金为你的六合贵人星，不仅适合表白，也适合拓展社交、参加活动、认识新朋友。\n\n需要避开的时间：十二月（丑月）和六月下旬（未土最旺时）不适合做重大决定——前者容易犹豫不决，后者容易冲动。如果必须在这两个月份做决定，建议找属鸡或属鼠的朋友帮你参谋。",
+        "en": "Timing rationale — March (Yin month): Wood thrives feeding Fire, Day Master empowered, energy and judgment at annual peak — best for courage-requiring decisions like job changes or startup launches. June (Wei month): Wei contains your Ding Fire root energy, your 'home turf month' — judgment is sharpest when signing contracts, negotiating, or making major commitments. August (Shen month): Travel Star activates, suited for anything involving movement — relocating, business trips, starting new journeys. September (You month): Primary Peach Blossom month, You Metal is your Six Harmony ally star — ideal not just for confessing feelings but also expanding your social circle and meeting new people.\n\nTimes to avoid: December (Chou month) and late June (when Wei Earth peaks) are poor for major decisions — the former brings indecisiveness, the latter impulsiveness. If you must decide during these months, consult a Rooster or Rat friend for counsel."
+      }
     }
   }
 }

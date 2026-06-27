@@ -69,8 +69,8 @@ const revealParam = args.reveal === 'true' ? '?reveal=true' : '';
 const url = `${baseUrl}/${locale}/free-reading${revealParam}`;
 
 console.log(`Navigating to: ${url}`);
-await page.goto(url, { waitUntil: 'networkidle' });
-await page.waitForTimeout(1000);
+await page.goto(url, { waitUntil: 'domcontentloaded' });
+await page.waitForTimeout(100);
 
 // Fill in the form
 console.log('Filling form...');
@@ -79,29 +79,29 @@ const monthInput = page.locator('input[type="number"]').nth(1);
 const dayInput = page.locator('input[type="number"]').nth(2);
 
 await yearInput.fill(args.year);
-await page.waitForTimeout(300);
+await page.waitForTimeout(200);
 await monthInput.fill(args.month);
-await page.waitForTimeout(300);
+await page.waitForTimeout(200);
 await dayInput.fill(args.day);
-await page.waitForTimeout(300);
+await page.waitForTimeout(200);
 
 // Select gender
 if (args.gender === 'male') {
   const genderButtons = page.locator('button[type="button"]');
   await genderButtons.nth(1).click();
-  await page.waitForTimeout(300);
+  await page.waitForTimeout(200);
 }
 
 // Select time
 const timeSelect = page.locator('select');
 await timeSelect.selectOption(args.time);
-await page.waitForTimeout(300);
+await page.waitForTimeout(200);
 
-// Scroll submit button into view and tap it
+// Scroll submit button into view and click
 console.log('Submitting...');
 const submitButton = page.locator('button[type="submit"]');
 await submitButton.scrollIntoViewIfNeeded();
-await page.waitForTimeout(800);
+await page.waitForTimeout(300);
 await submitButton.click();
 console.log('Submit button clicked');
 
@@ -111,23 +111,40 @@ await page.waitForTimeout(5000);
 console.log('Result loaded');
 
 // Extra time for reading JSON fetch
-await page.waitForTimeout(2000);
+await page.waitForTimeout(1500);
 
-// Slow scroll to bottom to capture the full reading
+// Smooth pixel-by-pixel scroll until "换一个日期试试" is visible near bottom of viewport
 console.log('Scrolling to bottom...');
-const scrollHeight = await page.evaluate(() => document.body.scrollHeight);
-const viewportHeight = 844;
-const scrollSteps = Math.ceil(scrollHeight / (viewportHeight * 0.6));
+const tryAgainButton = page.locator('button', { hasText: /换一个日期|tryAgain|Try/ });
+const totalDistance = await tryAgainButton.evaluate(el => {
+  const rect = el.getBoundingClientRect();
+  // Scroll until this element is ~80% down the viewport
+  return rect.top - window.innerHeight * 0.8;
+});
 
-for (let i = 0; i < scrollSteps; i++) {
-  await page.evaluate((step) => {
-    window.scrollBy({ top: window.innerHeight * 0.6, behavior: 'smooth' });
-  }, i);
-  await page.waitForTimeout(1200);
+if (totalDistance > 0) {
+  const pixelsPerFrame = 2;
+  const frameInterval = 16; // ~60fps
+  const totalFrames = Math.ceil(totalDistance / pixelsPerFrame);
+
+  await page.evaluate(({ distance, pxPerFrame, interval }) => {
+    return new Promise(resolve => {
+      let scrolled = 0;
+      const timer = setInterval(() => {
+        const step = Math.min(pxPerFrame, distance - scrolled);
+        window.scrollBy(0, step);
+        scrolled += step;
+        if (scrolled >= distance) {
+          clearInterval(timer);
+          resolve();
+        }
+      }, interval);
+    });
+  }, { distance: totalDistance, pxPerFrame: pixelsPerFrame, interval: frameInterval });
 }
 
-// Pause at the bottom
-await page.waitForTimeout(2000);
+// Brief pause at the end
+await page.waitForTimeout(1500);
 
 // Close
 await page.close();

@@ -1,15 +1,28 @@
 import type { ReadingResult } from './reading';
 
+export type Localizable = string | { zh: string; en: string };
+
+export function localize(value: Localizable | undefined, locale: 'en' | 'zh'): string {
+  if (!value) return '';
+  if (typeof value === 'string') return value;
+  return value[locale] || value.zh;
+}
+
+export function localizeArray(arr: Localizable[] | undefined, locale: 'en' | 'zh'): string[] {
+  if (!arr) return [];
+  return arr.map(v => localize(v, locale));
+}
+
 export interface ReadingData {
-  overview: { keywords: string[]; body: string };
-  decades: { label: string; theme: string; score: number }[];
-  annual: { firstHalf: string; secondHalf: string; keyMonths: string[]; rating: number };
-  career: { rating: number; advice: string; direction: string; bestMonths: string[] };
-  wealth: { rating: number; mode: string; advice: string; bestMonths: string[] };
-  love: { rating: number; romanceMonths: string[]; soulmate: string; direction: string; advice: string };
-  health: { areas: string[]; vulnerableMonths: string[]; remedy: string };
-  allies: { helpful: string[]; harmful: string[] };
-  timing: Record<string, string>;
+  overview: { keywords: Localizable[]; body: Localizable; detailed?: Localizable };
+  decades: { label: Localizable; theme: Localizable; score: number; detail?: Localizable; detailed?: Localizable }[];
+  annual: { firstHalf: Localizable; secondHalf: Localizable; keyMonths: Localizable[]; rating: number; detailed?: Localizable };
+  career: { rating: number; advice: Localizable; direction: Localizable; bestMonths: Localizable[]; detailed?: Localizable };
+  wealth: { rating: number; mode: Localizable; advice: Localizable; bestMonths: Localizable[]; detailed?: Localizable };
+  love: { rating: number; romanceMonths: Localizable[]; soulmate: Localizable; direction: Localizable; advice: Localizable; detailed?: Localizable };
+  health: { areas: Localizable[]; vulnerableMonths: Localizable[]; remedy: Localizable; detailed?: Localizable };
+  allies: { helpful: Localizable[]; harmful: Localizable[]; detailed?: Localizable };
+  timing: Record<string, Localizable> & { detailed?: Localizable };
 }
 
 const ZODIAC_LIST_ZH = ['鼠', '牛', '虎', '兔', '龙', '蛇', '马', '羊', '猴', '鸡', '狗', '猪'];
@@ -117,6 +130,34 @@ const LOVE_ADVICE_EN: Record<string, string> = {
 const SOULMATE_ZH = ['温柔内敛型', '热情开朗型', '稳重可靠型', '聪明机敏型', '果断独立型'];
 const SOULMATE_EN = ['Gentle & reserved', 'Warm & outgoing', 'Steady & reliable', 'Smart & quick-witted', 'Decisive & independent'];
 
+export interface LocalizedReadingData {
+  overview: { keywords: string[]; body: string; detailed?: string };
+  decades: { label: string; theme: string; score: number; detail?: string; detailed?: string }[];
+  annual: { firstHalf: string; secondHalf: string; keyMonths: string[]; rating: number; detailed?: string };
+  career: { rating: number; advice: string; direction: string; bestMonths: string[]; detailed?: string };
+  wealth: { rating: number; mode: string; advice: string; bestMonths: string[]; detailed?: string };
+  love: { rating: number; romanceMonths: string[]; soulmate: string; direction: string; advice: string; detailed?: string };
+  health: { areas: string[]; vulnerableMonths: string[]; remedy: string; detailed?: string };
+  allies: { helpful: string[]; harmful: string[]; detailed?: string };
+  timing: Record<string, string> & { detailed?: string };
+}
+
+export function localizeReading(data: ReadingData, locale: 'en' | 'zh'): LocalizedReadingData {
+  const l = (v: Localizable | undefined) => localize(v ?? '', locale);
+  const la = (arr: Localizable[] | undefined) => localizeArray(arr ?? [], locale);
+  return {
+    overview: { keywords: la(data.overview.keywords), body: l(data.overview.body), detailed: l(data.overview.detailed) || undefined },
+    decades: data.decades.map(d => ({ label: l(d.label), theme: l(d.theme), score: d.score, detail: l(d.detail) || undefined, detailed: l(d.detailed) || undefined })),
+    annual: { firstHalf: l(data.annual.firstHalf), secondHalf: l(data.annual.secondHalf), keyMonths: la(data.annual.keyMonths), rating: data.annual.rating, detailed: l(data.annual.detailed) || undefined },
+    career: { rating: data.career.rating, advice: l(data.career.advice), direction: l(data.career.direction), bestMonths: la(data.career.bestMonths), detailed: l(data.career.detailed) || undefined },
+    wealth: { rating: data.wealth.rating, mode: l(data.wealth.mode), advice: l(data.wealth.advice), bestMonths: la(data.wealth.bestMonths), detailed: l(data.wealth.detailed) || undefined },
+    love: { rating: data.love.rating, romanceMonths: la(data.love.romanceMonths), soulmate: l(data.love.soulmate), direction: l(data.love.direction), advice: l(data.love.advice), detailed: l(data.love.detailed) || undefined },
+    health: { areas: la(data.health.areas), vulnerableMonths: la(data.health.vulnerableMonths), remedy: l(data.health.remedy), detailed: l(data.health.detailed) || undefined },
+    allies: { helpful: la(data.allies.helpful), harmful: la(data.allies.harmful), detailed: l(data.allies.detailed) || undefined },
+    timing: Object.fromEntries(Object.entries(data.timing).map(([k, v]) => [k, k === 'detailed' ? (l(v as Localizable) || undefined) : l(v as Localizable)])) as LocalizedReadingData['timing'],
+  };
+}
+
 function hashCode(s: string): number {
   let h = 0;
   for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
@@ -133,7 +174,7 @@ function pickMonths(birthMonth: number, count: number, locale: 'en' | 'zh'): str
   return result;
 }
 
-export function deriveFakeReading(result: ReadingResult, locale: 'en' | 'zh', birthMonth: number): ReadingData {
+export function deriveFakeReading(result: ReadingResult, locale: 'en' | 'zh', birthMonth: number): LocalizedReadingData {
   const el = result.dayElement.replace(/[^\w]/g, '') || result.strongest;
   const strongest = result.strongest;
   const seed = hashCode(result.yearPillar.full + result.dayPillar.full);
