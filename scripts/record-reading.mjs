@@ -158,11 +158,12 @@ await context.close();
 await browser.close();
 
 // Rename the video file
-const { readdirSync, renameSync } = await import('node:fs');
-const files = readdirSync(outputDir).filter(f => f.endsWith('.webm'));
+const { readdirSync, renameSync, unlinkSync } = await import('node:fs');
+const files = readdirSync(outputDir).filter(f => f.endsWith('.webm') && f.startsWith('page'));
 const latest = files.sort().pop();
 if (latest) {
   const finalPath = join(outputDir, `${videoName}.webm`);
+  if (existsSync(finalPath)) unlinkSync(finalPath);
   renameSync(join(outputDir, latest), finalPath);
   console.log(`\nVideo saved: ${finalPath}`);
 } else {
