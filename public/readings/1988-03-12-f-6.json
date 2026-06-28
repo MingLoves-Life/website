@@ -1,0 +1,161 @@
+{
+  "locale": "zh",
+  "birthInfo": {
+    "year": 1988,
+    "month": 3,
+    "day": 12,
+    "timeIndex": 6,
+    "gender": "female"
+  },
+  "bazi": {
+    "yearPillar": "戊辰",
+    "monthPillar": "甲寅",
+    "dayPillar": "丙寅",
+    "hourPillar": "甲午",
+    "zodiac": "龙",
+    "nayin": "炉中火",
+    "dayElement": "Fire",
+    "strongest": "Wood",
+    "missing": ["Metal", "Water"]
+  },
+  "reading": {
+    "overview": {
+      "keywords": [
+        { "zh": "热情奔放", "en": "Passionate" },
+        { "zh": "行动力强", "en": "Action-oriented" },
+        { "zh": "天生领袖", "en": "Natural leader" }
+      ],
+      "body": {
+        "zh": "日主丙火，如太阳当空，光芒万丈。生于寅月木旺之时，双甲透干、双寅在支，木气极旺助火燃烧。丙寅日柱坐长生，自带不竭的生命能量。时柱甲午，午火为羊刃，火势更旺。整体格局属于'火炎土燥型'——精力充沛、热情洋溢、感染力极强。你天生具有领导气质和号召力，走到哪里都是人群中的焦点。缺金缺水是命中短板，需要后天有意识地培养自律和冷静。",
+        "en": "Your Day Master is Bing Fire — like the blazing sun, radiant and powerful. Born in the Wood-dominant Yin month with double Jia Wood exposed and double Yin Wood in branches, Wood energy is extremely strong fueling your Fire. Bing-Yin day pillar sits on 'Long Life' position, carrying inexhaustible vitality. Hour pillar Jia-Wu adds Wu Fire (Blade), intensifying the blaze. Your chart type is 'Blazing Fire, Dry Earth' — energetic, passionate, and highly magnetic. You naturally possess leadership charisma and wherever you go, you become the center of attention. Missing Metal and Water are your chart's gaps, requiring conscious cultivation of discipline and composure."
+      },
+      "detailed": {
+        "zh": "深入分析这个八字：丙火女命生于初春寅月，正值木气最旺之时。甲木正印双透天干（月干、时干），寅木坐月支和日支，印星力量极其强大。这是一个典型的'身旺印旺'格局。\n\n印星（木）代表母爱、学习能力、精神追求。双印旺的女性往往：思想深度超过同龄人、求知欲强、有精神洁癖、对自己的内在世界有很高要求。但印太旺也意味着'想得太多做得太少'的倾向，容易陷入理想主义。\n\n丙火坐寅木长生，说明你的生命力和恢复力极强——即使遭遇挫折也能迅速反弹。午火羊刃在时柱代表晚年依然精力充沛，事业持续性强。但羊刃也代表性格中有刚烈的一面，不轻易服输，有时候会因为'较真'而与人产生摩擦。\n\n缺金（官杀）意味着缺乏外在约束和规则感，容易按自己的节奏行事而忽略他人的感受。缺水（财星）对女命来说也代表理财意识偏弱，需要刻意培养。整体来看，这是一个能量充沛、潜力巨大但需要'收'多过'放'的命格。学会克制和聚焦，是你此生最重要的成长课题。",
+        "en": "Deep analysis of this BaZi: Bing Fire female born in early spring Yin month, at peak Wood energy. Jia Wood (Direct Resource) appears twice in Heavenly Stems (Month and Hour), with Yin Wood in both Month and Day branches — Resource star power is extraordinarily strong. This is a classic 'Strong Self with Strong Resource' pattern.\n\nResource (Wood) represents maternal love, learning ability, and spiritual pursuit. Women with double strong Resource tend to: think deeper than peers, have intense curiosity, hold spiritual standards, and demand much from their inner world. But excessive Resource also means a tendency to 'think too much, act too little,' easily falling into idealism.\n\nBing Fire sitting on Yin Wood (Long Life position) means exceptional vitality and recovery power — even after setbacks, you bounce back rapidly. Wu Fire (Blade) at the Hour pillar indicates sustained energy even in later years, with strong career longevity. However, the Blade also represents a fierce side — never easily yielding, sometimes creating friction through stubbornness.\n\nMissing Metal (Officer/Killing) means lacking external discipline and rule-awareness, tending to follow your own rhythm while overlooking others' feelings. Missing Water (Wealth) for a female chart also suggests weaker financial management awareness — requiring deliberate cultivation. Overall, this is a chart with abundant energy and enormous potential, but needing more 'restraint' than 'release.' Learning self-control and focus is your life's most important growth lesson."
+      }
+    },
+    "decades": [
+      {
+        "label": { "zh": "第一步运（4-14岁）", "en": "Phase 1 (Age 4-14)" },
+        "theme": { "zh": "印星庇护期", "en": "Resource protection phase" },
+        "score": 70,
+        "detail": { "zh": "木火旺盛，学习能力强但性格偏执", "en": "Strong Wood-Fire, excellent learning but stubborn temperament" },
+        "detailed": { "zh": "此运走癸丑大运，癸水正官、丑土伤官。正官出现对女命来说代表纪律和框架。丑中辛金七杀暗藏，开始接触到规则和约束。这十年是被家庭和学校框架保护的阶段，学业表现通常不差（印旺），但可能与权威人物（老师、父亲）有对抗意识。丑土伤官代表创意和叛逆并存。建议：让天性中的创造力有出口，不要完全压制。", "en": "Running Gui-Chou (Water-Earth) luck. Gui Water (Direct Officer) brings discipline and structure. Hidden Xin Metal (Seven Killing) in Chou introduces rules and constraints. These ten years are spent under family/school protection with typically good academics (strong Resource), but possible resistance toward authority figures (teachers, father). Chou Earth (Hurting Officer) brings both creativity and rebellion. Advice: give natural creativity an outlet rather than fully suppressing it." }
+      },
+      {
+        "label": { "zh": "第二步运（14-24岁）", "en": "Phase 2 (Age 14-24)" },
+        "theme": { "zh": "自我绽放期", "en": "Self-blossoming" },
+        "score": 75,
+        "detail": { "zh": "比劫帮身，社交活跃，容易锋芒太露", "en": "Peer energy amplifies self, socially active but risk of overexposure" },
+        "detailed": { "zh": "此运走壬子大运，壬水偏官、子水正财。水运来临是好事——补了命中最缺的五行。壬水偏官带来事业野心和挑战精神，子水正财激活理财意识。这十年是蜕变期：从'好学生'转变为'社会人'。但注意水木相生反而助火，精力过于旺盛容易分散注意力。感情方面，子午相冲暗示情感波动大。建议：把旺盛精力集中到一个方向深耕，避免四处开花。", "en": "Running Ren-Zi (Water-Water) luck. Ren Water (Seven Killing) brings career ambition and challenge-seeking; Zi Water (Direct Wealth) activates financial awareness. Water arriving is beneficial — supplementing the chart's most missing element. These ten years mark transformation from 'good student' to 'professional.' But Water feeding Wood which feeds Fire can scatter focus through excessive energy. Emotionally, Zi-Wu clash signals significant romantic turbulence. Advice: channel abundant energy into one direction for depth, avoid spreading too thin." }
+      },
+      {
+        "label": { "zh": "第三步运（24-34岁）", "en": "Phase 3 (Age 24-34)" },
+        "theme": { "zh": "事业扩张期", "en": "Career expansion" },
+        "score": 82,
+        "detail": { "zh": "食伤生财，创意变现能力爆发", "en": "Output generates Wealth — creative monetization explodes" },
+        "detailed": { "zh": "此运走辛亥大运，辛金正官、亥水偏财。金水齐来，正是命中所需！辛金正官代表正式的职业身份认定——可能获得重要职位、资质或社会地位。亥水偏财代表额外收入渠道打开。亥中甲木长生，印星仍有根，学习能力不减。这十年是事业的黄金扩张期，适合大胆争取机会。亥寅合木，贵人运旺。但辛金克甲木，可能与母亲或女性长辈关系有张力。", "en": "Running Xin-Hai (Metal-Water) luck. Xin Metal (Direct Officer) and Hai Water (Indirect Wealth) — Metal and Water arriving together are exactly what the chart needs! Xin Metal represents formal career identity recognition — possibly gaining important positions, qualifications, or social status. Hai Water opens additional income channels. Jia Wood's Long Life position in Hai keeps learning ability intact. These ten years are golden for career expansion — seize opportunities boldly. Hai-Yin combining Wood brings benefactor luck. However, Xin Metal clashing Jia Wood may create tension with mother or elder females." }
+      },
+      {
+        "label": { "zh": "第四步运（34-44岁）", "en": "Phase 4 (Age 34-44)" },
+        "theme": { "zh": "权力巅峰期", "en": "Peak authority" },
+        "score": 88,
+        "detail": { "zh": "官印相生，地位和影响力达到顶峰", "en": "Officer-Resource synergy, status and influence peak" },
+        "detailed": { "zh": "此运走庚戌大运，庚金七杀、戌土食神。庚金七杀对身旺的丙火来说是'以杀制刃'——恰好压制午火羊刃的莽撞，让你变得更有策略和深度。戌土食神泄火生金，形成完美的'食神制杀'格局。这是你一生中最有权力感和掌控力的十年。适合担任管理者、决策者角色。戌午半合火局，仍有充足的能量支撑。这十年的关键是：学会用智慧驾驭权力，不要被权力反噬。健康方面注意心血管和情绪管理。", "en": "Running Geng-Xu (Metal-Earth) luck. Geng Metal (Seven Killing) for a strong Bing Fire creates 'Killing controls Blade' — perfectly restraining Wu Fire Blade's recklessness, making you more strategic and profound. Xu Earth (Eating God) drains Fire to produce Metal, forming a perfect 'Eating God controls Killing' pattern. These are your most powerful and authoritative ten years. Suited for manager and decision-maker roles. Xu-Wu half-combining Fire maintains sufficient energy. The key this decade: learn to wield power with wisdom, don't let power consume you. Health-wise, watch cardiovascular and emotional management." }
+      }
+    ],
+    "annual": {
+      "firstHalf": { "zh": "上半年火运旺盛，精力充沛，三月有重要项目机遇，适合主动出击", "en": "First half sees strong Fire energy and high vitality — March brings key project opportunities, ideal for taking initiative" },
+      "secondHalf": { "zh": "下半年金水渐旺，适合收缩聚焦，九月有贵人相助，十一月签约或确定合作", "en": "Second half brings growing Metal-Water, suited for consolidation — September offers benefactor support, November ideal for signing or confirming partnerships" },
+      "keyMonths": [
+        { "zh": "三月", "en": "March" },
+        { "zh": "九月", "en": "September" },
+        { "zh": "十一月", "en": "November" }
+      ],
+      "rating": 4,
+      "detailed": {
+        "zh": "2026年丙午年，丙火比肩、午火羊刃。对于本来就身旺的丙火来说，比劫年能量过于充沛，需要特别注意'控制火候'。\n\n好的方面：行动力爆棚，想做什么就能做什么，魅力指数全年在线。三月寅月印星旺，有重要的学习或提升机会（可能是培训、考证、进修）。五月午月自坐羊刃，精力最旺但也最容易冲动——重大决策一定要冷静72小时再做。\n\n需注意的方面：比劫太旺代表竞争加剧和破财风险。可能出现同事或朋友与你争抢资源的情况。午午自刑，情绪容易走极端。九月戌月食神制杀格局形成，贵人出现帮你化解压力。十一月子月正财星到，适合确定重要的财务决策或合作协议。\n\n全年核心策略：克制冲动、聚焦一件大事、学会借力。",
+        "en": "2026 is Bing-Wu (Fire-Fire) year — Bing Fire Shoulder plus Wu Fire Blade. For an already-strong Bing Fire, this peer-energy year brings excessive power requiring careful 'temperature control.'\n\nPositives: Action capacity at maximum — whatever you want to do, you can do it. Charisma index stays high all year. March (Yin month) with strong Resource brings important learning or upgrade opportunities (training, certifications, advanced study). May (Wu month) sitting on Blade means peak energy but highest impulsivity risk — cool down 72 hours before any major decision.\n\nCautions: Excessive peer energy means intensified competition and money-loss risk. Colleagues or friends may compete for your resources. Wu-Wu self-punishment can drive emotional extremes. September (Xu month) forms Eating God controls Killing pattern — a benefactor appears to help dissolve pressure. November (Zi month) brings Direct Wealth — ideal for confirming important financial decisions or partnership agreements.\n\nYear-round core strategy: Restrain impulse, focus on one big thing, learn to leverage others' strengths."
+      }
+    },
+    "career": {
+      "rating": 5,
+      "advice": { "zh": "天生适合领导者角色，创业、管理、品牌建设等需要号召力的领域", "en": "Naturally suited for leadership — entrepreneurship, management, brand-building requiring charisma" },
+      "direction": { "zh": "正西", "en": "West" },
+      "bestMonths": [
+        { "zh": "三月", "en": "March" },
+        { "zh": "九月", "en": "September" }
+      ],
+      "detailed": {
+        "zh": "丙火身旺，以食伤（土）泄秀和官杀（水）为用神。你的事业最大优势是：感染力强、行动力强、天生具有领袖气质。适合的行业方向：\n\n1. 创业/品牌：自创品牌、网红经济、个人IP打造\n2. 教育/培训：讲师、教练、知识分享者\n3. 演艺/传媒：主持人、演员、内容创作者\n4. 管理/领导：团队负责人、项目经理、部门总监\n5. 公益/社会企业：社区领袖、公益发起人\n\n发展建议：你的能量适合'站在台前'而非'幕后操作'。不要浪费天赋在完全不需要与人互动的岗位上。正西方为金方，补命中所缺，西方发展或办公室朝西有利于提升自律性和执行效率。\n\n需警惕的是：火太旺容易'烧完就走'——做事虎头蛇尾。必须培养持续经营的耐心，不要频繁换方向。找一个'金水型'（冷静、理性、善于执行细节）的搭档互补，效果翻倍。",
+        "en": "Strong Bing Fire uses Output (Earth) for expression and Officer/Killing (Water) as useful gods. Your greatest career advantage: powerful charisma, strong execution, natural leadership presence. Suitable directions:\n\n1. Entrepreneurship/Branding: Own brand, influencer economy, personal IP building\n2. Education/Training: Speaker, coach, knowledge sharer\n3. Entertainment/Media: Host, performer, content creator\n4. Management/Leadership: Team lead, project manager, department director\n5. Social Enterprise/Nonprofit: Community leader, initiative founder\n\nDevelopment advice: Your energy suits 'front stage' not 'backstage.' Don't waste your gifts in roles requiring zero human interaction. West (Metal direction) supplements what you lack — western development or west-facing office improves self-discipline and execution efficiency.\n\nWatch out for: Excessive Fire tends to 'burn hot then abandon' — starting strong but finishing weak. Must cultivate patience for sustained operation; don't frequently change directions. Find a 'Metal-Water type' partner (calm, rational, detail-execution oriented) for complementary effect — doubles your impact."
+      }
+    },
+    "wealth": {
+      "rating": 3,
+      "mode": { "zh": "偏财为主，收入波动大", "en": "Indirect wealth dominant, income fluctuates" },
+      "advice": { "zh": "赚钱能力强但守财难，需要建立系统化理财习惯", "en": "Strong earning ability but difficulty retaining — build systematic financial habits" },
+      "bestMonths": [
+        { "zh": "九月", "en": "September" },
+        { "zh": "十一月", "en": "November" }
+      ],
+      "detailed": {
+        "zh": "命中缺水（财星），财运的核心特点是：赚钱不难，守财是挑战。丙火身旺的人天生有吸引资源的能力（太阳照到哪里，哪里就有生机），但'花钱如流水'的倾向也很明显。\n\n你的财富模式是'偏财型'——收入来源多元、不稳定但上限高。可能通过副业、投资、合作项目等非传统渠道获得大笔收入，但也可能因为冲动消费、大方过头、借钱给人等原因流失。\n\n理财建议：\n1. 收入到账后立即转20-30%到不易动用的账户（定期、基金定投）\n2. 大额消费设置48小时冷静期\n3. 绝对不做担保，不借大额给非直系亲属\n4. 适合投资方向：品牌资产、知识产权、指数基金（不适合短线炒作）\n5. 34岁后走庚戌大运，金来制木，财运管理能力会明显提升\n\n正西方、正北方为利财方位。秋冬季节财运好于春夏。",
+        "en": "Missing Water (Wealth star) creates a core financial pattern: earning isn't hard, retaining is the challenge. Strong Bing Fire naturally attracts resources (where the sun shines, life flourishes), but the 'spending like water' tendency is equally obvious.\n\nYour wealth pattern is 'Indirect Wealth type' — multiple income sources, unstable but high ceiling. May earn significantly through side ventures, investments, or collaboration projects, but also lose through impulse spending, excessive generosity, or lending to others.\n\nFinancial advice:\n1. Immediately transfer 20-30% of income to hard-to-access accounts (fixed deposits, fund DCA)\n2. Set 48-hour cooling period for large purchases\n3. Absolutely never guarantee others' debts; don't lend large sums to non-immediate family\n4. Suitable investments: brand assets, intellectual property, index funds (not short-term speculation)\n5. After age 34 entering Geng-Xu luck, Metal controlling Wood improves financial management ability noticeably\n\nWest and North are wealth-favorable directions. Autumn-winter financial luck exceeds spring-summer."
+      }
+    },
+    "love": {
+      "rating": 3,
+      "romanceMonths": [
+        { "zh": "五月", "en": "May" },
+        { "zh": "十一月", "en": "November" }
+      ],
+      "soulmate": { "zh": "沉稳智慧型", "en": "Calm & wise" },
+      "direction": { "zh": "正北", "en": "North" },
+      "advice": { "zh": "感情中太强势容易吓退对方，学会示弱和接纳", "en": "Too dominant in love pushes partners away — learn vulnerability and acceptance" },
+      "detailed": {
+        "zh": "丙火女命身旺，官杀（水）为夫星。命中不见明水，说明另一半出现的方式不会太直接——可能是朋友介绍、工作认识、慢慢相处后才确认关系。辰中藏癸水正官、壬水七杀，代表潜在的两种伴侣类型：\n\n正官型（癸水）：温柔内敛、细心体贴、可能从事文职或技术类工作。相处模式是'细水长流'，需要你主动维护。\n\n七杀型（壬水）：有魄力、事业心强、可能是创业者或管理层。相处模式是'棋逢对手'，互相激发也互相较劲。\n\n对你更合适的是正官型——因为你本身能量太强，需要一个能让你放松和'关机'的伴侣，而不是另一个让你战斗的人。\n\n恋爱课题：身旺无官的女性最大的感情障碍是'太独立'——强到不需要任何人，这反而让对方找不到存在感。学会适度依赖、表达脆弱、给对方'被需要'的感觉，是你的核心功课。\n\n桃花方位正北（子水），适合通过安静场合（图书馆、学术活动、线上社群）认识有缘人。",
+        "en": "Strong Bing Fire female — Officer/Killing (Water) as husband star. No visible Water in stems means your partner won't appear dramatically — more likely through friend introductions, work acquaintance, or gradual relationship development. Hidden in Chen: Gui Water (Direct Officer) and Ren Water (Seven Killing) represent two potential partner types:\n\nDirect Officer type (Gui Water): Gentle, introverted, attentive, possibly in administrative or technical work. Relationship style: 'slow and steady,' requiring your active maintenance.\n\nSeven Killing type (Ren Water): Bold, career-driven, possibly entrepreneur or executive. Relationship style: 'worthy opponents,' mutually stimulating and competing.\n\nThe Direct Officer type suits you better — your own energy is already overwhelming, you need a partner who helps you relax and 'power down,' not another person to battle.\n\nRelationship lesson: The biggest romantic obstacle for strong women without visible Officer is 'too independent' — so self-sufficient that partners can't find their role. Learning moderate dependence, expressing vulnerability, and giving partners the feeling of 'being needed' is your core homework.\n\nPeach Blossom direction is North (Zi Water) — meet destined connections through quiet settings (libraries, academic events, online communities)."
+      }
+    },
+    "health": {
+      "areas": [
+        { "zh": "心脏血压", "en": "Heart & blood pressure" },
+        { "zh": "眼睛视力", "en": "Eyes & vision" }
+      ],
+      "vulnerableMonths": [
+        { "zh": "五月", "en": "May" },
+        { "zh": "六月", "en": "June" }
+      ],
+      "remedy": { "zh": "养心降火，控制情绪波动，保护眼睛", "en": "Calm the heart-fire, manage emotional swings, protect eyes" },
+      "detailed": {
+        "zh": "丙火身旺且木多生火，火气极盛。火主心脏、小肠、眼睛、血液循环。你是典型的'阳气过剩'体质——精力旺但容易上火、失眠、心跳加速、眼压高。\n\n具体风险点：\n1. 心血管：血压偏高风险，尤其在情绪激动或工作强度大时。建议定期监测血压\n2. 眼睛：用眼过度风险大（火炎上攻目），长期看屏幕容易干眼、视力下降\n3. 失眠：心火旺导致思维活跃难以入睡，尤其在夏季\n4. 皮肤：火旺容易皮肤敏感、泛红、长痘\n\n调养方案：\n1. 运动选择：游泳（水克火）> 瑜伽 > 跑步。避免在烈日下剧烈运动\n2. 饮食：多吃白色食物（百合、银耳、莲子）降火润肺；少辛辣、少咖啡\n3. 作息：一定要在11点前入睡，午休不超过20分钟\n4. 环境：家中多用蓝色、白色、黑色装饰（水金色系）降火\n5. 情绪：冥想或深呼吸练习必不可少，每天至少10分钟\n\n高危月份：五月六月（午未月）火气最旺时，要特别注意降温和情绪管理。",
+        "en": "Strong Bing Fire with abundant Wood feeding Fire — Fire energy is extreme. Fire governs heart, small intestine, eyes, and blood circulation. You have a classic 'Yang excess' constitution — high energy but prone to internal heat, insomnia, rapid heartbeat, and high eye pressure.\n\nSpecific risk points:\n1. Cardiovascular: Elevated blood pressure risk, especially during emotional intensity or high workload. Monitor BP regularly\n2. Eyes: High risk of eye strain (Fire flaring upward attacks eyes), prolonged screen time causes dryness and vision decline\n3. Insomnia: Heart-fire overstimulates the mind, especially in summer\n4. Skin: Excessive Fire causes sensitivity, redness, breakouts\n\nWellness plan:\n1. Exercise choices: Swimming (Water controls Fire) > Yoga > Running. Avoid intense exercise under hot sun\n2. Diet: Eat white foods (lily bulb, snow fungus, lotus seeds) to cool and moisten; reduce spicy foods and coffee\n3. Sleep: Must sleep before 11pm; naps no longer than 20 minutes\n4. Environment: Use blue, white, black decor at home (Water-Metal colors) to cool Fire\n5. Emotions: Meditation or deep breathing practice is non-negotiable — minimum 10 minutes daily\n\nHigh-risk months: May-June (Wu-Wei months) when Fire peaks — pay special attention to cooling and emotional management."
+      }
+    },
+    "allies": {
+      "helpful": [
+        { "zh": "猴", "en": "Monkey" },
+        { "zh": "鼠", "en": "Rat" }
+      ],
+      "harmful": [
+        { "zh": "狗", "en": "Dog" },
+        { "zh": "兔", "en": "Rabbit" }
+      ],
+      "detailed": {
+        "zh": "贵人分析：辰龙与申猴三合（申子辰水局），与子鼠三合。属猴和属鼠的人能为你带来'水'的冷静能量——帮你降温、提供理性建议、在你冲动时拉住你。\n\n实际应用：团队中如果有属猴或属鼠的伙伴，让他们负责需要冷静分析和细节执行的工作。你负责方向和激励，他们负责落地和风控。这种搭配效率最高。感情中，属猴和属鼠的异性与你互补性强。\n\n小人分析：辰戌相冲——属狗的人与你容易产生正面对抗，尤其在利益相关时。辰卯相害——属兔的人可能看起来温和无害，但暗中消耗你的资源或说你坏话。\n\n应对策略：不需要刻意回避这两个属相的人，但涉及金钱合作或重要委托时，多一道书面确认的程序。属狗的人直来直去，反而可以成为有建设性的'反对派'——如果你能容纳不同声音的话。",
+        "en": "Benefactor analysis: Chen (Dragon) forms three-harmony with Shen (Monkey) and Zi (Rat) for Water frame. Monkey and Rat people bring 'Water' cooling energy — helping you calm down, offering rational advice, and pulling you back when impulsive.\n\nPractical application: If your team includes Monkey or Rat members, assign them tasks requiring cool analysis and detail execution. You handle direction and motivation, they handle implementation and risk control — this pairing is most efficient. Romantically, Monkey and Rat partners offer strong complementarity.\n\nChallenger analysis: Chen-Xu (Dragon-Dog) clash creates direct confrontation, especially regarding interests. Chen-Mao (Dragon-Rabbit) harm — Rabbit people may appear gentle but quietly drain your resources or speak ill behind your back.\n\nStrategy: No need to deliberately avoid these zodiacs, but for financial cooperation or important delegations, add an extra written confirmation step. Dog people are straightforward — they can actually become constructive 'opposition' if you can tolerate different voices."
+      }
+    },
+    "timing": {
+      "跳槽": { "zh": "三月、九月", "en": "March, September" },
+      "签约": { "zh": "十一月", "en": "November" },
+      "搬家": { "zh": "八月", "en": "August" },
+      "表白": { "zh": "五月、十一月", "en": "May, November" },
+      "detailed": {
+        "zh": "择时依据：\n- 跳槽：三月寅月印星旺，有贵人引荐新机会；九月戌月食神制杀，适合进入更有挑战性的岗位\n- 签约：十一月子月正财星到，合约条件最有利，也最能冷静判断\n- 搬家：八月申月驿马星动，同时金旺补命中所缺，换环境对你有利\n- 表白/确认关系：五月午火帮身，魅力值最高时主动出击；十一月水旺，感情更容易往深入和稳定方向发展\n\n全年注意：四月辰辰自刑月，容易跟自己较劲、钻牛角尖。六月未月火土混杂，思路不清时不做重大决定。遇到犹豫时记住你的人生策略：先冷静、再行动、找人商量。",
+        "en": "Timing rationale:\n- Job change: March (Yin month) — Resource peaks with benefactor referrals; September (Xu month) — Eating God controls Killing, suited for more challenging positions\n- Signing deals: November (Zi month) — Direct Wealth arrives, contract terms most favorable, judgment clearest\n- Moving: August (Shen month) — Travel star activates, Metal supplementing your deficiency makes environment change beneficial\n- Confessing/commitment: May — Wu Fire boosts charisma to maximum for initiative; November — Water strengthens, emotions develop toward depth and stability\n\nYear-round notes: April (Chen month) self-punishment — prone to internal conflict and overthinking. June (Wei month) Fire-Earth confusion — don't make major decisions when thinking is unclear. When hesitating, remember your life strategy: cool down first, then act, consult someone."
+      }
+    }
+  }
+}

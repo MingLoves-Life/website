@@ -1,0 +1,169 @@
+{
+  "locale": "zh",
+  "birthInfo": {
+    "year": 1981,
+    "month": 12,
+    "day": 16,
+    "timeIndex": 11,
+    "gender": "female"
+  },
+  "bazi": {
+    "yearPillar": "辛酉",
+    "monthPillar": "庚子",
+    "dayPillar": "戊辰",
+    "hourPillar": "癸亥",
+    "zodiac": "鸡",
+    "nayin": "大林木",
+    "dayElement": "Earth",
+    "strongest": "Metal",
+    "missing": ["Wood", "Fire"]
+  },
+  "reading": {
+    "overview": {
+      "keywords": [
+        { "zh": "冷静深沉", "en": "Cool & profound" },
+        { "zh": "大器晚成", "en": "Late bloomer" },
+        { "zh": "外柔内刚", "en": "Gentle outside, steel inside" }
+      ],
+      "body": {
+        "zh": "日主戊土，如高山厚土，沉稳包容。生于子月水旺之时，庚辛金双透天干，金旺水旺泄土之气。戊辰日柱坐魁罡——聪慧过人、有主见、不随波逐流。时柱癸亥，癸水正财坐长生，代表财运有持续增长之象。整体格局为'土弱金水旺'——内心有主见但外表温和，属于典型的'外柔内刚'。你不争不抢但有自己的节奏，时间会证明你的选择是对的。缺木缺火是先天短板，需要主动培养热情和行动力。",
+        "en": "Your Day Master is Wu Earth — like a mighty mountain, steady and all-embracing. Born in Water-dominant Zi month with Geng and Xin Metal both exposed in stems, Metal and Water are strong, draining Earth's energy. Wu-Chen day pillar sits on Kui Gang (魁罡) — exceptionally sharp-minded, opinionated, and never follows the crowd. Hour pillar Gui-Hai places Direct Wealth on its Long Life position, signaling continuously growing financial prospects. Your chart type is 'Weak Earth with Strong Metal-Water' — internally opinionated but outwardly gentle, a classic 'soft exterior, steel interior.' You don't fight or grab, but you have your own rhythm, and time will prove your choices right. Missing Wood and Fire are innate gaps requiring active cultivation of passion and initiative."
+      },
+      "detailed": {
+        "zh": "深入分析这个八字：戊土女命生于仲冬子月，水当令，天干庚辛金双透泄身生水，地支酉子辰组成半合水局（子辰半合），水势极旺。戊土日主在这样的环境下属于偏弱——像冬天的大地，被金水包围。\n\n但戊辰日柱本身不弱。辰土是戊的根气所在，魁罡日柱赋予你超强的判断力和不服输的内核。魁罡女命的特点是：外表可能温和安静，但一旦做了决定就谁也改变不了。你的坚持不是嘴上说说，是默默做到让人服气那种。\n\n金水旺而泄土，说明你天生善于'输出'——把内在的东西转化为外在的价值。庚金食神、辛金伤官双透，代表你有双重表达天赋：食神的条理清晰 + 伤官的创意灵活。这种组合做专业技术或创意工作都很出色。\n\n癸水正财在时柱坐亥水长生，这是非常好的晚年财运信号——越老越有钱，且是靠自己的专业能力赚来的。正财代表稳定、可持续的收入模式。\n\n缺木（官杀）：对女命来说，官杀代表丈夫和事业中的权力感。缺木说明你的另一半可能出现得晚，或者你在权力结构中更倾向于'专家'而非'管理者'。缺火（印星）：印代表来自长辈的庇护和精神支撑，缺火说明你很早就需要精神独立，不太依赖他人的认可来获得安全感。\n\n整体判断：这是一个'专业型晚成'格局——前半生积累深度，后半生收获广度。你的人生曲线不是早年上升中年衰退，而是一路稳步上升、越到后期越亮眼。关键是前期不要因为'看不到成果'而放弃深耕。",
+        "en": "Deep analysis: Wu Earth female born in mid-winter Zi month with Water in season. Geng and Xin Metal double-exposed in stems drain Earth to produce Water. Earthly Branches You-Zi-Chen form a partial Water combination (Zi-Chen half-combine), making Water extremely powerful. Wu Earth Day Master in this environment is relatively weak — like winter ground surrounded by Metal and Water.\n\nHowever, the Wu-Chen day pillar itself isn't weak. Chen Earth is Wu's root energy, and the Kui Gang pillar grants you extraordinary judgment and an unyielding core. Kui Gang females characteristically appear gentle and quiet outwardly, but once a decision is made, nothing changes it. Your persistence isn't loud — it's the quiet kind that earns respect through results.\n\nStrong Metal-Water draining Earth means you're naturally gifted at 'output' — converting inner substance into external value. Geng Metal (Eating God) and Xin Metal (Hurting Officer) both exposed represent dual expression talents: Eating God's logical clarity + Hurting Officer's creative flexibility. This combination excels in either technical expertise or creative work.\n\nGui Water (Direct Wealth) at Hour pillar sitting on Hai Water (Long Life position) is an excellent late-life wealth signal — growing richer with age through professional competence. Direct Wealth represents stable, sustainable income patterns.\n\nMissing Wood (Officer/Killing): For a female chart, Officer represents husband and authority in career. Missing Wood suggests your partner may appear later in life, or you tend toward 'specialist' rather than 'manager' in power structures. Missing Fire (Resource): Resource represents elder protection and spiritual support. Missing Fire means early spiritual independence — not relying on others' approval for security.\n\nOverall assessment: This is a 'professional late-bloomer' pattern — first half of life builds depth, second half harvests breadth. Your life curve isn't early-rise-then-decline, but steady ascent with increasing brightness toward later periods. The key is not abandoning deep cultivation during early years when 'results aren't visible yet.'"
+      }
+    },
+    "decades": [
+      {
+        "label": { "zh": "第一步运（3-13岁）", "en": "Phase 1 (Age 3-13)" },
+        "theme": { "zh": "金水泄身·默默成长期", "en": "Metal-Water drainage — quiet growth" },
+        "score": 55,
+        "detail": { "zh": "金水旺泄土气，内向敏感，学习能力强但不爱表现", "en": "Strong Metal-Water drains Earth; introverted, sensitive, strong learner but reluctant to show off" },
+        "detailed": { "zh": "此步大运金水继续当令，身弱未得扶助。这十年的你像冬天里安静生长的种子——外面看不出动静，内里却在积蓄养分。学业不差（食伤旺主聪慧），但容易因为'太安静'而被忽略。可能偏内向，朋友不多但质量高。家庭氛围中缺火（温暖感不够充足），较早学会了自我安慰和独立思考。", "en": "This decade continues Metal-Water dominance without Earth support. You were like a seed growing silently in winter — no visible movement outside, but quietly accumulating nutrients within. Academics were decent (strong Output means intelligence), but you were easily overlooked for being 'too quiet.' Likely introverted with few but quality friendships. Family atmosphere lacked Fire (insufficient warmth), teaching early self-comfort and independent thinking." }
+      },
+      {
+        "label": { "zh": "第二步运（13-23岁）", "en": "Phase 2 (Age 13-23)" },
+        "theme": { "zh": "伤官见才·才华初显期", "en": "Output meets Wealth — talents emerge" },
+        "score": 65,
+        "detail": { "zh": "食伤生财格局启动，开始展露专业能力", "en": "Output-generates-Wealth pattern activates, professional abilities begin showing" },
+        "detailed": { "zh": "这十年进入食伤生财的通道——你的才华和专业技能开始转化为实际回报。伤官的创造力和食神的条理性共同作用，可能在学业或早期工作中崭露头角。但土仍偏弱，自信心还没完全建立起来。这个阶段最大的收获不是外在成就，而是'确认自己的方向'——找到了那个值得深耕的领域。感情方面，因缺木（官星），可能暗恋多于明恋，主动出击的勇气不足。", "en": "This decade enters the Output-generates-Wealth channel — your talents and professional skills begin converting into tangible returns. Hurting Officer creativity and Eating God logic work together, likely showing promise in academics or early career. But Earth remains weak, confidence not yet fully established. This phase's greatest gain isn't external achievement but 'confirming your direction' — finding the field worth deep cultivation. Romantically, with missing Wood (Officer), secret crushes likely outnumber open ones, lacking courage for initiative." }
+      },
+      {
+        "label": { "zh": "第三步运（23-33岁）", "en": "Phase 3 (Age 23-33)" },
+        "theme": { "zh": "土来帮身·根基稳固期", "en": "Earth arrives — foundation solidifies" },
+        "score": 75,
+        "detail": { "zh": "比劫帮身，自信心和行动力明显提升", "en": "Peer energy assists self — confidence and action capacity rise notably" },
+        "detailed": { "zh": "这步大运土气开始回升，帮身力量到位。你会明显感觉到'活过来了'——不再是被动等待的状态，开始有底气争取自己想要的东西。事业方面可能获得第一个有分量的职位或项目。辰土动了，辰戌冲暗示这十年有至少一次重大转折——可能是换城市、换行业、或者一段重要关系的开始/结束。整体上升但过程有波动。建议：把根扎深，不要在上升期频繁换方向。", "en": "This decade sees Earth energy recovering with genuine self-support arriving. You'll noticeably feel 'coming alive' — no longer passively waiting but gaining confidence to pursue what you want. Career may yield your first substantial position or project. Chen Earth activates, Chen-Xu clash hints at least one major turning point — possibly changing cities, industries, or a significant relationship beginning/ending. Overall upward but with process turbulence. Advice: root deeply, don't frequently change directions during an ascending period." }
+      },
+      {
+        "label": { "zh": "第四步运（33-43岁）", "en": "Phase 4 (Age 33-43)" },
+        "theme": { "zh": "火来暖局·贵人助力期", "en": "Fire warms the chart — benefactor period" },
+        "score": 85,
+        "detail": { "zh": "印星（火）终于到来，补缺最关键的五行，运势显著提升", "en": "Resource (Fire) finally arrives, filling the most critical elemental gap — fortune rises dramatically" },
+        "detailed": { "zh": "这是你命中最关键的转运期！火为印星，是你最缺的五行。当火运到来时：精神层面有了依托（可能遇到人生导师或重要贵人）、社会认可度显著提高、自我价值感增强。火生土、土生金、金生水——整个命局的循环被打通了。这十年适合：考取重要资质、接受提拔、建立个人品牌、出版作品。同时火暖冬土，身体状态和精神状态都比之前好很多。感情上也是确认终身伴侣的窗口期。", "en": "This is your chart's most critical turning period! Fire as Resource is your most deficient element. When Fire luck arrives: spiritual anchoring found (possibly meeting a life mentor or key benefactor), social recognition rises significantly, and self-worth strengthens. Fire produces Earth, Earth produces Metal, Metal produces Water — the entire chart's cycle becomes unblocked. Suited for: obtaining important credentials, accepting promotions, building personal brand, publishing work. Fire warming winter Earth also means physical and mental states improve dramatically. Romantically, this is also the window for confirming a life partner." }
+      },
+      {
+        "label": { "zh": "第五步运（43-53岁）", "en": "Phase 5 (Age 43-53)" },
+        "theme": { "zh": "官来立格·权力巅峰期", "en": "Officer establishes structure — peak authority" },
+        "score": 88,
+        "detail": { "zh": "木运（官杀）到来，事业格局正式确立，影响力达到顶峰", "en": "Wood luck (Officer/Killing) arrives — career structure formally established, influence peaks" },
+        "detailed": { "zh": "木为官杀，是戊土的'管束之力'。对于之前一直缺木的你来说，官杀到来不是压力而是'被赋予正式权力'——终于有了title、有了平台、有了说话的分量。木克土看似不利，但你此时经过火运温暖，土有根气，完全承受得住。'身旺任官'的格局成型。这十年适合担任管理者、决策者、行业权威。同时木也代表丈夫星旺——如果此前感情有缺憾，这步运有修复或确认的机会。辰中乙木被引动，暗藏的官星发力。", "en": "Wood as Officer/Killing is Wu Earth's 'governing force.' For someone who's lacked Wood until now, Officer arriving isn't pressure but 'formal power bestowal' — finally gaining title, platform, and weight in your words. Wood controlling Earth seems unfavorable, but after Fire luck's warming, your Earth has roots and can fully bear it. 'Strong self bearing Officer' pattern forms. Suited for manager, decision-maker, and industry authority roles. Wood also represents husband star strengthening — if romance had gaps before, this decade offers repair or confirmation opportunities. Yi Wood hidden in Chen gets activated, latent Officer star emerges." }
+      }
+    ],
+    "annual": {
+      "firstHalf": { "zh": "上半年火运暖局，贵人运旺。三月有重要的升职或认可机会，适合主动争取曝光", "en": "First half sees Fire warming the chart with strong benefactor energy. March offers important promotion or recognition opportunities — actively seek visibility" },
+      "secondHalf": { "zh": "下半年金水转强，适合落地执行。九月有重要财务决策窗口，十一月适合签约或确定合作", "en": "Second half sees Metal-Water strengthening — suited for execution and implementation. September offers an important financial decision window, November ideal for signing or confirming partnerships" },
+      "keyMonths": [
+        { "zh": "三月", "en": "March" },
+        { "zh": "九月", "en": "September" },
+        { "zh": "十一月", "en": "November" }
+      ],
+      "rating": 4,
+      "detailed": {
+        "zh": "2026年丙午年，丙火正印、午火正印禄。对你这个极度缺火的命局来说，这是近十年来最好的补缺年！丙火正印代表：贵人运极旺、学习和提升机会多、精神状态飞升、社会认可度显著提高。\n\n好的方面：正印年最利'被看见'和'被认可'——适合考证、进修、发表观点、建立个人影响力。三月寅月木火同旺，官印相生，可能收到重要的任命或提拔。五月午月印星最旺，精力和信心都达到年度高峰。八月申月食神旺，适合产出重要的作品或项目交付。\n\n需注意的方面：午火冲子水（月支正财），上半年可能需要在'名'和'利'之间做选择——建议选名，名到利自来。六月未月土旺但湿气重，身体容易疲劳。十月戌月辰戌冲，可能有突发变动但对你有利——打破旧局面迎来新机会。十二月子月财星最旺，年底有一笔可观的收入确认。\n\n全年核心策略：这一年的主题是'升级'——升级认知、升级身份、升级圈子。不要低调，该出手就出手。",
+        "en": "2026 is Bing-Wu (Fire-Fire) year — Bing Fire (Direct Resource) with Wu Fire as Resource's prosperity position. For your extremely Fire-deficient chart, this is the best gap-filling year in a decade! Direct Resource means: extraordinary benefactor luck, abundant learning and growth opportunities, soaring mental state, and significantly increased social recognition.\n\nPositives: Resource year most favors 'being seen' and 'being recognized' — suited for certifications, advanced study, publishing opinions, building personal influence. March (Yin month) sees Wood-Fire co-prosperity with Officer-Resource synergy — possible important appointment or promotion. May (Wu month) peaks Resource energy with maximum confidence and vitality. August (Shen month) strengthens Eating God — suited for delivering important work or project milestones.\n\nCautions: Wu Fire clashing Zi Water (Month branch Direct Wealth) — first half may require choosing between 'reputation' and 'money'; choose reputation, money follows naturally. June (Wei month) sees heavy damp Earth causing fatigue. October (Xu month) triggers Chen-Xu clash — sudden changes but favorable for you, breaking old patterns for new opportunities. December (Zi month) peaks Wealth energy with year-end income confirmation.\n\nYear-round core strategy: This year's theme is 'upgrading' — upgrading cognition, identity, and social circles. Don't stay low-profile; when it's time to move, move."
+      }
+    },
+    "career": {
+      "rating": 4,
+      "advice": { "zh": "适合需要专业深度的领域——技术、金融、研究、咨询、创意设计", "en": "Suited for fields requiring professional depth — technology, finance, research, consulting, creative design" },
+      "direction": { "zh": "正南", "en": "South" },
+      "bestMonths": [
+        { "zh": "三月", "en": "March" },
+        { "zh": "八月", "en": "August" }
+      ],
+      "detailed": {
+        "zh": "戊土日主，食伤（金）双透泄秀生财——这是'靠专业能力吃饭'的典型格局。庚金食神代表逻辑、条理、系统性思维；辛金伤官代表创意、审美、独特见解。你不是靠人脉或地位赚钱的人，而是靠'你懂别人不懂的东西'。\n\n适合的行业方向：\n1. 技术/研发：程序员、工程师、数据分析——金主精密\n2. 金融/投资：分析师、理财师——食伤生财天然组合\n3. 设计/创意：视觉设计、建筑设计——伤官主审美\n4. 咨询/顾问：管理咨询、心理咨询——食伤主输出\n5. 教育/写作：专业培训、内容创作——泄秀即是表达\n\n发展节奏建议：\n- 33岁前：打磨核心技能，成为某个领域的'绝对专家'\n- 33-43岁（火运）：借贵人之力放大影响力，获得正式认可\n- 43岁后（木运）：进入管理或创业，把积累的专业转化为权力\n\n正南方为火方，是你最需要的能量方位。南方发展或办公室朝南有利于获得贵人支持和社会认可。\n\n最大的事业瓶颈是'怕被看见'——魁罡日的人做事厉害但不爱邀功。2026年正好是突破这个瓶颈的年份。",
+        "en": "Wu Earth Day Master with Output (Metal) double-exposed draining refined energy to produce Wealth — the classic 'living by professional competence' pattern. Geng Metal (Eating God) represents logic, structure, and systematic thinking; Xin Metal (Hurting Officer) represents creativity, aesthetics, and unique insights. You don't earn through connections or status, but through 'knowing what others don't.'\n\nSuitable directions:\n1. Technology/R&D: Programming, engineering, data analysis — Metal governs precision\n2. Finance/Investment: Analyst, financial planner — Output-generates-Wealth natural combination\n3. Design/Creative: Visual design, architecture — Hurting Officer governs aesthetics\n4. Consulting/Advisory: Management consulting, psychology — Output governs expression\n5. Education/Writing: Professional training, content creation — draining refined energy IS expression\n\nDevelopment rhythm:\n- Before 33: Polish core skills, become the 'absolute expert' in one domain\n- 33-43 (Fire luck): Leverage benefactors to amplify influence, gain formal recognition\n- After 43 (Wood luck): Enter management or entrepreneurship, convert accumulated expertise into authority\n\nSouth (Fire direction) is your most needed energy direction. Southern development or south-facing office environments help attract benefactor support and social recognition.\n\nBiggest career bottleneck: 'fear of being seen' — Kui Gang people excel at work but dislike claiming credit. 2026 is precisely the year to break through this bottleneck."
+      }
+    },
+    "wealth": {
+      "rating": 4,
+      "mode": { "zh": "正财为主，稳健增长型", "en": "Direct Wealth dominant — steady growth type" },
+      "advice": { "zh": "财运靠专业能力驱动，越专业越有钱，中年后财运显著上升", "en": "Wealth driven by professional competence — greater expertise means greater wealth; significant rise after middle age" },
+      "bestMonths": [
+        { "zh": "九月", "en": "September" },
+        { "zh": "十一月", "en": "November" }
+      ],
+      "detailed": {
+        "zh": "命中财星配置相当好：月支子水正财当令有力，时干癸水正财坐亥水长生位。双正财格局代表：收入来源正当、可持续、有增长性。不是'暴富型'但绝对是'越来越有钱型'。\n\n食伤生财格局（金生水）：你的钱是从脑子里赚出来的。每一份专业积累最终都会转化为收入。这种人的财运和能力正相关——不需要靠运气或关系。\n\n财运阶段分析：\n- 23-33岁：财运开始启动但需要耐心，收入和能力成正比增长\n- 33-43岁（火运）：火生土、土生金、金生水——循环打通，财运加速。可能出现收入翻倍的节点\n- 43岁后：正官管身，收入进入'组织化'阶段——工资外加管理分红或投资收益\n\n理财建议：\n1. 你的财运模式是'复利型'——早期多投入自我提升，回报率远超金融产品\n2. 适合长期持有型投资：指数基金、不动产、知识产权\n3. 不适合短线操作和高杠杆——你的财不是'博'来的\n4. 正财为主意味着你有天然的储蓄习惯，继续保持\n5. 时柱癸亥正财长生，55岁后可能有一笔可观的被动收入（养老金、版税、投资回报等）\n\n利财方位：正北（水方）和正南（火方，补命中所缺能量）。",
+        "en": "Wealth star configuration is quite good: Month branch Zi Water (Direct Wealth) in season and powerful, Hour stem Gui Water (Direct Wealth) sitting on Hai Water Long Life position. Double Direct Wealth pattern means: legitimate, sustainable, and growing income sources. Not 'sudden fortune' but absolutely 'steadily richer' type.\n\nOutput-generates-Wealth pattern (Metal produces Water): Your money comes from your mind. Every professional accumulation eventually converts to income. This type's wealth correlates directly with ability — no luck or connections needed.\n\nWealth phase analysis:\n- Age 23-33: Wealth begins activating but requires patience; income grows proportional to ability\n- Age 33-43 (Fire luck): Fire produces Earth, Earth produces Metal, Metal produces Water — cycle unblocked, wealth accelerates. Possible income-doubling inflection point\n- After 43: Officer governs self; income enters 'organizational' phase — salary plus management dividends or investment returns\n\nFinancial advice:\n1. Your wealth pattern is 'compound interest type' — investing early in self-improvement yields returns far exceeding financial products\n2. Suited for long-term hold investments: index funds, real estate, intellectual property\n3. Not suited for short-term trading or high leverage — your wealth isn't 'gambled'\n4. Direct Wealth dominance means natural saving habits — maintain this\n5. Hour pillar Gui-Hai Direct Wealth at Long Life suggests considerable passive income after 55 (pension, royalties, investment returns, etc.)\n\nWealth-favorable directions: North (Water) and South (Fire, supplementing missing energy)."
+      }
+    },
+    "love": {
+      "rating": 3,
+      "romanceMonths": [
+        { "zh": "三月", "en": "March" },
+        { "zh": "十月", "en": "October" }
+      ],
+      "soulmate": { "zh": "温暖有才华·年长稳重型", "en": "Warm & talented · mature stable type" },
+      "direction": { "zh": "正东", "en": "East" },
+      "advice": { "zh": "不要等'完美的人'出现，学会在相处中发现对方的好；火木型伴侣最适合你", "en": "Don't wait for the 'perfect person' — learn to discover their goodness through togetherness; Fire-Wood type partners suit you best" },
+      "detailed": {
+        "zh": "戊土女命以木为夫星——命中天干无甲乙木明透，正官藏于辰中（乙木余气）。官星不透不旺，说明你的姻缘不是'早来型'，而是需要时间沉淀和相处后确认的类型。\n\n魁罡日柱女命的感情模式：标准极高、宁缺毋滥。你不是感情用事的人，选伴侣时理性成分大于感性。这保证了你不会随便将就，但也可能因为'找不到完美匹配'而推迟感情大事。\n\n适合的伴侣类型：\n- 甲木型（正官）：高大有气场、有责任感、在组织中有地位、可能从事管理或公务类工作。给你'安全感和方向感'\n- 乙木型：温柔有才华、文艺气质、善于包容和倾听。给你'被理解和被温暖'\n\n你更需要一个有'火'属性的伴侣——热情主动、能带动你、给你温暖。因为你本身太'冷'（金水旺），需要一个能融化你的人。\n\n桃花时机：\n- 33-43岁火运期间是最佳姻缘窗口——火来暖局，你会变得更温暖更有吸引力，同时贵人运旺易遇到好对象\n- 2026年丙午年正印年：桃花以'被介绍'或'通过学习/工作场合认识'的方式出现\n- 三月木旺官星有力；十月戌月引动辰戌冲，感情可能有戏剧性变化\n\n正东方（木方）为姻缘方位。适合通过专业场合、学术环境、有深度的社交活动认识有缘人。",
+        "en": "Wu Earth female uses Wood as husband star — no Jia/Yi Wood visible in stems; Officer hides within Chen (Yi Wood residual energy). Officer not exposed and not strong means your marriage isn't the 'comes early' type — requiring time, accumulation, and gradual confirmation through togetherness.\n\nKui Gang day pillar female love pattern: Extremely high standards, preferring none over settling. You're not emotionally impulsive; rationality dominates over feelings when choosing a partner. This guarantees you won't casually settle, but may delay major relationship milestones while seeking 'perfect match.'\n\nSuitable partner types:\n- Jia Wood type (Direct Officer): Tall with presence, responsible, organizationally positioned, possibly in management or civil service. Provides 'security and direction'\n- Yi Wood type: Gentle and talented, artistic temperament, skilled at understanding and listening. Provides 'being understood and warmed'\n\nYou especially need a partner with 'Fire' attributes — passionate, proactive, energizing, warming. Because you're inherently too 'cold' (strong Metal-Water), you need someone who can melt you.\n\nRomance timing:\n- Fire luck period (age 33-43) is your optimal marriage window — Fire warming the chart makes you warmer and more attractive while benefactor luck brings good prospects\n- 2026 Bing-Wu year (Resource year): Romance appears through 'introductions' or 'professional/educational settings'\n- March with strong Wood empowers Officer star; October Xu month triggers Chen-Xu clash with potentially dramatic romantic changes\n\nEast (Wood direction) is your romance direction. Meet destined connections through professional venues, academic environments, and intellectually substantial social activities."
+      }
+    },
+    "health": {
+      "areas": [
+        { "zh": "脾胃消化", "en": "Spleen & digestion" },
+        { "zh": "呼吸系统", "en": "Respiratory system" },
+        { "zh": "手脚冰凉·寒湿体质", "en": "Cold extremities · cold-damp constitution" }
+      ],
+      "vulnerableMonths": [
+        { "zh": "六月", "en": "June" },
+        { "zh": "十二月", "en": "December" }
+      ],
+      "remedy": { "zh": "暖脾祛湿、坚持有氧运动出汗、多晒太阳", "en": "Warm the spleen and dispel dampness, maintain aerobic exercise for sweating, get more sunshine" },
+      "detailed": {
+        "zh": "戊土日主缺火，金水旺——这是典型的'阳虚寒湿'体质。冬天出生的土命，像一块被冰水浸泡的土地，最大的问题是'冷'和'湿'。\n\n具体风险点：\n1. 脾胃：土主脾胃，土弱则消化功能偏弱。容易胃寒、腹胀、食欲不振、吃凉的就不舒服\n2. 呼吸系统：金旺主肺，金多不一定好——过旺的金容易引起肺燥或反复咳嗽\n3. 寒湿体质：手脚冰凉、怕冷、容易水肿、冬天尤其难熬\n4. 关节：湿气重的人关节容易酸痛，尤其是膝盖和腰部\n5. 情绪：缺火容易导致动力不足、冬季情绪低落（季节性情绪障碍倾向）\n\n调养方案：\n1. 运动首选：跑步、跳舞、热瑜伽、游泳（温水池）——关键是出汗排湿排寒\n2. 饮食：姜茶常备、红枣桂圆每日食、少冰饮少寒凉水果、早餐必须吃热的（小米粥、燕麦最佳）\n3. 晒太阳：每天至少20分钟户外阳光（补火第一法则）。冬天更要坚持\n4. 泡脚：睡前艾叶或生姜泡脚，驱寒助眠\n5. 居住环境：避免潮湿阴暗，选择阳光充足的南向房间\n6. 季节策略：夏天是你的'治疗窗口'——三伏天艾灸、冬病夏治效果翻倍\n\n高危月份：六月未月湿土当令，湿气最重；十二月子月水寒至极。这两个月特别注意保暖和温补饮食。",
+        "en": "Wu Earth Day Master missing Fire with strong Metal-Water — the classic 'Yang deficient, cold-damp' constitution. A winter-born Earth chart is like soil soaked in ice water; the biggest problems are 'cold' and 'damp.'\n\nSpecific risk points:\n1. Spleen/Stomach: Earth governs spleen/stomach; weak Earth means weak digestion. Prone to stomach coldness, bloating, poor appetite, discomfort from cold foods\n2. Respiratory: Strong Metal governs lungs; excessive Metal can cause lung dryness or recurring coughs\n3. Cold-damp constitution: Cold extremities, cold sensitivity, prone to water retention, winter especially difficult\n4. Joints: High dampness causes joint aches, especially knees and lower back\n5. Mood: Missing Fire leads to low motivation and winter mood depression (seasonal affective tendency)\n\nWellness plan:\n1. Exercise priority: Running, dancing, hot yoga, swimming (warm pools) — key is sweating to expel dampness and cold\n2. Diet: Keep ginger tea always available; eat red dates and longan daily; minimize iced drinks and cold fruits; breakfast must be warm (millet porridge, oatmeal ideal)\n3. Sunshine: At least 20 minutes outdoor sunlight daily (Fire supplementation rule #1). Even more important in winter\n4. Foot soaking: Pre-sleep foot baths with mugwort or ginger — dispels cold, aids sleep\n5. Living environment: Avoid damp, dark spaces; choose south-facing rooms with abundant sunlight\n6. Seasonal strategy: Summer is your 'treatment window' — San Fu (hottest days) moxibustion and 'winter diseases treated in summer' doubles effectiveness\n\nHigh-risk months: June (Wei month) when damp Earth peaks with maximum dampness; December (Zi month) when Water cold reaches extreme. Pay special attention to warmth and warm-tonic diet during these months."
+      }
+    },
+    "allies": {
+      "helpful": [
+        { "zh": "蛇", "en": "Snake" },
+        { "zh": "牛", "en": "Ox" }
+      ],
+      "harmful": [
+        { "zh": "兔", "en": "Rabbit" },
+        { "zh": "马", "en": "Horse" }
+      ],
+      "detailed": {
+        "zh": "贵人分析（天乙贵人法）：年干辛，贵人在寅和午。日干戊，贵人在丑和未。综合来看属蛇（巳与酉丑三合金局）和属牛（丑为戊土贵人）是你最大的贵人。\n\n实际应用：\n- 属蛇的伙伴：巳中丙火正印，能给你最缺的'温暖感'和精神支持。适合做导师、上司、或情感上信任的人\n- 属牛的伙伴：丑中己土比肩、辛金伤官，能理解你的处境并帮你把想法变成现实。适合做同事搭档或事业合伙人\n- 关系中：属蛇和属牛的异性与你有天然的吸引力和互补性\n\n小人分析：\n- 属兔（卯）：卯辰相害——属兔的人可能无意中触碰你的底线或暗中消耗你的资源\n- 属马（午）：午冲子水（你的月支正财）——属马的人可能在财务利益上与你产生冲突\n\n应对策略：属兔的人保持适当距离，不分享核心利益。属马的人可以做朋友但别合作做生意。注意：2026年是午年，流年小人星动，上半年注意同事或合作方的竞争行为。",
+        "en": "Benefactor analysis (Heavenly Noble method): Year stem Xin has nobles at Yin and Wu. Day stem Wu has nobles at Chou and Wei. Combined, Snake (Si forms three-harmony Metal frame with You and Chou) and Ox (Chou is Wu Earth's noble) are your greatest benefactors.\n\nPractical application:\n- Snake partners: Bing Fire (Direct Resource) hidden in Si provides your most needed 'warmth' and spiritual support. Suited as mentors, superiors, or emotionally trusted figures\n- Ox partners: Ji Earth (Shoulder) and Xin Metal (Hurting Officer) hidden in Chou — understand your situation and help convert ideas into reality. Suited as work partners or business associates\n- Romantically: Snake and Ox partners offer natural attraction and complementarity\n\nChallenger analysis:\n- Rabbit (Mao): Mao-Chen harm — Rabbit people may inadvertently cross your boundaries or quietly drain resources\n- Horse (Wu): Wu clashes Zi Water (your Month branch Direct Wealth) — Horse people may conflict with you on financial interests\n\nStrategy: Maintain appropriate distance from Rabbit people; don't share core interests. Horse people can be friends but avoid business partnerships. Note: 2026 is a Wu (Horse) year — annual challenger star activates; watch for competitive behavior from colleagues or partners in the first half."
+      }
+    },
+    "timing": {
+      "跳槽": { "zh": "三月、八月", "en": "March, August" },
+      "签约": { "zh": "十一月", "en": "November" },
+      "搬家": { "zh": "九月", "en": "September" },
+      "表白": { "zh": "三月、十月", "en": "March, October" },
+      "detailed": {
+        "zh": "择时依据（2026丙午年）：\n- 跳槽/求职：三月寅月木火同旺，官印相生，最佳的职位变动窗口；八月申月食神旺，适合进入技术性或专业性更强的岗位\n- 签约/合作：十一月子月正财当令，财务条款最有利，头脑最清醒冷静\n- 搬家/置业：九月戌月引动辰戌冲，'动'的能量最强，适合搬迁或环境变化。选南向或朝阳面\n- 表白/确认关系：三月寅月甲木正官最旺，正式关系最容易确定；十月亥月官星长生位，感情进入深水区\n\n全年注意：\n- 四月辰月自坐，容易思虑过重、钻牛角尖——大事缓一缓\n- 六月未月湿重，身心疲惫——以休息为主\n- 七月午月正印最旺，适合做年度最重要的决定（因为此时判断力和贵人运都最强）\n- 记住你的核心原则：'做比想更重要'——魁罡人想清楚了就执行，不要反复犹豫。",
+        "en": "Timing rationale (2026 Bing-Wu year):\n- Job change: March (Yin month) — Wood-Fire co-prosperity with Officer-Resource synergy, optimal position change window; August (Shen month) — Eating God peaks, suited for entering more technical or specialized roles\n- Signing deals: November (Zi month) — Direct Wealth in season, financial terms most favorable, clearest and calmest thinking\n- Moving: September (Xu month) — triggers Chen-Xu clash with strongest 'movement' energy, ideal for relocation or environmental change. Choose south-facing or sunny orientations\n- Confessing/commitment: March (Yin month) — Jia Wood Officer peaks, formal relationships easiest to establish; October (Hai month) — Officer reaches Long Life position, emotions enter deep territory\n\nYear-round notes:\n- April (Chen month) self-sitting — prone to overthinking and fixation; pause on big decisions\n- June (Wei month) heavy dampness — physical and mental fatigue; prioritize rest\n- July (Wu month) peaks Resource star — suited for the year's most important decision (judgment and benefactor energy both strongest)\n- Remember your core principle: 'Doing matters more than thinking' — Kui Gang people should execute once thinking is clear; don't repeatedly hesitate."
+      }
+    }
+  }
+}
