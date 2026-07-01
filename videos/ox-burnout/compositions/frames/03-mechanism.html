@@ -1,0 +1,264 @@
+<template data-composition-id="03-mechanism" data-width="1080" data-height="1920">
+<div id="root" data-composition-id="03-mechanism" data-width="1080" data-height="1920">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;900&display=swap');
+
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      font-family: 'Barlow', sans-serif;
+    }
+
+    .clip {
+      position: absolute;
+      inset: 0;
+    }
+
+    .bg {
+      background: #111111;
+    }
+
+    /* Scene 1 — conspiratorial setup */
+    .setup-line {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      text-align: center;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      font-size: 58px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: #F0ECE5;
+      will-change: opacity;
+    }
+
+    #line-but {
+      top: 200px;
+    }
+
+    #line-nobody {
+      top: 285px;
+    }
+
+    /* Scene 2 — key phrase block */
+    #label-ox {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 617px;
+      text-align: center;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      font-size: 52px;
+      line-height: 1;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #F0ECE5;
+      will-change: opacity;
+    }
+
+    #phrase-fills {
+      position: absolute;
+      left: 40px;
+      right: 40px;
+      top: 750px;
+      text-align: center;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 900;
+      font-size: 145px;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: #E85D26;
+      will-change: transform, opacity;
+    }
+
+    /* Scene 3 — supporting clause */
+    #line-before {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      top: 1050px;
+      text-align: center;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      font-size: 62px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: #F0ECE5;
+      will-change: opacity;
+    }
+
+    #line-notweak {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      top: 1135px;
+      text-align: center;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      font-size: 58px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: #F0ECE5;
+      will-change: opacity;
+    }
+
+    /* Scene 4 — structural lines */
+    #line-written {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      top: 1230px;
+      text-align: center;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 600;
+      font-size: 68px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #F0ECE5;
+      will-change: opacity;
+    }
+
+    #line-cycle {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      top: 1320px;
+      text-align: center;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 600;
+      font-size: 68px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #F0ECE5;
+      will-change: opacity;
+    }
+
+    /* Scene 5 — closing punch */
+    #line-every {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      top: 1450px;
+      text-align: center;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 900;
+      font-size: 105px;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: #E85D26;
+      will-change: opacity;
+    }
+  </style>
+
+  <!-- Track 0: full-bleed background -->
+  <div class="clip bg" data-start="0" data-duration="10.8" data-track-index="0"></div>
+
+  <!-- Track 1: kinetic type content -->
+  <div class="clip" data-start="0" data-duration="10.8" data-track-index="1">
+
+    <!-- Scene 1: conspiratorial setup -->
+    <div class="setup-line" id="line-but">But here's the pattern</div>
+    <div class="setup-line" id="line-nobody">nobody tells you:</div>
+
+    <!-- Scene 2: key phrase -->
+    <div id="label-ox">the Ox</div>
+    <div id="phrase-fills">fills other<br>people's cups</div>
+
+    <!-- Scene 3: supporting clause -->
+    <div id="line-before">before their own —</div>
+    <div id="line-notweak">not because you're weak,</div>
+
+    <!-- Scene 4: structural -->
+    <div id="line-written">but because it's written</div>
+    <div id="line-cycle">into your energy cycle.</div>
+
+    <!-- Scene 5: closing punch -->
+    <div id="line-every">Every single time.</div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+
+      const tl = gsap.timeline({ paused: true });
+
+      // ── Scene 1 (0.0 – 2.5s): Setup lines — conspiratorial fade-in ──
+      tl.fromTo(
+        '#line-but',
+        { opacity: 0 },
+        { opacity: 1, duration: 0.5, ease: 'power2.out' },
+        0.0
+      );
+      tl.fromTo(
+        '#line-nobody',
+        { opacity: 0 },
+        { opacity: 1, duration: 0.5, ease: 'power2.out' },
+        0.6
+      );
+
+      // ── Scene 2 (2.5 – 5.5s): Key phrase slams in ──
+      // "the Ox" label appears 0.3s before the big phrase
+      tl.fromTo(
+        '#label-ox',
+        { opacity: 0 },
+        { opacity: 1, duration: 0.35, ease: 'power2.out' },
+        2.2
+      );
+      // Big phrase spring-pop
+      tl.fromTo(
+        '#phrase-fills',
+        { opacity: 0, scale: 0.82, transformOrigin: '50% 50%' },
+        { opacity: 1, scale: 1, duration: 0.55, ease: 'back.out(1.4)' },
+        2.5
+      );
+
+      // ── Scene 3 (5.5 – 8.0s): Supporting clause — per-line reveal ──
+      tl.fromTo(
+        '#line-before',
+        { opacity: 0 },
+        { opacity: 1, duration: 0.45, ease: 'power2.out' },
+        5.5
+      );
+      tl.fromTo(
+        '#line-notweak',
+        { opacity: 0 },
+        { opacity: 1, duration: 0.45, ease: 'power2.out' },
+        6.3
+      );
+
+      // ── Scene 4 (8.0 – 10.0s): Structural lines — weighted fade-in ──
+      tl.fromTo(
+        '#line-written',
+        { opacity: 0 },
+        { opacity: 1, duration: 0.45, ease: 'power2.out' },
+        8.0
+      );
+      tl.fromTo(
+        '#line-cycle',
+        { opacity: 0 },
+        { opacity: 1, duration: 0.45, ease: 'power2.out' },
+        8.55
+      );
+
+      // ── Scene 5 (10.0 – 10.8s): "Every single time." — hard cut-in ──
+      tl.fromTo(
+        '#line-every',
+        { opacity: 0 },
+        { opacity: 1, duration: 0.001, ease: 'none' },
+        10.0
+      );
+
+      // Extend timeline to full duration
+      tl.to({}, { duration: 0.01 }, 10.79);
+
+      window.__timelines['03-mechanism'] = tl;
+    })();
+  </script>
+</div>
+</template>

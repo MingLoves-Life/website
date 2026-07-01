@@ -1,0 +1,111 @@
+<template data-composition-id="05-cta" data-width="1080" data-height="1920">
+<div id="root" data-composition-id="05-cta" data-width="1080" data-height="1920">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,900&display=swap');
+
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      font-family: 'Barlow', sans-serif;
+    }
+
+    .clip {
+      position: absolute;
+      inset: 0;
+    }
+
+    .text-line {
+      position: absolute;
+      left: 80px;
+      right: 80px;
+      text-align: center;
+      line-height: 1.15;
+      will-change: transform, opacity;
+    }
+
+    .question-line {
+      font-size: 68px;
+      font-weight: 400;
+      color: #F0ECE5;
+      opacity: 0;
+    }
+
+    .question-line-1 {
+      top: 545px;
+    }
+
+    .question-line-2 {
+      top: 645px;
+    }
+
+    .link-line {
+      font-size: 145px;
+      font-weight: 900;
+      color: #E85D26;
+      top: 870px;
+      opacity: 0;
+    }
+  </style>
+
+  <!-- Full-bleed background -->
+  <div class="clip" data-start="0" data-duration="5.2" data-track-index="0" style="background:#111111;"></div>
+
+  <!-- Question line 1: "Want to know when" -->
+  <div id="cta-q1" class="clip text-line question-line question-line-1" data-start="0" data-duration="5.2" data-track-index="1">
+    Want to know when
+  </div>
+
+  <!-- Question line 2: "your cycle turns?" -->
+  <div id="cta-q2" class="clip text-line question-line question-line-2" data-start="0" data-duration="5.2" data-track-index="2">
+    your cycle turns?
+  </div>
+
+  <!-- Focal: "Link in bio." -->
+  <div class="clip text-line link-line" data-start="0" data-duration="5.2" data-track-index="3" id="cta-link-line">
+    Link in bio.
+  </div>
+
+  <script>
+    (function () {
+      var q1 = document.querySelector('[data-composition-id="05-cta"] .question-line-1');
+      var q2 = document.querySelector('[data-composition-id="05-cta"] .question-line-2');
+      var link = document.querySelector('[data-composition-id="05-cta"] #cta-link-line');
+
+      var tl = gsap.timeline({ paused: true });
+
+      // Scene 1 (0.0 – 2.0s): fade in question lines
+      tl.to(q1, { opacity: 1, duration: 0.7, ease: 'power2.out' }, 0.2);
+      tl.to(q2, { opacity: 1, duration: 0.7, ease: 'power2.out' }, 0.6);
+
+      // Scene 2 (2.0 – 3.5s): "Link in bio." slams in with spring-pop
+      tl.fromTo(
+        link,
+        { opacity: 0, scale: 0.8 },
+        { opacity: 1, scale: 1.0, duration: 0.55, ease: 'back.out(1.7)' },
+        2.0
+      );
+
+      // Scene 3 (3.5 – 5.2s): ambient glow pulse on "Link in bio."
+      // Attach looping glow as onComplete callback so it only starts after slam-in
+      tl.call(function () {
+        // Pulse available window: 5.2 - 3.5 = 1.7s. Cycle = 0.75s * 2 (yoyo) = 1.5s.
+        // repeat = Math.floor(1.7 / 1.5) - 1 = 0; bump to 1 for a visible pulse.
+        gsap.set(link, { textShadow: '0 0 12px rgba(232,93,38,0.4)' });
+        gsap.to(link, {
+          textShadow: '0 0 32px rgba(232,93,38,0.8)',
+          duration: 0.75,
+          ease: 'power1.inOut',
+          repeat: 1,
+          yoyo: true,
+          repeatDelay: 0
+        });
+      }, null, 3.5);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines['05-cta'] = tl;
+    })();
+  </script>
+</div>
+</template>

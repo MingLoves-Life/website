@@ -1,0 +1,131 @@
+<template data-composition-id="01-hook" data-width="1080" data-height="1920">
+<div id="root" data-composition-id="01-hook" data-width="1080" data-height="1920">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;900&display=swap');
+
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      font-family: 'Barlow', sans-serif;
+    }
+
+    .clip {
+      position: absolute;
+      inset: 0;
+    }
+
+    .bg {
+      background: #111111;
+    }
+
+    .stage {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .years-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      /* top set inline via JS constant — 730px from top, centered */
+      top: 730px;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 48px;
+      will-change: transform, opacity;
+    }
+
+    .year {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 900;
+      font-size: 160px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: #E85D26;
+      will-change: transform, opacity;
+      opacity: 0; /* matches fromTo "from" state — seek-safe */
+    }
+
+    .accusation-line {
+      position: absolute;
+      left: 80px;
+      right: 80px;
+      top: 940px;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      font-size: 52px;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      color: #F0ECE5;
+      text-align: center;
+      will-change: opacity;
+      opacity: 0; /* matches fromTo "from" state — seek-safe */
+    }
+  </style>
+
+  <!-- Track 0: full-bleed background -->
+  <div class="clip bg" data-start="0" data-duration="3.5" data-track-index="0"></div>
+
+  <!-- Track 1: kinetic type content -->
+  <div class="clip" data-start="0" data-duration="3.5" data-track-index="1">
+    <div class="stage">
+      <div class="years-line" id="years-line">
+        <span class="year" id="y1985">1985</span>
+        <span class="year" id="y1997">1997</span>
+        <span class="year" id="y1973">1973</span>
+      </div>
+      <div class="accusation-line" id="accusation">
+        this is why you're always exhausted but never rich.
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+
+      // Layout constants — pre-calculated, never derived at tween time
+      const SLAM_Y_OFFSET = 220;   // px below final position — years slam up from here
+
+      const tl = gsap.timeline({ paused: true });
+
+      // ── Scene 1 (0.0 – 1.2s): Years slam in, staggered 0.15s per word ──
+      // Each year starts below its final position (y = +SLAM_Y_OFFSET) and slams up
+      // Using fromTo so seek-safe at t=0 (opacity:0, y offset)
+      const years = ['#y1985', '#y1997', '#y1973'];
+      const BEATS = [0.05, 0.20, 0.35]; // staggered onsets
+
+      years.forEach(function (id, i) {
+        tl.fromTo(
+          id,
+          { y: SLAM_Y_OFFSET, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.45, ease: 'power4.out' },
+          BEATS[i]
+        );
+      });
+
+      // ── Scene 2 (1.2 – 2.4s): Accusation line fades in ──
+      tl.fromTo(
+        '#accusation',
+        { opacity: 0 },
+        { opacity: 1, duration: 0.5, ease: 'power2.out' },
+        1.2
+      );
+
+      // ── Scene 3 (2.4 – 3.5s): Hold — no drift, no exit ──
+      // A small identity tween extends the timeline to full 3.5s duration.
+      tl.to({}, { duration: 0.01 }, 3.49);
+
+      window.__timelines['01-hook'] = tl;
+    })();
+  </script>
+</div>
+</template>

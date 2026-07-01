@@ -1,0 +1,135 @@
+<template data-composition-id="02-recognition" data-width="1080" data-height="1920">
+<div id="root" data-composition-id="02-recognition" data-width="1080" data-height="1920">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,700;0,900&display=swap');
+
+    #root {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      font-family: 'Barlow', sans-serif;
+    }
+
+    .clip {
+      position: absolute;
+      inset: 0;
+    }
+
+    .stage {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .line-ox-people {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      top: 516px; /* ~0.27 × 1920 — sits above center, room for two lines below */
+      font-family: 'Barlow', sans-serif;
+      font-weight: 700;
+      font-size: 90px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #F0ECE5;
+      text-align: center;
+      will-change: transform, opacity;
+      opacity: 0;
+    }
+
+    .line-hardest {
+      position: absolute;
+      left: 40px;
+      right: 40px;
+      top: 680px; /* below first line */
+      font-family: 'Barlow', sans-serif;
+      font-weight: 900;
+      font-size: 115px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: #E85D26;
+      text-align: center;
+      will-change: transform, opacity;
+      opacity: 0;
+    }
+
+    .line-in-any-room {
+      position: absolute;
+      left: 80px;
+      right: 80px;
+      top: 860px; /* below orange line */
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      font-size: 72px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: #F0ECE5;
+      text-align: center;
+      will-change: opacity;
+      opacity: 0;
+    }
+  </style>
+
+  <!-- Track 0: full-bleed background -->
+  <div class="clip" data-start="0" data-duration="5.8" data-track-index="0" style="background:#111111;"></div>
+
+  <!-- Track 1: kinetic type content -->
+  <div class="clip" data-start="0" data-duration="5.8" data-track-index="1">
+    <div class="stage">
+      <!-- Scene 1: "Ox people are" slides up -->
+      <div class="line-ox-people" id="line-ox-people">Ox people are</div>
+
+      <!-- Scene 2: "the hardest workers" spring-pops in, fire-orange -->
+      <div class="line-hardest" id="line-hardest">the hardest workers</div>
+
+      <!-- Scene 3: "in any room." fades in below -->
+      <div class="line-in-any-room" id="line-in-any-room">in any room.</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+
+      const SLIDE_OFFSET = 180; // px below final pos — "Ox people are" slides up from here
+
+      const tl = gsap.timeline({ paused: true });
+
+      // ── Scene 1 (0.0 – 1.5s): "Ox people are" slides up from below ──
+      tl.fromTo(
+        '#line-ox-people',
+        { y: SLIDE_OFFSET, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.55, ease: 'power3.out' },
+        0.0
+      );
+
+      // ── Scene 2 (1.5 – 3.2s): "the hardest workers" spring-pops in ──
+      // scale 0.85 → 1.0 with back.out overshoot — emphasis lands hard
+      tl.fromTo(
+        '#line-hardest',
+        { scale: 0.85, opacity: 0 },
+        { scale: 1.0, opacity: 1, duration: 0.55, ease: 'back.out(1.7)' },
+        1.5
+      );
+
+      // ── Scene 3 (3.2 – 4.5s): "in any room." fades in ──
+      tl.fromTo(
+        '#line-in-any-room',
+        { opacity: 0 },
+        { opacity: 1, duration: 0.45, ease: 'power2.out' },
+        3.2
+      );
+
+      // ── Scene 4 (4.5 – 5.8s): hold still — extend timeline to full 5.8s ──
+      tl.to({}, { duration: 0.01 }, 5.79);
+
+      window.__timelines['02-recognition'] = tl;
+    })();
+  </script>
+</div>
+</template>
