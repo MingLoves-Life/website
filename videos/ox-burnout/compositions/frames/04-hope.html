@@ -1,7 +1,7 @@
 <template data-composition-id="04-hope" data-width="1080" data-height="1920">
-<div id="root" data-composition-id="04-hope" data-width="1080" data-height="1920">
+<div id="root" data-composition-id="04-hope" data-width="1080" data-height="1920" data-duration="3.52">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;900&display=swap');
 
     #root {
       position: relative;
@@ -11,133 +11,68 @@
       font-family: 'Barlow', sans-serif;
     }
 
-    .clip {
+    #line-that-changes,
+    #line-but-only {
       position: absolute;
-      inset: 0;
-    }
-
-    .setup-line {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 280px;
+      left: 60px;
+      right: 60px;
       text-align: center;
-      font-family: 'Barlow', sans-serif;
-      font-weight: 400;
-      font-size: 62px;
-      line-height: 1.2;
-      color: #F0ECE5;
-      opacity: 0;
-      will-change: opacity;
-    }
-
-    .number-display {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 540px;
-      text-align: center;
-      font-family: 'Barlow', sans-serif;
-      font-weight: 900;
-      font-size: 320px;
-      line-height: 1;
-      letter-spacing: -0.04em;
-      color: #E85D26;
-      font-variant-numeric: tabular-nums;
       opacity: 0;
       will-change: opacity, transform;
     }
 
-    .condition-line {
-      position: absolute;
-      left: 80px;
-      right: 80px;
-      top: 1100px;
-      text-align: center;
-      font-family: 'Barlow', sans-serif;
-      font-weight: 600;
-      font-size: 72px;
-      line-height: 1.25;
+    #line-that-changes {
+      top: 720px;
+      font-weight: 700;
+      font-size: 80px;
       color: #F0ECE5;
-      opacity: 0;
-      will-change: opacity;
+      line-height: 1.15;
+    }
+
+    #line-but-only {
+      top: 840px;
+      font-weight: 600;
+      font-size: 56px;
+      color: #E85D26;
+      line-height: 1.2;
     }
   </style>
 
-  <!-- Full-bleed background -->
-  <div class="clip" data-start="0" data-duration="6.2" data-track-index="0" style="background: #111111;"></div>
+  <!-- Track 1: dark overlay (video is a direct child of index.html #root per framework rules) -->
+  <div id="04-hope-overlay" class="clip" data-start="0" data-duration="3.52" data-track-index="1" style="position:absolute;inset:0;background:rgba(0,0,0,0.55);"></div>
 
-  <!-- Setup line: "The shift comes after" -->
-  <div class="clip setup-line" id="setup-line" data-start="0" data-duration="6.2" data-track-index="1">
-    The shift comes after
-  </div>
-
-  <!-- Number 35 -->
-  <div class="clip number-display" id="number-display" data-start="0" data-duration="6.2" data-track-index="2">
-    0
-  </div>
-
-  <!-- Condition line: "But only if you stop first." -->
-  <div class="clip condition-line" id="condition-line" data-start="0" data-duration="6.2" data-track-index="3">
-    But only if you stop first.
+  <!-- Track 2: text content -->
+  <div id="04-hope-text-clip" class="clip" data-start="0" data-duration="3.52" data-track-index="2" style="position:relative;z-index:10;">
+    <div id="line-that-changes" data-layout-allow-occlusion="true">That changes.</div>
+    <div id="line-but-only" data-layout-allow-occlusion="true">But only at one specific point.</div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
   <script>
-    window.__timelines = window.__timelines || {};
+    (function () {
+      window.__timelines = window.__timelines || {};
 
-    const tl = gsap.timeline({ paused: true });
+      const tl = gsap.timeline({ paused: true });
 
-    const setupEl = document.getElementById('setup-line');
-    const numberEl = document.getElementById('number-display');
-    const conditionEl = document.getElementById('condition-line');
+      // t=0.00s — "That changes." slides up from +60px, power3.out 0.4s
+      tl.fromTo('#line-that-changes',
+        { opacity: 0, y: 60 },
+        { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' },
+        0.00
+      );
 
-    // Scene 1 (0.0–1.5s): setup line fades in over 0.6s
-    tl.to(setupEl, {
-      opacity: 1,
-      duration: 0.6,
-      ease: 'power2.out'
-    }, 0.0);
+      // t=1.18s — "But only at one specific point." fades in, power2.out 0.4s
+      tl.fromTo('#line-but-only',
+        { opacity: 0 },
+        { opacity: 1, duration: 0.4, ease: 'power2.out' },
+        1.18
+      );
 
-    // Scene 2 (1.5–3.5s): number fades in, then counts up 0→35 over 1.5s
-    tl.to(numberEl, {
-      opacity: 1,
-      duration: 0.3,
-      ease: 'power2.out'
-    }, 1.5);
+      // Hold to full 2.94s
+      tl.to({}, { duration: 0.01 }, 2.93);
 
-    const counter = { val: 0 };
-    tl.to(counter, {
-      val: 35,
-      duration: 1.5,
-      ease: 'power2.out',
-      onUpdate: () => {
-        numberEl.textContent = Math.round(counter.val);
-      }
-    }, 1.5);
-
-    // Scale pop when 35 lands (at 3.0s = 1.5 + 1.5)
-    tl.to(numberEl, {
-      scale: 1.12,
-      duration: 0.15,
-      ease: 'power2.in'
-    }, 3.0);
-    tl.to(numberEl, {
-      scale: 1.0,
-      duration: 0.15,
-      ease: 'back.out(1.5)'
-    }, 3.15);
-
-    // Scene 3 (3.5–5.2s): condition line fades in
-    tl.to(conditionEl, {
-      opacity: 1,
-      duration: 0.5,
-      ease: 'power2.out'
-    }, 3.5);
-
-    // Scene 4 (5.2–6.2s): hold — no new animations
-
-    window.__timelines['04-hope'] = tl;
+      window.__timelines['04-hope'] = tl;
+    })();
   </script>
 </div>
 </template>

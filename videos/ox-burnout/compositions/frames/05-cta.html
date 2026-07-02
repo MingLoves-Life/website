@@ -1,7 +1,7 @@
 <template data-composition-id="05-cta" data-width="1080" data-height="1920">
-<div id="root" data-composition-id="05-cta" data-width="1080" data-height="1920">
+<div id="root" data-composition-id="05-cta" data-width="1080" data-height="1920" data-duration="3.23">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;900&display=swap');
 
     #root {
       position: relative;
@@ -11,99 +11,112 @@
       font-family: 'Barlow', sans-serif;
     }
 
-    .clip {
+    #line-want {
       position: absolute;
-      inset: 0;
-    }
-
-    .text-line {
-      position: absolute;
-      left: 80px;
-      right: 80px;
+      left: 60px;
+      right: 60px;
+      top: 680px;
       text-align: center;
-      line-height: 1.15;
-      will-change: transform, opacity;
-    }
-
-    .question-line {
-      font-size: 68px;
-      font-weight: 400;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 500;
+      font-size: 52px;
+      line-height: 1.2;
       color: #F0ECE5;
       opacity: 0;
+      will-change: opacity;
     }
 
-    .question-line-1 {
-      top: 545px;
-    }
-
-    .question-line-2 {
-      top: 645px;
-    }
-
-    .link-line {
-      font-size: 145px;
+    #line-free {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 810px;
+      text-align: center;
+      font-family: 'Barlow', sans-serif;
       font-weight: 900;
+      font-size: 95px;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
       color: #E85D26;
-      top: 870px;
       opacity: 0;
+      will-change: transform, opacity;
+      transform-origin: 50% 50%;
+    }
+
+    #line-link {
+      position: absolute;
+      left: 60px;
+      right: 60px;
+      top: 930px;
+      text-align: center;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 1.2;
+      color: #F0ECE5;
+      opacity: 0;
+      will-change: opacity;
     }
   </style>
 
-  <!-- Full-bleed background -->
-  <div class="clip" data-start="0" data-duration="5.2" data-track-index="0" style="background:#111111;"></div>
+  <!-- Track 1: dark overlay (video lives as direct child of host root in index.html) -->
+  <div id="cta-overlay" class="clip" data-start="0" data-duration="3.23" data-track-index="1" style="position:absolute;inset:0;background:rgba(0,0,0,0.55);"></div>
 
-  <!-- Question line 1: "Want to know when" -->
-  <div id="cta-q1" class="clip text-line question-line question-line-1" data-start="0" data-duration="5.2" data-track-index="1">
-    Want to know when
+  <!-- Track 2: text content -->
+  <div id="cta-text" class="clip" data-start="0" data-duration="3.23" data-track-index="2" style="position:relative;z-index:10;">
+    <div id="line-want" data-layout-allow-occlusion="true">Want to know when yours is?</div>
+    <div id="line-free" data-layout-allow-occlusion="true">Free reading</div>
+    <div id="line-link" data-layout-allow-occlusion="true">link in bio.</div>
   </div>
 
-  <!-- Question line 2: "your cycle turns?" -->
-  <div id="cta-q2" class="clip text-line question-line question-line-2" data-start="0" data-duration="5.2" data-track-index="2">
-    your cycle turns?
-  </div>
-
-  <!-- Focal: "Link in bio." -->
-  <div class="clip text-line link-line" data-start="0" data-duration="5.2" data-track-index="3" id="cta-link-line">
-    Link in bio.
-  </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
   <script>
     (function () {
-      var q1 = document.querySelector('[data-composition-id="05-cta"] .question-line-1');
-      var q2 = document.querySelector('[data-composition-id="05-cta"] .question-line-2');
-      var link = document.querySelector('[data-composition-id="05-cta"] #cta-link-line');
+      window.__timelines = window.__timelines || {};
 
-      var tl = gsap.timeline({ paused: true });
+      const tl = gsap.timeline({ paused: true });
 
-      // Scene 1 (0.0 – 2.0s): fade in question lines
-      tl.to(q1, { opacity: 1, duration: 0.7, ease: 'power2.out' }, 0.2);
-      tl.to(q2, { opacity: 1, duration: 0.7, ease: 'power2.out' }, 0.6);
-
-      // Scene 2 (2.0 – 3.5s): "Link in bio." slams in with spring-pop
+      // t=0.00s: "Want to know when yours is?" fades in over 0.4s
       tl.fromTo(
-        link,
-        { opacity: 0, scale: 0.8 },
-        { opacity: 1, scale: 1.0, duration: 0.55, ease: 'back.out(1.7)' },
-        2.0
+        '#line-want',
+        { opacity: 0 },
+        { opacity: 1, duration: 0.4, ease: 'power2.out' },
+        0.0
       );
 
-      // Scene 3 (3.5 – 5.2s): ambient glow pulse on "Link in bio."
-      // Attach looping glow as onComplete callback so it only starts after slam-in
-      tl.call(function () {
-        // Pulse available window: 5.2 - 3.5 = 1.7s. Cycle = 0.75s * 2 (yoyo) = 1.5s.
-        // repeat = Math.floor(1.7 / 1.5) - 1 = 0; bump to 1 for a visible pulse.
-        gsap.set(link, { textShadow: '0 0 12px rgba(232,93,38,0.4)' });
-        gsap.to(link, {
-          textShadow: '0 0 32px rgba(232,93,38,0.8)',
-          duration: 0.75,
-          ease: 'power1.inOut',
-          repeat: 1,
-          yoyo: true,
-          repeatDelay: 0
-        });
-      }, null, 3.5);
+      // t=1.50s: "Free reading" slams in — scale 0.8→1.0, back.out(1.7), 0.3s
+      tl.fromTo(
+        '#line-free',
+        { opacity: 0, scale: 0.8 },
+        { opacity: 1, scale: 1.0, duration: 0.3, ease: 'back.out(1.7)' },
+        1.5
+      );
 
-      window.__timelines = window.__timelines || {};
+      // t=1.96s: "link in bio." fades in over 0.3s
+      tl.fromTo(
+        '#line-link',
+        { opacity: 0 },
+        { opacity: 1, duration: 0.3, ease: 'power2.out' },
+        1.96
+      );
+
+      // t=2.5s: glow pulse on "Free reading" — finite repeat:2, yoyo:true
+      tl.fromTo(
+        '#line-free',
+        { textShadow: '0 0 0px rgba(232,93,38,0)' },
+        {
+          textShadow: '0 0 40px rgba(232,93,38,0.9), 0 0 80px rgba(232,93,38,0.5)',
+          duration: 0.15,
+          ease: 'power1.inOut',
+          repeat: 2,
+          yoyo: true
+        },
+        2.5
+      );
+
+      // Hold to full duration 2.88s
+      tl.to({}, { duration: 0.01 }, 2.87);
+
       window.__timelines['05-cta'] = tl;
     })();
   </script>
