@@ -50,14 +50,14 @@ console.log(`Output: ${outputDir}`);
 
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({
-  viewport: { width: 390, height: 844 },
-  deviceScaleFactor: 3,
+  viewport: { width: 600, height: 1300 },
+  deviceScaleFactor: 1,
   isMobile: true,
   hasTouch: true,
   userAgent: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1',
   recordVideo: {
     dir: outputDir,
-    size: { width: 390, height: 844 },
+    size: { width: 600, height: 1300 },
   },
 });
 
@@ -157,14 +157,20 @@ await page.close();
 await context.close();
 await browser.close();
 
-// Rename the video file
+// Rename + upscale to 1080x1920
 const { readdirSync, renameSync, unlinkSync } = await import('node:fs');
+const { execSync } = await import('node:child_process');
 const files = readdirSync(outputDir).filter(f => f.endsWith('.webm') && f.startsWith('page'));
 const latest = files.sort().pop();
 if (latest) {
-  const finalPath = join(outputDir, `${videoName}.webm`);
+  const rawPath = join(outputDir, `${videoName}-raw.webm`);
+  const finalPath = join(outputDir, `${videoName}.mp4`);
+  if (existsSync(rawPath)) unlinkSync(rawPath);
   if (existsSync(finalPath)) unlinkSync(finalPath);
-  renameSync(join(outputDir, latest), finalPath);
+  renameSync(join(outputDir, latest), rawPath);
+  // upscale 600x1300 → 1080x1920, keyframe every 1s for seek
+  execSync(`ffmpeg -y -i "${rawPath}" -vf "scale=1080:1920" -c:v libx264 -r 30 -g 30 -keyint_min 30 -movflags +faststart -an -pix_fmt yuv420p "${finalPath}"`);
+  unlinkSync(rawPath);
   console.log(`\nVideo saved: ${finalPath}`);
 } else {
   console.log('\nWarning: No video file found in output directory');

@@ -79,7 +79,7 @@ export default function FreeReadingPage() {
 
   return (
     <main className="min-h-screen flex items-center justify-center px-6 py-32">
-      <div className="max-w-lg w-full">
+      <div className="max-w-xl w-full">
         {loading ? (
           <div className="flex flex-col items-center justify-center py-20">
             <div className="relative w-16 h-16 mb-6">
@@ -494,7 +494,7 @@ export default function FreeReadingPage() {
             {/* Sticky bottom CTA — hidden when revealed */}
             <PaywallOverlay>
               <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-t from-bg-primary via-bg-primary/95 to-transparent">
-                <div className="max-w-lg mx-auto">
+                <div className="max-w-xl mx-auto">
                   <Link
                     href={`/${locale}/book`}
                     onClick={() => track('reading_cta_click')}
