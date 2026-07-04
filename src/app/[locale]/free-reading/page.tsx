@@ -3,11 +3,11 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { useState, useEffect } from 'react';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
-import Link from 'next/link';
 import { getReading, type ReadingResult } from '../../../lib/reading';
 import { track } from '../../../lib/analytics';
 import { Blur, DeepBlur, PaywallOverlay, useRevealed } from '../../../components/Blur';
 import { deriveFakeReading, localizeReading, type ReadingData, type LocalizedReadingData } from '../../../lib/reading-data';
+import { ContactModal } from '../../../components/ContactModal';
 
 export default function FreeReadingPage() {
   const t = useTranslations('FreeReading');
@@ -24,6 +24,7 @@ export default function FreeReadingPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [realReading, setRealReading] = useState<ReadingData | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
   const revealed = useRevealed();
 
   useEffect(() => {
@@ -336,14 +337,13 @@ export default function FreeReadingPage() {
                     <p className="text-xs text-text-secondary mb-3">
                       {locale === 'zh' ? '完整解读包含事业方位、桃花月份、健康提醒等8个维度' : 'Full reading covers career direction, romance timing, health alerts & 5 more dimensions'}
                     </p>
-                    <Link
-                      href={`/${locale}/book`}
-                      onClick={() => track('reading_inline_cta_click')}
+                    <button
+                      onClick={() => { track('reading_inline_cta_click'); setModalOpen(true); }}
                       className="inline-flex items-center gap-1.5 px-4 py-2 bg-accent text-bg-primary text-sm font-medium rounded-lg hover:bg-accent-hover transition-colors"
                     >
                       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-                      {locale === 'zh' ? '找老师解读完整命盘' : 'Get full reading from the master'}
-                    </Link>
+                      {locale === 'zh' ? '免费获取我的命盘解读' : 'Get my free reading'}
+                    </button>
                   </div>
                 </PaywallOverlay>
 
@@ -491,18 +491,23 @@ export default function FreeReadingPage() {
                 {t('tryAgain')}
               </button>
             </div>
-            {/* Sticky bottom CTA — hidden when revealed */}
+            {/* Contact Modal */}
+            <ContactModal
+              open={modalOpen}
+              onClose={() => setModalOpen(false)}
+            />
+
+            {/* Sticky bottom CTA — hidden when revealed or modal open */}
             <PaywallOverlay>
-              <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-t from-bg-primary via-bg-primary/95 to-transparent">
+              <div className={`fixed bottom-0 left-0 right-0 z-40 p-4 bg-gradient-to-t from-bg-primary via-bg-primary/95 to-transparent transition-opacity duration-200 ${modalOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
                 <div className="max-w-xl mx-auto">
-                  <Link
-                    href={`/${locale}/book`}
-                    onClick={() => track('reading_cta_click')}
+                  <button
+                    onClick={() => { track('reading_cta_click'); setModalOpen(true); }}
                     className="flex items-center justify-center gap-2 w-full py-3.5 bg-accent text-bg-primary font-medium rounded-lg hover:bg-accent-hover transition-colors shadow-lg"
                   >
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-                    {locale === 'zh' ? '找老师看完整命盘' : 'Get your full reading from the master'}
-                  </Link>
+                    {locale === 'zh' ? '免费获取我的命盘解读' : 'Get my free reading'}
+                  </button>
                 </div>
               </div>
             </PaywallOverlay>
