@@ -1,0 +1,134 @@
+{
+  "locale": "zh",
+  "birthInfo": { "year": 1990, "month": 2, "day": 5, "timeIndex": 6, "gender": "female" },
+  "bazi": {
+    "yearPillar": "庚午",
+    "monthPillar": "戊寅",
+    "dayPillar": "壬子",
+    "hourPillar": "甲午",
+    "zodiac": "马",
+    "nayin": "壁上土",
+    "dayElement": "Water",
+    "strongest": "Fire",
+    "missing": ["Metal"]
+  },
+  "reading": {
+    "overview": {
+      "keywords": [
+        { "zh": "聪慧灵动", "en": "Intelligent" },
+        { "zh": "善于变通", "en": "Adaptable" },
+        { "zh": "财来财去", "en": "Money flows through" }
+      ],
+      "body": {
+        "zh": "日主壬水，生于寅月火土旺时，水势偏弱。壬子日柱坐下子水羊刃，自带强烈的自我意识和反弹力。庚午年生，火气旺盛，财星（火）极强，代表赚钱机会多、收入来源广。但水弱无法蓄积，财来财去是这个命格最典型的特征——进账不少，留存不多。",
+        "en": "Your Day Master is Ren Water — born in the Wood-Fire dominant Yin month, Water energy is relatively weak. Ren-Zi day pillar sits on Zi Water Blade, carrying strong self-awareness and resilience. Born in Geng-Wu (Fire) year, Fire energy is powerful — Wealth star (Fire) is extremely strong, meaning abundant earning opportunities and wide income sources. However, weak Water cannot accumulate: money flows in and flows out is the most defining pattern of this chart."
+      },
+      "detailed": {
+        "zh": "1990年庚午年，壬水日主坐子水羊刃，双午火在年柱和时柱，火势旺盛克水。这是典型的'财多身弱'格局——财星（火）太旺，身（水）不足以承载。\n\n财多身弱的核心矛盾：赚钱的机会和欲望都很强，但实际掌控财富的能力偏弱。挣多花多，容易被财所累。感情方面，官杀混杂（庚金七杀、戊土伤官透出），情感经历较复杂，容易遇到强势或难以把控的异性。\n\n壬水最大的优势是智慧和适应力。在正确的引导下，壬水可以'以柔克刚'，找到属于自己的独特节奏。子水羊刃给你足够的骨气和底气——不会轻易被人拿捏。\n\n此生最重要的课题：学会存钱、建立边界、找到稳定的'蓄水池'（长期储蓄、固定资产、稳定关系）。",
+        "en": "Born in 1990 Geng-Wu year, Ren Water Day Master sits on Zi Water Blade; double Wu Fire in Year and Hour pillars creates powerful Fire dominating Water. This is a classic 'Strong Wealth, Weak Self' pattern — Wealth star (Fire) is too dominant, and the Self (Water) lacks the strength to hold it.\n\nCore contradiction of Strong Wealth Weak Self: strong desire and opportunity to earn money, but weak capacity to actually control and retain wealth. Earn more, spend more — easily burdened by wealth. Romantically, mixed Officer-Killing (Geng Metal Seven Killing, Wu Earth Hurting Officer exposed) creates complex emotional experiences, often attracting domineering or unpredictable partners.\n\nRen Water's greatest advantage is intelligence and adaptability. With proper guidance, Ren Water can 'overcome strength through softness,' finding a unique personal rhythm. Zi Water Blade gives you sufficient backbone — you won't be easily manipulated.\n\nThis life's most important lesson: learn to save money, establish boundaries, and find stable 'reservoirs' (long-term savings, fixed assets, stable relationships)."
+      }
+    },
+    "decades": [
+      {
+        "label": { "zh": "第一步运（4-14岁）", "en": "Phase 1 (Age 4-14)" },
+        "theme": { "zh": "基础积累期", "en": "Foundation building" },
+        "score": 65,
+        "detail": { "zh": "土旺制水，学业有压力但有韧性", "en": "Strong Earth controls Water, academic pressure but resilient" },
+        "detailed": { "zh": "走己卯大运，己土正官、卯木正印。正官约束力强，家庭对你要求较高。卯木印星护身，学习能力得到滋养。整体是'被管教'的阶段，但这种管教为后来的独立奠定基础。", "en": "Running Ji-Mao luck. Ji Earth (Direct Officer) brings strong discipline; Mao Wood (Direct Resource) nurtures learning ability. Overall a 'managed' phase with high family expectations, but this discipline lays the foundation for later independence." }
+      },
+      {
+        "label": { "zh": "第二步运（14-24岁）", "en": "Phase 2 (Age 14-24)" },
+        "theme": { "zh": "自我觉醒期", "en": "Self-awakening" },
+        "score": 72,
+        "detail": { "zh": "木运生水，个性开始展现，感情萌动", "en": "Wood supports Water, personality emerges, romance awakens" },
+        "detailed": { "zh": "走庚辰大运，庚金七杀、辰土偏财。庚金七杀生水，反而帮助了壬水。辰土偏财，有额外收入机会。辰中癸水，暗藏比劫，开始建立自己的小圈子。这十年充满变化和可能性。", "en": "Running Geng-Chen luck. Geng Metal (Seven Killing) actually generates Water, supporting Ren Water. Chen Earth (Indirect Wealth) brings extra income opportunities. Hidden Gui Water in Chen builds a peer circle. These ten years are full of change and possibility." }
+      },
+      {
+        "label": { "zh": "第三步运（24-34岁）", "en": "Phase 3 (Age 24-34)" },
+        "theme": { "zh": "财运爆发期", "en": "Wealth surge" },
+        "score": 78,
+        "detail": { "zh": "火运旺财，赚钱机会多但难以留存", "en": "Fire luck boosts Wealth — many earning opportunities but hard to retain" },
+        "detailed": { "zh": "走辛巳大运，辛金正印、巳火正财。这是你人生中财运最旺的阶段。巳火正财大量涌入，收入显著提升。但身弱财旺的矛盾在此运最为突出——赚得多花得也多。辛金印星护住了你的智慧和判断力，是这十年的最大保护。关键：这十年一定要强制储蓄。", "en": "Running Xin-Si luck. Xin Metal (Direct Resource) and Si Fire (Direct Wealth). This is your life's strongest wealth luck phase. Direct Wealth pours in abundantly — income rises significantly. But the Weak Self-Strong Wealth contradiction peaks here: earn more, spend more. Xin Metal Resource protects your wisdom and judgment — the biggest protection this decade. Key: force yourself to save during these ten years." }
+      },
+      {
+        "label": { "zh": "第四步运（34-44岁）", "en": "Phase 4 (Age 34-44)" },
+        "theme": { "zh": "稳定转型期", "en": "Stabilization & transformation" },
+        "score": 80,
+        "detail": { "zh": "水运归根，开始找到自己真正的节奏", "en": "Water luck returns home, finding true personal rhythm" },
+        "detailed": { "zh": "走壬午大运，壬水比肩、午火偏财。壬水比肩帮扶日主，身强了才能留住财。这十年是你人生的转折点——从'财来财去'到真正开始积累的阶段。午火偏财仍然旺盛，但此时你的承载力变强了。是建立长期资产、固定投资的最佳时机。", "en": "Running Ren-Wu luck. Ren Water (Shoulder) strengthens the Day Master; Wu Fire (Indirect Wealth) remains active. With a stronger Self, you can now retain wealth. This decade is your life's turning point — transitioning from 'money flows through' to real accumulation. Best time to establish long-term assets and fixed investments." }
+      }
+    ],
+    "annual": {
+      "firstHalf": { "zh": "上半年木火旺盛，收入机会多，但支出也大，需严控预算", "en": "First half brings strong Wood-Fire — many income opportunities but also high spending, budget control essential" },
+      "secondHalf": { "zh": "下半年金水渐强，适合整理财务、建立储蓄计划，十月有贵人相助", "en": "Second half sees growing Metal-Water — ideal for financial organization and savings planning; October brings benefactor support" },
+      "keyMonths": [
+        { "zh": "三月", "en": "March" },
+        { "zh": "七月", "en": "July" },
+        { "zh": "十月", "en": "October" }
+      ],
+      "rating": 3,
+      "detailed": {
+        "zh": "2026年丙午流年，火气极旺，财星爆发。对于壬水来说，这是个'机会多、压力大'的年份。收入渠道大概率增加，但花销同步上升，净存下来的未必多。\n\n上半年：三月寅月木旺生水，体力和创造力最好，适合启动新项目。五月午月自刑，情绪和财务最容易出状况，避免冲动消费和冲动投资。\n\n下半年：七月申月金水同根，是全年最冷静、判断力最准的一个月，重要决策放在这里做。十月亥月，亥中壬水归根，贵人运旺，可能获得重要的援助或机遇。\n\n年度核心任务：设立一个'不可动用的账户'，每月强制存入固定金额，这是打破财来财去循环的第一步。",
+        "en": "2026 Bing-Wu year: Fire energy is overwhelming, Wealth stars explode. For Ren Water, this is a year of 'abundant opportunity, high pressure.' Income channels likely expand, but expenses rise simultaneously — net savings may not increase much.\n\nFirst half: March (Yin month) with strong Wood feeds Water — best energy and creativity, ideal for launching new projects. May (Wu month) self-punishment means highest risk of emotional and financial mishaps — avoid impulsive spending and investing.\n\nSecond half: July (Shen month) with Metal-Water sharing roots is the clearest-headed month of the year — make important decisions here. October (Hai month), Hai contains Ren Water returning home, benefactor luck peaks — important assistance or opportunities may arrive.\n\nAnnual core mission: establish an 'untouchable account' with a fixed monthly deposit — this is the first step to breaking the money-flows-through cycle."
+      }
+    },
+    "career": {
+      "rating": 3,
+      "advice": { "zh": "适合灵活性强、需要快速反应的行业，避免重复性机械工作", "en": "Suited for flexible, fast-response industries; avoid repetitive mechanical work" },
+      "direction": { "zh": "创意、传媒、咨询、金融、教育", "en": "Creative, media, consulting, finance, education" },
+      "bestMonths": [{ "zh": "三月", "en": "March" }, { "zh": "十月", "en": "October" }],
+      "detailed": {
+        "zh": "壬水日主天生具备快速学习和适应新环境的能力。最适合的职业方向是那些需要'信息处理+灵活应变'的领域：金融分析、咨询顾问、媒体传播、创意策划、教育培训。\n\n壬水的职场优势：思维敏捷、沟通能力强、能在混乱中找到规律。弱点：缺乏持续性和系统性，容易'有始无终'，在同一件事上深耕不够。\n\n当前大运（辛巳）对职业的影响：巳火正财代表主业收入稳定上升，同时有开辟副业的强烈冲动。辛金正印保护判断力不被贪婪蒙蔽。建议：主业深耕+一个副业，不要同时开三个以上。",
+        "en": "Ren Water Day Masters naturally excel at rapid learning and adapting to new environments. Best career directions are those requiring 'information processing + flexible response': financial analysis, consulting, media communications, creative planning, education and training.\n\nWorkplace strengths: sharp thinking, strong communication, finding patterns in chaos. Weaknesses: lacking persistence and systematic depth — tendency toward 'good starts, weak follow-through,' insufficient depth in any single area.\n\nCurrent luck cycle (Xin-Si) career impact: Si Fire (Direct Wealth) represents steady rise in primary income, plus strong impulse to develop side income. Xin Metal Resource protects judgment from being blinded by greed. Recommendation: deepen one primary career + one side venture — don't run three or more simultaneously."
+      }
+    },
+    "wealth": {
+      "rating": 3,
+      "mode": { "zh": "流通型财运——财来财去，广进广出", "en": "Circulator wealth pattern — money flows in and flows out freely" },
+      "advice": { "zh": "强制储蓄是第一优先，建立自动转入的长期账户", "en": "Forced savings is the first priority — establish automatic long-term transfer accounts" },
+      "bestMonths": [{ "zh": "七月", "en": "July" }, { "zh": "十月", "en": "October" }],
+      "detailed": {
+        "zh": "壬水财多身弱是标准的'流通型财运'命格。这类人的财运特点：\n\n✓ 赚钱机会多，收入渠道广，不愁没有进账\n✓ 对金钱的感知敏锐，善于发现赚钱的机会\n\n✗ 财难久留，花钱速度往往与赚钱速度持平甚至超过\n✗ 容易被'更好的机会'诱惑，频繁转换赛道导致沉淀少\n\n突破方向：\n1. 建立'财库'——命中水弱，辰戌丑未（土）是天然财库，配合投资固定资产（房产、指数基金定投）可以改善留财能力\n2. 强制储蓄机制：每月固定日期自动转入不易动用的账户，金额从小开始\n3. 避免频繁投机：短线交易是壬水最大的财务陷阱，看起来灵活实则损耗大",
+        "en": "Ren Water's Strong Wealth Weak Self is the textbook 'Circulator wealth pattern.' Characteristics:\n\n✓ Abundant earning opportunities, multiple income channels, never lacking inflow\n✓ Sharp money intuition — excellent at spotting earning opportunities\n\n✗ Wealth rarely stays long — spending speed often matches or exceeds earning speed\n✗ Easily attracted by 'better opportunities,' frequent path-switching leads to minimal accumulation\n\nBreakthrough approach:\n1. Build a 'wealth reservoir' — with weak Water in chart, Earth (Chen, Xu, Chou, Wei) represents natural wealth storage; investing in fixed assets (real estate, index fund auto-investment) improves wealth retention\n2. Forced savings mechanism: automatic transfer to a hard-to-access account on a fixed date monthly, starting with small amounts\n3. Avoid frequent speculation: short-term trading is Ren Water's biggest financial trap — appears flexible but actually highly erosive"
+      }
+    },
+    "love": {
+      "rating": 3,
+      "romanceMonths": [{ "zh": "三月", "en": "March" }, { "zh": "七月", "en": "July" }],
+      "soulmate": { "zh": "木命或金命，稳重、有担当的类型", "en": "Wood or Metal type — steady, responsible personality" },
+      "direction": { "zh": "正北或西北方向相遇概率大", "en": "High probability of meeting in North or Northwest" },
+      "advice": { "zh": "避免被激情冲昏头脑，观察对方处理钱财的方式", "en": "Avoid being swept away by passion — observe how they handle money" },
+      "detailed": {
+        "zh": "壬水女命，官杀混杂（庚金七杀、戊土伤官），感情经历通常比较复杂。吸引力强但选择标准需要调整。\n\n容易遇到的类型：强势、主见多、或者经济状况比自己好的异性。这类关系起初令人兴奋，但长期来看容易失衡。\n\n真正适合的伴侣：有稳定收入和理财习惯的木命或金命——他们能提供壬水缺乏的稳定感，同时欣赏壬水的聪慧和灵动。\n\n警惕信号：如果对方也是'花钱大手大脚'或'今朝有酒今朝醉'的类型，两人在一起财务压力会成倍放大。\n\n当前运势：巳火与日柱壬子形成冲克，感情方面有波动。有缘分但需要双方都愿意'慢下来'建立长期稳定的关系。",
+        "en": "Ren Water female with mixed Officer-Killing (Geng Metal Seven Killing, Wu Earth Hurting Officer) typically has complex romantic experiences. Strong attraction but selection criteria need adjustment.\n\nTypes commonly encountered: dominant, opinionated, or financially superior partners. These relationships start exciting but tend to become imbalanced long-term.\n\nTruly compatible partner: Wood or Metal type with stable income and good financial habits — they provide the stability Ren Water lacks, while appreciating Ren Water's intelligence and adaptability.\n\nWarning signs: if the partner also 'spends freely' or 'lives only for today,' financial pressure in the relationship doubles.\n\nCurrent fortune: Si Fire creates clash tension with Ren-Zi day pillar — romantic turbulence ahead. Connections exist but both parties need willingness to 'slow down' and build long-term stability."
+      }
+    },
+    "health": {
+      "areas": [{ "zh": "肾", "en": "Kidneys" }, { "zh": "泌尿系统", "en": "Urinary system" }],
+      "vulnerableMonths": [{ "zh": "五月", "en": "May" }, { "zh": "六月", "en": "June" }],
+      "remedy": { "zh": "补水养肾，避免过度消耗，规律作息", "en": "Nourish Water element, avoid overexertion, maintain regular sleep schedule" },
+      "detailed": {
+        "zh": "壬水日主身弱，肾与泌尿系统是需要重点关注的健康领域。水弱的人往往容易：睡眠质量差（特别是熬夜后难以恢复）、情绪容易焦虑或抑郁、腰膝酸软。\n\n火旺克水，夏季（五六月）是全年健康最需要注意的时段。这段时间容易出现：体力透支、情绪波动、婚姻或感情摩擦。\n\n调养建议：充足睡眠是第一位的（壬水靠静养补充能量）；适合游泳、瑜伽等水系运动；饮食上多补充黑色食物（黑芝麻、黑豆、黑木耳）。避免过度饮酒——酒精对壬水的损耗远大于其他日主。",
+        "en": "Ren Water Day Master with weak Water should prioritize kidneys and urinary system health. People with weak Water often experience: poor sleep quality (especially difficulty recovering after late nights), tendency toward anxiety or depression, lower back and knee weakness.\n\nStrong Fire overcomes Water — summer (May-June) requires most health attention annually. This period is prone to: physical exhaustion, emotional fluctuations, romantic or marital friction.\n\nWellness recommendations: sufficient sleep is the top priority (Ren Water recharges through rest); suitable exercises include swimming and yoga (Water-element activities); dietary focus on black foods (black sesame, black beans, wood ear mushroom). Avoid excessive alcohol — alcohol depletes Ren Water far more than other Day Masters."
+      }
+    },
+    "allies": {
+      "helpful": [{ "zh": "金命", "en": "Metal type" }, { "zh": "木命", "en": "Wood type" }],
+      "harmful": [{ "zh": "强火命", "en": "Strong Fire type" }, { "zh": "强土命", "en": "Strong Earth type" }],
+      "detailed": {
+        "zh": "贵人类型：金命（庚辛申酉）是壬水的正印和七杀，能给你提供资源、提升你的能力；木命（甲乙寅卯）是壬水的食神和伤官，能帮助你将才华变现。\n\n需要谨慎相处的类型：强火命的人（丙丁巳午年生）能量太旺，相处久了容易消耗壬水；强土命（戊己辰戌丑未年生）对壬水形成制约，容易产生压迫感。\n\n职场贵人方向：上司或合作伙伴中有金命属性的人对你最有帮助，可以有意识地建立这类关系。",
+        "en": "Benefactor types: Metal types (Geng, Xin, Shen, You) serve as Ren Water's Resource and Seven Killing — providing resources and enhancing your abilities; Wood types (Jia, Yi, Yin, Mao) serve as Eating God and Hurting Officer — helping monetize your talents.\n\nTypes requiring caution: Strong Fire types (Bing, Ding, Si, Wu year births) carry too much energy — extended time together drains Ren Water; Strong Earth types (Wu, Ji, Chen, Xu, Chou, Wei births) constrain Ren Water, easily creating a sense of suppression.\n\nWorkplace benefactor direction: supervisors or partners with Metal element attributes are most beneficial to you — consciously cultivate these relationships."
+      }
+    },
+    "timing": {
+      "跳槽": { "zh": "2026年十月亥月，贵人运旺，是最佳时机", "en": "October 2026 (Hai month) — benefactor luck peaks, best timing" },
+      "签约": { "zh": "七月申月或十月亥月，判断力最准确", "en": "July (Shen) or October (Hai) — sharpest judgment" },
+      "搬家": { "zh": "避开五月午月，选择秋冬季节", "en": "Avoid May (Wu month), choose autumn or winter" },
+      "表白": { "zh": "三月寅月或七月申月，能量最顺", "en": "March (Yin) or July (Shen) — energy flows most smoothly" },
+      "detailed": {
+        "zh": "壬水最佳行动节点：\n• 申月（七月）：金水同气，思维最清晰，判断力最准，适合做重大决策\n• 亥月（十月）：壬水归根，贵人运最旺，适合寻求帮助和建立重要关系\n• 寅月（三月）：木旺生水，精力充沛，适合启动新项目\n\n需要谨慎的节点：\n• 午月（五月）：子午相冲，壬水受克最重，避免做重要决策\n• 未月（六月）：土旺制水，财务决策容易失误\n\n总体原则：秋冬季节（金水旺）是壬水的主场，春夏（木火旺）需要更多自我保护。",
+        "en": "Ren Water's optimal action windows:\n• Shen month (July): Metal-Water aligned, clearest thinking and sharpest judgment — ideal for major decisions\n• Hai month (October): Ren Water returns home, peak benefactor luck — ideal for seeking help and establishing important relationships\n• Yin month (March): strong Wood feeds Water, peak energy — ideal for launching new projects\n\nNodes requiring caution:\n• Wu month (May): Zi-Wu clash, Ren Water under heaviest pressure — avoid important decisions\n• Wei month (June): strong Earth controls Water, financial decisions prone to error\n\nOverall principle: Autumn-Winter (Metal-Water dominant) is Ren Water's home turf; Spring-Summer (Wood-Fire dominant) requires more self-protection."
+      }
+    }
+  }
+}

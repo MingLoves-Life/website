@@ -1,0 +1,221 @@
+{
+  "locale": "zh",
+  "birthInfo": {
+    "year": 1972,
+    "month": 8,
+    "day": 16,
+    "timeIndex": 6,
+    "gender": "male"
+  },
+  "bazi": {
+    "yearPillar": "壬子",
+    "monthPillar": "戊申",
+    "dayPillar": "己卯",
+    "hourPillar": "庚午",
+    "zodiac": "鼠",
+    "nayin": "城头土",
+    "dayElement": "Earth",
+    "strongest": "Earth",
+    "missing": []
+  },
+  "reading": {
+    "overview": {
+      "keywords": [
+        { "zh": "稳重厚道", "en": "Grounded & Reliable" },
+        { "zh": "外柔内刚", "en": "Gentle Outside, Firm Inside" },
+        { "zh": "财运绵长", "en": "Steady Wealth Flow" },
+        { "zh": "贵人缘深", "en": "Strong Benefactor Luck" },
+        { "zh": "大器晚成", "en": "Late Bloomer, Big Harvest" }
+      ],
+      "body": {
+        "zh": "日主己土，如田园沃土，滋养万物而不张扬。生于申月金气渐旺，庚金伤官透时干，有独特的思维方式和表达能力。年柱壬子正财坐下，财根深固；日支卯木正官，对规则和秩序有天然的敬重。整体格局平衡，五行齐全，是一个走得稳、走得远的命格。人生前半段蓄势，四十岁之后往往迎来真正的爆发期。",
+        "en": "Day Master Ji Earth, like fertile farmland — nurturing and unpretentious. Born in the Metal-strengthening Shen month, with Geng Metal (Hurting Officer) at the Hour stem, you possess a distinctive way of thinking and expressing yourself. Year pillar Ren-Zi anchors solid Wealth roots deep below; Day branch Mao Wood (Direct Officer) brings natural respect for structure and order. This is a well-balanced chart with all five elements present — steady, sustainable, built for the long game. The first half of life builds the foundation; after forty, the real breakthrough arrives."
+      },
+      "detailed": {
+        "zh": "深入解读这个八字：己土男命生于申月，正值金气渐旺之时。庚金伤官透出时干，这是命盘中最有特色的一个结构——伤官代表创造力、独特见解和不拘常规的思维方式。与此同时，年干壬水正财得子水为根，财星有力且稳定，说明赚钱能力不差，且偏向于稳定累积型而非暴富型。\n\n日支卯木正官坐命，己土克卯木（但卯中有乙木，己土本身也是柔土，这种克制是温和的），说明你天生有责任感，对自己有要求，在职场中往往是可靠的执行者和管理者。但卯午相害需要注意，时支午火与日支卯木形成相害，在感情和工作关系中偶有摩擦，需要有意识地沟通化解。\n\n月柱戊申，戊土比肩与己土同根，申金中藏庚壬，是命盘最复杂的一柱——既有兄弟朋友的竞争，也藏着财（壬）和能力（庚）。整体来看，这是一个'内有乾坤、外表平稳'的命格，真正的能量往往在外人看不到的地方积蓄。",
+        "en": "Deep analysis: Ji Earth male born in Shen month, as Metal energy rises. Geng Metal (Hurting Officer) emerges at the Hour stem — the most distinctive feature of this chart. Hurting Officer represents creativity, unconventional thinking, and a unique way of expressing ideas. Meanwhile, Year stem Ren Water (Direct Wealth) is rooted in Zi Water below — the Wealth star is powerful and stable, indicating solid earning ability through steady accumulation rather than sudden windfalls.\n\nMao Wood (Direct Officer) sits under the Day stem — Ji Earth's gentle relationship with Mao Wood (rather than harsh clashing) shows someone with natural responsibility, self-discipline, and a reputation for being reliable in the workplace. However, Mao-Wu harm between Day and Hour branches creates occasional friction in relationships and work partnerships — conscious communication is the remedy.\n\nMonth pillar Wu-Shen holds multiple hidden energies: Wu Earth (Shoulder) brings peer competition, while hidden Geng Metal and Ren Water within Shen represent capability and wealth lurking beneath the surface. Overall this is a chart of 'quiet depth' — the real power accumulates where others cannot see it."
+      }
+    },
+    "decades": [
+      {
+        "label": { "zh": "第一步运（6-16岁）", "en": "Phase 1 (Age 6-16)" },
+        "theme": { "zh": "根基奠定期", "en": "Foundation Building" },
+        "score": 62,
+        "detail": { "zh": "木火运助学习，性格开始成形", "en": "Wood-Fire luck supports learning, character takes shape" },
+        "detailed": { "zh": "此步走丁未大运，丁火正印、未土劫财。正印入运，学习能力强，有贵师提携，家庭教育对你的影响深远。未土劫财说明兄弟朋友关系活跃，但也有破财风险（家庭财务有起伏）。整体是打基础的十年，不会特别出彩，但性格中的责任感和自律性在此期间悄然形成。建议：这十年认真读书，打好知识基础，是后期发展的核心投资。", "en": "Running Ding-Wei (Fire-Earth) luck. Ding Fire (Direct Resource) entering the luck brings strong learning ability and influential mentors — family education shapes you deeply. Wei Earth (Parallel) means active sibling/friend connections but also some financial turbulence at home. This decade is about building foundations, not shining brightly. The responsibility and self-discipline that define you later take root here. Advice: invest seriously in education — it is the single highest-return action of this phase." }
+      },
+      {
+        "label": { "zh": "第二步运（16-26岁）", "en": "Phase 2 (Age 16-26)" },
+        "theme": { "zh": "自我摸索期", "en": "Self-Discovery" },
+        "score": 58,
+        "detail": { "zh": "伤官旺，叛逆创意并存，容易走弯路", "en": "Hurting Officer peaks — rebellious, creative, prone to detours" },
+        "detailed": { "zh": "此步走丙午大运，丙火偏印、午火正印。印星旺盛，求知欲强，但丙火与庚金时干形成克制（火克金），伤官受压，这十年的创造力可能被外部环境或权威人物压制，容易感到憋屈和不被理解。午火与年支子水相冲，情感方面有较大波动，初恋或重要感情可能无疾而终。建议：接受这十年不会太顺，把精力放在积累技能而非追求认可上，是最明智的选择。", "en": "Running Bing-Wu (Fire-Fire) luck. Strong Resource energy feeds curiosity and learning, but Bing Fire clashing Geng Metal (Hurting Officer) at the Hour means creativity gets suppressed by authority or environment — frustration of being misunderstood is common this decade. Wu-Zi clash (Hour-Year branches) brings emotional turbulence; early significant relationships may not last. Advice: accept that this phase won't flow smoothly — focus on accumulating skills rather than seeking recognition." }
+      },
+      {
+        "label": { "zh": "第三步运（26-36岁）", "en": "Phase 3 (Age 26-36)" },
+        "theme": { "zh": "财运开启期", "en": "Wealth Channel Opens" },
+        "score": 72,
+        "detail": { "zh": "正财星得力，事业财务开始起步", "en": "Direct Wealth strengthens — career and finances begin to take off" },
+        "detailed": { "zh": "此步走乙巳大运，乙木正官、巳火偏印。正官入运，职场地位开始确立，有机会获得重要职位或晋升。巳火偏印助思维，巳中藏庚壬，与命盘申金形成巳申合，财官合化，是事业和财运同步提升的十年。这十年的关键是：把握住职场机会，不要因为早期的不得志而对权威有过度的抵触情绪。感情方面，乙木正官对男命来说也代表子女缘，可能在此阶段有子嗣。建议：主动寻求晋升机会，同时开始有意识地积累财富。", "en": "Running Yi-Si (Wood-Fire) luck. Yi Wood (Direct Officer) entering luck establishes professional standing — real career advancement becomes possible. Si Fire (Indirect Resource) sharpens strategic thinking; Si hidden Geng-Ren combines with chart's Shen Metal (Si-Shen combination), merging Wealth and Officer energy into a decade of simultaneous career and financial growth. Key: don't let early frustration turn into resistance toward authority — those doors are now opening. Romantically, Direct Officer for a male chart also suggests children may arrive in this phase. Advice: actively pursue promotion while beginning deliberate wealth accumulation." }
+      },
+      {
+        "label": { "zh": "第四步运（36-46岁）", "en": "Phase 4 (Age 36-46)" },
+        "theme": { "zh": "贵人鼎力期", "en": "Peak Benefactor Support" },
+        "score": 80,
+        "detail": { "zh": "甲木七杀化权，贵人助推，事业达到新高度", "en": "Jia Wood Seven Killing transforms to power — benefactors propel career to new heights" },
+        "detailed": { "zh": "此步走甲辰大运，甲木七杀、辰土劫财。甲木七杀对己土日主形成有力约束，但身强的己土能驾驭七杀，'杀化权'——这十年你会在压力和挑战中爆发出惊人的行动力和执行力。辰土劫财带来竞争，但辰中藏乙木、癸水，财官暗藏，竞争中反而有机遇。这是你人生中最有魄力、最敢于出击的十年。贵人在此阶段最为活跃，重要的合作伙伴或贵人往往在此期间出现。年龄段是36-46岁，正是很多人事业转折的黄金期。建议：大胆布局，敢于承担更大的责任，这十年的格局决定你后半生的高度。", "en": "Running Jia-Chen (Wood-Earth) luck. Jia Wood Seven Killing challenges strong Ji Earth — but a strong Day Master can harness Seven Killing's power, transforming pressure into decisive action and extraordinary execution ability. Chen Earth (Parallel) brings competition, but hidden Yi Wood and Gui Water within Chen mean opportunities emerge through the very challenges you face. This is your decade of boldest moves and greatest ambitions. Benefactors are most active now — the most important partnerships and sponsors of your life tend to appear in this phase (ages 36-46). Advice: think big, accept greater responsibilities — the scale you establish this decade defines your ceiling for the second half of life." }
+      },
+      {
+        "label": { "zh": "第五步运（46-56岁）", "en": "Phase 5 (Age 46-56)" },
+        "theme": { "zh": "财富收获期", "en": "Wealth Harvest" },
+        "score": 85,
+        "detail": { "zh": "癸水正财入运，财运达到人生巅峰", "en": "Gui Water Direct Wealth enters luck — wealth peaks across a lifetime" },
+        "detailed": { "zh": "此步走癸卯大运，癸水正财、卯木正官。正财与正官同时入运，这是命盘中最吉利的组合之一——'财官双美'格局。癸水正财对己土日主来说是最直接的财富信号，这十年收入、资产、财务状态都会有显著提升。卯木正官与日支卯木同气，官运稳固，社会地位持续上升。这十年是你把前半生积累的所有能量兑现的阶段。注意：癸水被戊土月干克制（戊癸合化火），财来财去的情况也有，理财要谨慎，不要在旺财期间大意冒进。建议：此时最适合做稳健投资，锁定长期收益，而不是追求短期暴利。", "en": "Running Gui-Mao (Water-Wood) luck. Gui Water (Direct Wealth) and Mao Wood (Direct Officer) entering simultaneously — one of the most auspicious combinations in BaZi, the 'Wealth-Officer Double Beauty' pattern. Gui Water represents the most direct wealth signal for Ji Earth Day Master — this decade brings significant growth in income, assets, and overall financial standing. Mao Wood reinforces the Day branch, stabilizing official status and social standing. This is the decade of cashing in everything accumulated in the first half of life. Caution: Wu-Gui combination (Month stem Wu Earth controls Gui Water) means wealth can flow in and out — don't grow careless during peak fortune. Advice: stable, long-term investments outperform short-term speculation in this phase." }
+      },
+      {
+        "label": { "zh": "第六步运（56-66岁）", "en": "Phase 6 (Age 56-66)" },
+        "theme": { "zh": "智慧传承期", "en": "Legacy & Wisdom" },
+        "score": 78,
+        "detail": { "zh": "壬寅运，财星有根，晚年安稳有余", "en": "Ren-Yin luck: Wealth rooted, late years secure and abundant" },
+        "detailed": { "zh": "此步走壬寅大运，壬水偏财、寅木偏官。偏财入运，偏财代表灵活收入和意外之财，晚年可能有投资收益或副业收入持续流入。寅木偏官带来一定的事务繁忙，但寅中藏甲丙戊，三元皆有，吉中带旺。这十年适合发挥人生经验，从执行者转变为指导者、顾问角色。子女和后辈的成就会给你带来极大的满足感。建议：适当放手，让下一代接班，把精力放在健康和家庭关系的经营上。", "en": "Running Ren-Yin (Water-Wood) luck. Ren Water (Indirect Wealth) brings flexible income streams — investment returns or side ventures continue flowing in later years. Yin Wood (Indirect Officer) keeps life active; hidden Jia-Bing-Wu within Yin fills the pillars with vitality. This decade suits a shift from executor to advisor, mentor, elder statesman. Children's and protégés' achievements become a deep source of fulfillment. Advice: gradually release control and let the next generation take over — redirect energy toward health and nurturing family bonds." }
+      }
+    ],
+    "annual": {
+      "firstHalf": {
+        "zh": "2026年丙午流年，丙火偏印入命，上半年思维活跃、贵人来访，三月有重要项目机遇，五月做决策需冷静72小时",
+        "en": "2026 Bing-Wu year brings Indirect Resource energy — first half sees active thinking and benefactor arrivals. March brings key project opportunities; May requires a 72-hour cooling period before major decisions"
+      },
+      "secondHalf": {
+        "zh": "下半年午火加旺，事业扩张机会明显，九月戌月形成火局，行动力达到全年高峰，十一月收尾总结，锁定全年成果",
+        "en": "Second half: Wu Fire intensifies, career expansion opportunities become clear. September (Xu month) forms a Fire combination, action capacity peaks for the year. November is ideal for consolidating and locking in annual achievements"
+      },
+      "keyMonths": [
+        { "zh": "三月", "en": "March" },
+        { "zh": "五月", "en": "May" },
+        { "zh": "九月", "en": "September" },
+        { "zh": "十一月", "en": "November" }
+      ],
+      "rating": 4,
+      "detailed": {
+        "zh": "2026丙午年，丙火偏印、午火正印，双印入流年。对己土日主来说，印星旺是'有人罩着'的信号——贵人运极旺，来自上级、导师、长辈的支持明显增加。\n\n好的方面：三月寅月，寅中甲木正官旺，有实质性的职位或业务突破机会。六月未月，己土自坐，自身状态最佳，适合推进重要谈判。九月戌月，寅午戌三合火局，行动力和影响力全年最强，是拓展人脉和项目的黄金月份。\n\n需注意：五月午月，午火与年支子水形成子午冲，情绪容易大起大落，感情和家庭关系需要特别用心维护。七月申月，申子辰三合水局，正财星聚集，财运旺但也容易在此时有较大支出。\n\n全年核心策略：主动借助贵人之力，在九月之前把重要项目推进到位，下半年收割成果。",
+        "en": "2026 Bing-Wu year: double Resource stars (Indirect and Direct) enter the flow year. For Ji Earth Day Master, strong Resource means 'someone has your back' — benefactor luck is at its strongest, with visible support from superiors, mentors, and elders.\n\nHighlights: March (Yin month) — Jia Wood Direct Officer peaks within Yin, creating real opportunity for professional breakthroughs or business expansion. June (Wei month) — Ji Earth self-sits, personal state at its best for key negotiations. September (Xu month) — Yin-Wu-Xu fire combination peaks influence and action capacity, the year's golden month for expanding networks and advancing projects.\n\nCautions: May (Wu month) — Wu-Zi clash (Hour-Year branches) amplifies emotional swings; relationships and family bonds need extra attention. July (Shen month) — Shen-Zi-Chen water combination clusters Direct Wealth, meaning both income opportunity and significant expenditure risk.\n\nYear strategy: actively leverage benefactor relationships, advance critical projects before September, then harvest results in the second half."
+      }
+    },
+    "career": {
+      "rating": 4,
+      "advice": {
+        "zh": "适合管理、咨询、需要判断力的领域，避免单纯执行型岗位，你的价值在于思维而非体力",
+        "en": "Best suited for management, consulting, or judgment-intensive roles — your value lies in thinking, not execution"
+      },
+      "direction": {
+        "zh": "西南方向（申金所在）有利，适合向西南发展或与西南方向的合作伙伴合作",
+        "en": "Southwest direction (aligned with Shen Metal) is favorable — partnerships or opportunities from the southwest tend to benefit you"
+      },
+      "bestMonths": [
+        { "zh": "三月", "en": "March" },
+        { "zh": "九月", "en": "September" }
+      ],
+      "detailed": {
+        "zh": "己土日主配庚金伤官，最适合的职业方向是：需要独特见解、创意表达或专业技能输出的领域。比如：咨询顾问、策划、教育培训、技术专家、金融分析。庚金伤官在申月得地，说明你的专业能力在同龄人中有相当竞争力，但表达方式有时会显得过于直接，需要注意与上级和客户的沟通方式。\n\n当前大运（癸卯，46-56岁）：财官双旺，是职业生涯最高光的阶段。适合在此期间确立行业地位，建立个人品牌或专业口碑。如果在这之前还没有找到自己的'专属赛道'，现在是最后的窗口期。\n\n最佳行业：房地产、金融、教育、咨询、土地资产相关（五行属土的行业与己土共鸣）。",
+        "en": "Ji Earth Day Master with Geng Metal Hurting Officer points toward careers requiring unique perspectives, creative expression, or specialized expertise: consulting, strategy, education and training, technical specialist roles, financial analysis. Geng Metal at its home ground (Shen month) means your professional capabilities are genuinely competitive among peers, though communication style can come across as overly direct — worth calibrating with superiors and clients.\n\nCurrent luck phase (Gui-Mao, age 46-56): Both Wealth and Officer stars are at their strongest. This is the career highlight decade — the right time to establish industry standing, build a personal brand, or cement professional reputation. If you haven't yet found your dedicated lane, this is the last optimal window.\n\nBest industries: real estate, finance, education, consulting, land and physical assets (Earth-element industries resonate with Ji Earth)."
+      }
+    },
+    "wealth": {
+      "rating": 4,
+      "mode": {
+        "zh": "正财为主，偏财辅助——稳定收入是基础，副业和投资收益是加速器",
+        "en": "Direct Wealth as foundation, Indirect Wealth as accelerator — stable income base with investment/side income as multiplier"
+      },
+      "advice": {
+        "zh": "财根深固，适合长期持有型投资，不适合频繁短炒，耐心是你最大的财富工具",
+        "en": "Wealth roots run deep — long-term holding investments suit you far better than frequent trading; patience is your greatest wealth tool"
+      },
+      "bestMonths": [
+        { "zh": "七月", "en": "July" },
+        { "zh": "十一月", "en": "November" }
+      ],
+      "detailed": {
+        "zh": "壬子年柱，正财坐子水，财根在年柱，代表财富积累从早期就有基础，但真正爆发在中年之后。己土克壬水（土克水），对财的控制欲和管理能力强，但有时候会'压财'——过度保守而错失机会。\n\n财运模式分析：申月藏壬水，偏财暗藏，说明除了主业收入外，会有隐性的偏财来源（投资、兼职、意外收益）。但申中庚金生壬水（金生水），财运容易受到职业能力和个人努力的影响——越努力提升专业能力，财运越旺。\n\n理财建议：50岁之前以稳健为主，房产、指数基金、长期存款适合你的财运模式。不适合做高风险投机，也不适合轻易借钱给他人（土克水，借出去的钱容易打水漂）。50岁之后偏财运旺，可以适当增加灵活投资的比例。",
+        "en": "Year pillar Ren-Zi anchors Direct Wealth in Zi Water — wealth accumulation has roots from early on, but the real surge comes after midlife. Ji Earth controlling Ren Water means strong wealth management instincts, but sometimes this becomes over-conservatism — missing opportunities by holding too tight.\n\nWealth pattern: Shen month hides Ren Water (Indirect Wealth), meaning income sources beyond the main job exist in subtle forms — investments, side work, unexpected windfalls. Crucially, Geng Metal within Shen produces Ren Water (Metal generates Water), linking your wealth directly to your professional capabilities — the more you invest in your expertise, the stronger the financial return.\n\nWealth management: before age 50, prioritize stability — real estate, index funds, long-term deposits align well with your wealth pattern. High-risk speculation doesn't suit you, nor does lending money easily (Earth controlling Water means lent money rarely returns). After 50, Indirect Wealth energy rises — gradually increasing flexible investment allocation becomes appropriate."
+      }
+    },
+    "love": {
+      "rating": 3,
+      "romanceMonths": [
+        { "zh": "二月", "en": "February" },
+        { "zh": "八月", "en": "August" }
+      ],
+      "soulmate": {
+        "zh": "属兔或属蛇的伴侣有缘分，年龄相近或略小，性格独立有主见",
+        "en": "Partners born in Rabbit or Snake year share strong affinity — similar age or slightly younger, independent and opinionated"
+      },
+      "direction": {
+        "zh": "正东方向（卯木方位）有利于桃花，可多在东方向的场合拓展感情缘分",
+        "en": "Due East direction (Mao Wood) is favorable for romance — expanding social circles in eastern locations increases romantic opportunities"
+      },
+      "advice": {
+        "zh": "卯午相害影响感情稳定性，需要主动化解沟通摩擦，不要让小事积累成大裂痕",
+        "en": "Mao-Wu harm creates friction in close relationships — proactively address communication frictions before small issues become deep cracks"
+      },
+      "detailed": {
+        "zh": "己土男命，日支卯木为正官（官星对男命代表纪律、责任，同时也反映感情中的对外投入），时支午火为正印（正印代表母亲、精神支持）。卯午相害是命盘中感情关系的核心挑战——它不是大冲突，而是持续的小摩擦和不理解，容易让感情慢慢消磨。\n\n伴侣画像：命盘中卯木最旺，己土正官星，伴侣倾向于有主见、独立、注重规则和秩序的类型。属兔（卯）或属蛇（巳，与申合）的伴侣与命盘有合化关系，缘分较深。\n\n感情节奏：前半生感情较为波折（子午冲影响年轻时的感情），中年之后感情趋于稳定。壬癸大运期间（46-56岁），正财星入运，对男命来说也代表与伴侣的关系进入最稳定和融洽的阶段。\n\n建议：不要把工作上的压力带回家，卯午相害在疲惫和压力下更容易触发，主动创造两人独处的轻松时光是维系感情的最佳策略。",
+        "en": "Ji Earth male, Day branch Mao Wood is Direct Officer (for males, Officer represents discipline, responsibility, and outward investment in relationships); Hour branch Wu Fire is Direct Resource (nurturing energy, maternal support). Mao-Wu harm is the central relationship challenge in this chart — not explosive conflict, but sustained low-level friction and misunderstanding that gradually erodes closeness.\n\nPartner profile: Mao Wood is strongest in the chart; Ji Earth's Direct Officer points toward partners who are independent, opinionated, and structure-oriented. Rabbit (Mao) or Snake (Si, combining with Shen) year partners share combination relationships with this chart — deeper affinity.\n\nRelationship rhythm: first half of life sees more romantic turbulence (Zi-Wu clash affects younger years); midlife brings stabilization. During Gui-Mao luck phase (age 46-56), Direct Wealth energy entering luck — for a male chart, this also signals the most stable and harmonious period with a long-term partner.\n\nAdvice: don't bring workplace stress home. Mao-Wu harm triggers most easily under fatigue and pressure — proactively creating relaxed, dedicated time together is the single most effective relationship maintenance strategy."
+      }
+    },
+    "health": {
+      "areas": [
+        { "zh": "脾胃消化系统", "en": "Digestive system & spleen-stomach" },
+        { "zh": "心血管系统", "en": "Cardiovascular system" },
+        { "zh": "腰肾", "en": "Lumbar & kidneys" }
+      ],
+      "vulnerableMonths": [
+        { "zh": "五月", "en": "May" },
+        { "zh": "十一月", "en": "November" }
+      ],
+      "remedy": {
+        "zh": "养脾胃为先，规律饮食，减少忧思；中年后注意心血管定期检查",
+        "en": "Prioritize digestive health through regular meals and reducing overthinking; schedule cardiovascular check-ups from midlife onward"
+      },
+      "detailed": {
+        "zh": "己土日主，土对应脾胃消化系统，是健康的核心需要关注的部位。土旺的人容易因为思虑过重而损伤脾胃——'思伤脾'在你身上体现得很明显，工作压力大时首先反应在胃部不适上。\n\n年柱壬子正财，水旺克土，长期来看肾和腰部需要保养，尤其是40岁之后要注意腰椎问题。时柱庚午，午火生土，心脏和血液循环系统在中年后需要定期检查。\n\n五月（午月）子午冲，情绪波动最大，心血管风险最高。十一月（子月）子水冲午火，脾胃最弱，注意饮食保暖。\n\n调理建议：保持规律作息，减少忧思（土的克星是思虑过度），适当增加运动（金克木，卯木正官主四肢，运动能激活正官的活力）。中年后每年做一次心血管检查，是最划算的健康投资。",
+        "en": "Ji Earth Day Master — Earth corresponds to the digestive system (spleen-stomach), the primary health focus. Strong Earth types are vulnerable to digestive issues caused by excessive worry — 'overthinking damages the spleen' shows up clearly in this chart; work stress first manifests as stomach discomfort.\n\nYear pillar Ren-Zi: strong Water controlling Earth means kidneys and lumbar spine need long-term care, especially lumbar vertebrae issues after age 40. Hour pillar Geng-Wu: Wu Fire generating Earth points to cardiovascular health needing regular monitoring from midlife.\n\nVulnerable periods: May (Wu month) — Zi-Wu clash maximizes emotional swings, highest cardiovascular stress. November (Zi month) — Zi Water clashing Wu Fire weakens digestive system most; prioritize warming foods and regular meals.\n\nWellness approach: maintain consistent sleep schedule, actively reduce rumination (Earth's greatest threat is overthinking), incorporate regular physical activity (movement activates the Wood Direct Officer energy, energizing the body). Annual cardiovascular check-up from midlife onward is the highest-return health investment."
+      }
+    },
+    "allies": {
+      "helpful": [
+        { "zh": "属牛（丑）和属蛇（巳）的贵人", "en": "Ox (Chou) and Snake (Si) benefactors" },
+        { "zh": "属兔（卯）的合作伙伴", "en": "Rabbit (Mao) partners" }
+      ],
+      "harmful": [
+        { "zh": "属马（午）容易与你产生隐性摩擦", "en": "Horse (Wu) people create subtle ongoing friction" },
+        { "zh": "属羊（未）在竞争中容易形成阻碍", "en": "Goat (Wei) people may become competitive obstacles" }
+      ],
+      "detailed": {
+        "zh": "贵人推导：日干己土，天乙贵人在子（鼠）和申（猴），年支子鼠已在命盘，申月又是出生月，说明命中贵人缘深，尤其是与属鼠和属猴的人合作机会多，且多有实质帮助。\n\n另外，卯木正官是己土最直接的管理星，属兔的人在职场中往往是你的上级或有实权帮助你的人。\n\n小人防范：午时为时柱，卯午相害的地支对应属马的人，在亲密关系和工作关系中容易有暗地里的摩擦或误解，并非恶意，但处理不好容易内耗。申月出生，申与寅相冲，属虎的人在某些竞争场景中可能与你发生利益冲突。\n\n化解建议：与属马的人相处，多一点主动沟通，少一些默认对方理解你的想法。与属虎的人合作，明确划分职责边界，避免职责模糊引发的争执。",
+        "en": "Benefactor analysis: Day stem Ji Earth — Heavenly Yi Benefactors are at Zi (Rat) and Shen (Monkey). Zi Rat is already in the Year branch, and Shen Monkey is the birth month — indicating exceptionally strong benefactor affinity. Rat and Monkey year people tend to provide substantial, tangible help rather than just moral support.\n\nAdditionally, Mao Wood Direct Officer means Rabbit year people often appear as direct superiors or influential helpers in professional settings.\n\nCaution: Hour branch Wu (Horse) creates Mao-Wu harm — Horse year people in close relationships or work partnerships bring subtle, ongoing friction. Not malicious, but left unaddressed, it creates internal drain. Born in Shen month (Monkey), Shen-Yin clash means Tiger year people may create competitive conflicts in certain contexts.\n\nNavigation: with Horse year people, communicate proactively rather than assuming they understand your intent. With Tiger year people, establish clear responsibility boundaries upfront — ambiguous roles are the most common trigger for disputes."
+      }
+    },
+    "timing": {
+      "跳槽": {
+        "zh": "最佳时机：三月（寅月，正官旺）或九月（戌月，火局行动力强），避开五月和十一月",
+        "en": "Best timing: March (Yin month, Direct Officer peaks) or September (Xu month, Fire combination maximizes action energy) — avoid May and November"
+      },
+      "签约": {
+        "zh": "六月（未月，己土自坐，谈判状态最佳）或十一月（子月，正财星旺，财务条款有利）",
+        "en": "June (Wei month, Ji Earth self-sits, peak negotiation state) or November (Zi month, Direct Wealth peaks, favorable financial terms)"
+      },
+      "搬家": {
+        "zh": "七月（申月，出生月，自带旺气，且申中财星藏旺）最适合搬迁或置业",
+        "en": "July (Shen month, birth month carries inherent vitality, Wealth star peaks within Shen) — most auspicious for relocation or property moves"
+      },
+      "表白": {
+        "zh": "二月（卯月，卯木正官旺，感情主动出击效果最好）或八月（酉月，酉卯相冲反而激发感情张力）",
+        "en": "February (Mao month, Direct Officer peaks, romantic initiative lands well) or August (You month, You-Mao clash creates romantic tension and breakthroughs)"
+      },
+      "detailed": {
+        "zh": "择时核心原则：己土日主的最佳行动月份，看正财（壬癸水）和正官（甲乙木）何时得令。\n\n2026年流年分析：\n- 三月（寅月）：寅中甲木正官旺，职业行动力最强，适合跳槽、争取晋升、开拓新业务\n- 六月（未月）：己土自坐，个人状态巅峰，适合重要谈判、签约、推进关键决策\n- 七月（申月）：出生本命月，自带旺气加持，申中藏壬偏财，是全年置业、投资的最佳月份\n- 九月（戌月）：寅午戌三合火局，行动力和感染力全年最强，适合一切需要魄力的决定\n- 十一月（子月）：子水正财旺，财务相关的决策（投资、理财、谈薪）在此月最为顺畅\n\n需要回避的月份：五月（子午冲，情绪不稳），不适合做重大决定；八月（酉月，酉卯冲，职场有暗流）谨慎为上。",
+        "en": "Core timing principle for Ji Earth: identify when Direct Wealth (Ren-Gui Water) and Direct Officer (Jia-Yi Wood) stars are most empowered.\n\n2026 flow year breakdown:\n- March (Yin month): Jia Wood Direct Officer peaks within Yin — strongest career action energy of the year; optimal for job changes, promotions, new business development\n- June (Wei month): Ji Earth self-sits at personal peak — ideal for important negotiations, contract signing, advancing critical decisions\n- July (Shen month): birth-sign month carries inherent vitality boost; Ren Indirect Wealth hidden in Shen makes this the year's best month for property, investment, financial moves\n- September (Xu month): Yin-Wu-Xu fire combination peaks influence and action capacity — best for decisions requiring boldness and conviction\n- November (Zi month): Zi Water Direct Wealth peaks — financial decisions (investment, wealth management, salary negotiation) flow most smoothly\n\nMonths to approach cautiously: May (Zi-Wu clash creates emotional instability — avoid major decisions); August (You-Mao clash brings workplace undercurrents — proceed carefully)."
+      }
+    }
+  }
+}
