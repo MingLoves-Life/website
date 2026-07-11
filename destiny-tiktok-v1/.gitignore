@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+.thumbnails/
+
+# 中间渲染文件（保留最终版）
+renders/*.mp4
+!renders/final-with-demo.mp4
+renders/*.meta.json
+
+# 视频素材（体积大，不适合Git）
+assets/**/*.mp4
+assets/**/*.webm

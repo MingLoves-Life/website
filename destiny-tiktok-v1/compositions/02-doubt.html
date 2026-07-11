@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Frame 02 — Doubt</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      @font-face { font-family: 'Inter'; src: local('Inter'); }
+      body { background: #000; overflow: hidden; font-family: "Inter", system-ui, sans-serif; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+
+      #particle-bg { position: absolute; inset: 0; width: 1080px; height: 1920px; display: block; }
+
+      /* Dark overlay so particles don't compete with text */
+      #overlay {
+        position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.65) 100%);
+        pointer-events: none;
+      }
+
+      .clip { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; background: transparent; padding: 0 96px; }
+
+      .line {
+        display: block;
+        font-size: 52px; font-weight: 400; line-height: 1.45;
+        margin-bottom: 30px;
+        opacity: 0;
+        will-change: transform, opacity, filter;
+        color: rgba(255,255,255,0.88);
+      }
+      .line.accent {
+        font-size: 60px; font-weight: 800;
+        background: linear-gradient(90deg, #c9a84c 0%, #fff0a0 50%, #c9a84c 100%);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        background-clip: text;
+        background-size: 200% auto;
+        will-change: transform, opacity, filter, background-position;
+      }
+      .line.dim { color: rgba(255,255,255,0.45); font-size: 42px; }
+      .line.kicker {
+        font-size: 64px; font-weight: 900; color: #fff;
+        margin-top: 40px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+
+      /* Clip-path reveal on each line */
+      .line-mask {
+        overflow: hidden;
+        clip-path: inset(0 100% 0 0);
+        will-change: clip-path;
+      }
+
+      /* Gold accent bar left edge */
+      .bar {
+        position: absolute; left: 56px;
+        width: 4px; border-radius: 2px;
+        background: linear-gradient(180deg, #c9a84c, #fff0a0, #c9a84c);
+        transform-origin: top center;
+        scaleY: 0;
+        opacity: 0;
+        will-change: transform, opacity;
+      }
+
+      .scanlines {
+        position: absolute; inset: 0;
+        background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px);
+        pointer-events: none; z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="02-doubt"
+      data-width="1080"
+      data-height="1920"
+      data-duration="9"
+    >
+      <canvas id="particle-bg"></canvas>
+      <div id="overlay"></div>
+      <div class="scanlines"></div>
+
+      <!-- Gold bar that grows down the left edge -->
+      <div class="bar" id="sidebar" style="top:460px; height:0px;"></div>
+
+      <section id="scene-doubt" class="clip" data-start="0" data-duration="9" data-track-index="1">
+        <div class="line-mask" id="mask1"><div id="d1" class="line dim">A lot of people secretly wonder —</div></div>
+        <div class="line-mask" id="mask2"><div id="d2" class="line accent">Maybe working hard just doesn't work for everyone.</div></div>
+        <div class="line-mask" id="mask3"><div id="d3" class="line">It's not that you're not trying.</div></div>
+        <div class="line-mask" id="mask4"><div id="d4" class="line">You've been using the wrong strategy —</div></div>
+        <div class="line-mask" id="mask5"><div id="d5" class="line dim">and you didn't even know it.</div></div>
+        <div class="line-mask" id="mask6"><div id="d6" class="line kicker">No matter how much you earn,<br>the result is the same.</div></div>
+      </section>
+    </div>
+
+    <script>
+      // ── Canvas 2D particle field ──────────────────────────────────────
+      (function() {
+        var canvas = document.getElementById('particle-bg');
+        canvas.width = 1080; canvas.height = 1920;
+        var ctx = canvas.getContext('2d');
+
+        // Deterministic hash
+        function hash(x, y) {
+          var n = (x * 374761393 + y * 668265263) | 0;
+          n = (n ^ (n >> 13)) * 1274126177;
+          return ((n ^ (n >> 16)) & 0x7fffffff) / 0x7fffffff;
+        }
+
+        var PARTICLES = 180;
+        var particles = [];
+        for (var i = 0; i < PARTICLES; i++) {
+          particles.push({
+            x: hash(i, 0) * 1080,
+            y: hash(i, 1) * 1920,
+            r: hash(i, 2) * 2.5 + 0.5,
+            speed: hash(i, 3) * 0.4 + 0.05,
+            angle: hash(i, 4) * Math.PI * 2,
+            drift: (hash(i, 5) - 0.5) * 0.015,
+            bright: hash(i, 6)
+          });
+        }
+
+        window.__particleDraw = function(t) {
+          ctx.clearRect(0, 0, 1080, 1920);
+
+          // Deep space bg gradient
+          var grad = ctx.createRadialGradient(540, 960, 0, 540, 960, 1100);
+          grad.addColorStop(0, '#0d0a04');
+          grad.addColorStop(0.5, '#060400');
+          grad.addColorStop(1, '#000000');
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, 1080, 1920);
+
+          // Draw particles
+          for (var i = 0; i < PARTICLES; i++) {
+            var p = particles[i];
+            // Deterministic motion: use hash-seeded angle + t
+            var ang = p.angle + t * p.speed + p.drift * t * t * 0.1;
+            var px = (p.x + Math.cos(ang) * 80 * p.speed + 1080) % 1080;
+            var py = (p.y + Math.sin(ang * 0.7) * 60 * p.speed + t * p.speed * 12 + 1920) % 1920;
+
+            var alpha = (0.3 + p.bright * 0.5) * (0.7 + 0.3 * Math.sin(t * p.speed * 3 + i));
+            var isGold = p.bright > 0.6;
+            ctx.beginPath();
+            ctx.arc(px, py, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = isGold
+              ? 'rgba(201,168,76,' + alpha.toFixed(2) + ')'
+              : 'rgba(255,255,255,' + (alpha * 0.4).toFixed(2) + ')';
+            ctx.fill();
+
+            // Glow on bright gold particles
+            if (isGold && p.bright > 0.8) {
+              ctx.beginPath();
+              ctx.arc(px, py, p.r * 4, 0, Math.PI * 2);
+              ctx.fillStyle = 'rgba(201,168,76,0.04)';
+              ctx.fill();
+            }
+          }
+
+          // Subtle horizontal scan lines of light
+          for (var j = 0; j < 3; j++) {
+            var ly = (hash(j, 99) * 1920 + t * 40 * (j + 1) * 0.3) % 1920;
+            var lg = ctx.createLinearGradient(0, ly - 60, 0, ly + 60);
+            lg.addColorStop(0, 'rgba(201,168,76,0)');
+            lg.addColorStop(0.5, 'rgba(201,168,76,0.03)');
+            lg.addColorStop(1, 'rgba(201,168,76,0)');
+            ctx.fillStyle = lg;
+            ctx.fillRect(0, ly - 60, 1080, 120);
+          }
+        };
+        window.__particleDraw(0);
+      })();
+
+      // ── GSAP Timeline ─────────────────────────────────────────────────
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      // Drive particle canvas
+      var pp = { t: 0 };
+      tl.to(pp, {
+        t: 12, duration: 9, ease: 'none',
+        onUpdate: function() { if (window.__particleDraw) window.__particleDraw(pp.t); }
+      }, 0);
+
+      // Gold sidebar bar grows down
+      tl.to('#sidebar', { height: 720, opacity: 1, duration: 0.6, ease: 'power3.out' }, 0.1);
+
+      // Lines reveal via clip-path wipe (each sweeps left→right)
+      var BEATS = [0.15, 1.35, 2.55, 3.55, 4.55, 6.1];
+
+      // Line 1: wipe reveal + dim fade
+      tl.to('#mask1', { clipPath: 'inset(0 0% 0 0)', duration: 0.5, ease: 'power3.out' }, BEATS[0])
+        .fromTo('#d1', { opacity: 0 }, { opacity: 1, duration: 0.4 }, BEATS[0]);
+
+      // Line 2: accent — wipe + gold shimmer
+      tl.to('#mask2', { clipPath: 'inset(0 0% 0 0)', duration: 0.55, ease: 'expo.out' }, BEATS[1])
+        .fromTo('#d2', { opacity: 0, filter: 'blur(8px)' }, { opacity: 1, filter: 'blur(0px)', duration: 0.5 }, BEATS[1])
+        .to('#d2', { backgroundPosition: '200% center', duration: 1.5, ease: 'none' }, BEATS[1] + 0.3);
+
+      // Line 3
+      tl.to('#mask3', { clipPath: 'inset(0 0% 0 0)', duration: 0.45, ease: 'power3.out' }, BEATS[2])
+        .fromTo('#d3', { opacity: 0 }, { opacity: 1, duration: 0.35 }, BEATS[2]);
+
+      // Line 4
+      tl.to('#mask4', { clipPath: 'inset(0 0% 0 0)', duration: 0.45, ease: 'power3.out' }, BEATS[3])
+        .fromTo('#d4', { opacity: 0 }, { opacity: 1, duration: 0.35 }, BEATS[3]);
+
+      // Line 5: dim
+      tl.to('#mask5', { clipPath: 'inset(0 0% 0 0)', duration: 0.4, ease: 'power2.out' }, BEATS[4])
+        .fromTo('#d5', { opacity: 0 }, { opacity: 1, duration: 0.35 }, BEATS[4]);
+
+      // Line 6: kicker — scale slam
+      tl.to('#mask6', { clipPath: 'inset(0 0% 0 0)', duration: 0.6, ease: 'expo.out' }, BEATS[5])
+        .fromTo('#d6',
+          { opacity: 0, scale: 1.12, filter: 'blur(14px)' },
+          { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.55, ease: 'power4.out' }, BEATS[5]);
+
+      window.__timelines['02-doubt'] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Frame 04 — Demo Recording</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      @font-face { font-family: 'Inter'; src: local('Inter'); }
+      body { background: #000; overflow: hidden; font-family: "Inter", system-ui, sans-serif; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+      .clip { position: absolute; inset: 0; background: transparent; }
+
+      /* Phone outline frame — 尺寸和位置与 index.html 里的 video 完全一致 */
+      .phone-outline {
+        position: absolute;
+        left: 281px; top: 277px;
+        width: 518px; height: 917px;
+        border: 2px solid rgba(201,168,76,0.5);
+        border-radius: 50px;
+        opacity: 0;
+        will-change: transform, opacity;
+        box-shadow: 0 0 60px rgba(201,168,76,0.2), 0 0 120px rgba(201,168,76,0.08);
+        pointer-events: none;
+      }
+      /* Phone notch */
+      .phone-outline::before {
+        content: '';
+        position: absolute; top: 16px; left: 50%;
+        transform: translateX(-50%);
+        width: 100px; height: 6px;
+        background: rgba(201,168,76,0.5);
+        border-radius: 3px;
+      }
+      /* Gold vignette overlay */
+      .phone-outline::after {
+        content: '';
+        position: absolute; inset: 0;
+        background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.5) 100%);
+        border-radius: 50px;
+      }
+
+      /* Corner brackets on phone */
+      .ph-bracket {
+        position: absolute; width: 32px; height: 32px;
+        opacity: 0; will-change: opacity, transform;
+      }
+      .ph-bracket::before, .ph-bracket::after { content: ''; position: absolute; background: #c9a84c; }
+      .ph-bracket.tl { top: 10px; left: 10px; }
+      .ph-bracket.tl::before { top:0;left:0;width:100%;height:2px; }
+      .ph-bracket.tl::after  { top:0;left:0;width:2px;height:100%; }
+      .ph-bracket.tr { top: 10px; right: 10px; }
+      .ph-bracket.tr::before { top:0;right:0;width:100%;height:2px; }
+      .ph-bracket.tr::after  { top:0;right:0;width:2px;height:100%; }
+      .ph-bracket.bl { bottom: 10px; left: 10px; }
+      .ph-bracket.bl::before { bottom:0;left:0;width:100%;height:2px; }
+      .ph-bracket.bl::after  { bottom:0;left:0;width:2px;height:100%; }
+      .ph-bracket.br { bottom: 10px; right: 10px; }
+      .ph-bracket.br::before { bottom:0;right:0;width:100%;height:2px; }
+      .ph-bracket.br::after  { bottom:0;right:0;width:2px;height:100%; }
+
+      /* Voice lines */
+      .vo-line { font-size: 50px; font-weight: 400; text-align: center; line-height: 1.6; opacity: 0; color: rgba(255,255,255,0.85); will-change: transform, opacity; }
+      .vo-line.gold { color: #c9a84c; font-weight: 700; font-size: 56px; }
+
+      .scanlines {
+        position: absolute; inset: 0;
+        background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.05) 3px, rgba(0,0,0,0.05) 4px);
+        pointer-events: none; z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="04-demo"
+      data-width="1080"
+      data-height="1920"
+      data-duration="15"
+    >
+      <div class="scanlines"></div>
+
+      <section id="scene-demo" class="clip" data-start="0" data-duration="15" data-track-index="1">
+
+        <!-- Phone outline — video plays behind this in index.html -->
+        <div class="phone-outline" id="phone">
+          <div class="ph-bracket tl" id="pb-tl"></div>
+          <div class="ph-bracket tr" id="pb-tr"></div>
+          <div class="ph-bracket bl" id="pb-bl"></div>
+          <div class="ph-bracket br" id="pb-br"></div>
+        </div>
+
+        <!-- Voiceover text — 手机框下方 -->
+        <div class="line-mask" id="vo-mask1" style="position:absolute; left:72px; right:72px; top:1234px; overflow:hidden; clip-path:inset(0 100% 0 0); will-change:clip-path">
+          <div id="vo1" class="vo-line">Your energy type</div>
+        </div>
+        <div class="line-mask" id="vo-mask2" style="position:absolute; left:72px; right:72px; top:1314px; overflow:hidden; clip-path:inset(0 100% 0 0); will-change:clip-path">
+          <div id="vo2" class="vo-line gold">is written in your birth chart.</div>
+        </div>
+        <div id="vo3" class="vo-line" style="position:absolute; left:72px; right:72px; top:1430px; font-size:42px; color:rgba(255,255,255,0.5); opacity:0">Enter your birthday —</div>
+        <div id="vo4" class="vo-line gold" style="position:absolute; left:72px; right:72px; top:1510px; opacity:0">2 minutes. Your answer is here.</div>
+
+      </section>
+    </div>
+
+    <script>
+      // ── GSAP Timeline ─────────────────────────────────────────────────
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      // Phone outline fades in (绝对定位，不用 y 位移)
+      tl.fromTo('#phone',
+        { opacity: 0, filter: 'blur(20px)' },
+        { opacity: 1, filter: 'blur(0px)', duration: 0.9, ease: 'power3.out' }, 0.2);
+
+      // Phone corner brackets
+      tl.fromTo(['#pb-tl','#pb-tr','#pb-bl','#pb-br'],
+        { opacity: 0, scale: 1.5 },
+        { opacity: 1, scale: 1, duration: 0.3, stagger: 0.05, ease: 'power3.out' }, 0.5);
+
+      // Voiceover text reveals
+      tl.to('#vo-mask1', { clipPath: 'inset(0 0% 0 0)', duration: 0.55, ease: 'expo.out' }, 5.5)
+        .fromTo('#vo1', { opacity: 0 }, { opacity: 1, duration: 0.4 }, 5.5);
+      tl.to('#vo-mask2', { clipPath: 'inset(0 0% 0 0)', duration: 0.55, ease: 'expo.out' }, 6.3)
+        .fromTo('#vo2', { opacity: 0, filter: 'blur(8px)' }, { opacity: 1, filter: 'blur(0px)', duration: 0.5 }, 6.3);
+      tl.fromTo('#vo3', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' }, 9.5);
+      tl.fromTo('#vo4',
+        { opacity: 0, scale: 1.1, filter: 'blur(10px)' },
+        { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.55, ease: 'power4.out' }, 10.8);
+
+      window.__timelines['04-demo'] = tl;
+    </script>
+  </body>
+</html>

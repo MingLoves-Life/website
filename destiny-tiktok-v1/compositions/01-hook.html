@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Frame 01 — Hook</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      @font-face { font-family: 'Inter'; src: local('Inter'); }
+      body { background: #000; overflow: hidden; font-family: "Inter", system-ui, sans-serif; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+
+      /* WebGL shader canvas — full bleed bg */
+      #shader-bg {
+        position: absolute; inset: 0;
+        width: 1080px; height: 1920px;
+        display: block;
+      }
+
+      .clip { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: transparent; }
+
+      /* Iris reveal mask on each block */
+      .reveal-mask {
+        overflow: hidden;
+        clip-path: inset(50% 50% 50% 50% round 50%);
+        will-change: clip-path;
+      }
+
+      .block { text-align: center; padding: 48px 60px; position: relative; }
+
+      /* Gold separator line */
+      .sep {
+        width: 0px; height: 2px;
+        background: linear-gradient(90deg, transparent, #c9a84c 40%, #fff8e0 50%, #c9a84c 60%, transparent);
+        margin: 44px auto;
+        opacity: 0;
+        will-change: width, opacity;
+      }
+
+      /* Numbers with gold gradient */
+      .amount {
+        font-size: 128px; font-weight: 900;
+        letter-spacing: -0.04em; line-height: 1;
+        background: linear-gradient(135deg, #c9a84c 0%, #fff0a0 40%, #c9a84c 70%, #8a6010 100%);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        background-clip: text;
+        display: block;
+        will-change: transform, opacity, filter;
+        filter: blur(0px);
+      }
+
+      .desc {
+        font-size: 42px; font-weight: 500;
+        color: rgba(255,255,255,0.75);
+        letter-spacing: 0.01em;
+        display: block;
+        margin-top: 12px;
+        will-change: opacity, transform;
+      }
+
+      /* Scanline overlay for premium feel */
+      .scanlines {
+        position: absolute; inset: 0;
+        background: repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 3px,
+          rgba(0,0,0,0.08) 3px,
+          rgba(0,0,0,0.08) 4px
+        );
+        pointer-events: none; z-index: 10;
+      }
+
+      /* Corner brackets */
+      .bracket {
+        position: absolute;
+        width: 50px; height: 50px;
+        opacity: 0;
+        will-change: opacity, transform;
+      }
+      .bracket::before, .bracket::after {
+        content: ''; position: absolute;
+        background: #c9a84c;
+      }
+      .bracket.tl { top: 20px; left: 20px; }
+      .bracket.tl::before { top:0; left:0; width:100%; height:3px; }
+      .bracket.tl::after  { top:0; left:0; width:3px; height:100%; }
+      .bracket.tr { top: 20px; right: 20px; }
+      .bracket.tr::before { top:0; right:0; width:100%; height:3px; }
+      .bracket.tr::after  { top:0; right:0; width:3px; height:100%; }
+      .bracket.bl { bottom: 20px; left: 20px; }
+      .bracket.bl::before { bottom:0; left:0; width:100%; height:3px; }
+      .bracket.bl::after  { bottom:0; left:0; width:3px; height:100%; }
+      .bracket.br { bottom: 20px; right: 20px; }
+      .bracket.br::before { bottom:0; right:0; width:100%; height:3px; }
+      .bracket.br::after  { bottom:0; right:0; width:3px; height:100%; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="01-hook"
+      data-width="1080"
+      data-height="1920"
+      data-duration="3"
+    >
+      <!-- WebGL molten gold background -->
+      <canvas id="shader-bg"></canvas>
+
+      <!-- Corner brackets (premium frame) -->
+      <div class="bracket tl" id="b-tl"></div>
+      <div class="bracket tr" id="b-tr"></div>
+      <div class="bracket bl" id="b-bl"></div>
+      <div class="bracket br" id="b-br"></div>
+
+      <div class="scanlines"></div>
+
+      <section id="scene-hook" class="clip" data-start="0" data-duration="3" data-track-index="1">
+
+        <!-- Block A -->
+        <div id="mask-a" class="reveal-mask">
+          <div class="block" id="block-a">
+            <span class="amount" id="amt-a">$3,000/mo</span>
+            <span class="desc" id="desc-a" style="opacity:0">saves every month</span>
+          </div>
+        </div>
+
+        <!-- Separator -->
+        <div class="sep" id="sep"></div>
+
+        <!-- Block B -->
+        <div id="mask-b" class="reveal-mask">
+          <div class="block" id="block-b">
+            <span class="amount" id="amt-b" style="background:linear-gradient(135deg,#fff 0%,#ddd 60%,#999 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">$30,000/mo</span>
+            <span class="desc" id="desc-b" style="opacity:0;color:rgba(255,255,255,0.5)">always broke, always anxious</span>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <script>
+      // ── WebGL molten gold shader ──────────────────────────────────────
+      (function() {
+        var canvas = document.getElementById('shader-bg');
+        canvas.width = 1080; canvas.height = 1920;
+        var gl = canvas.getContext('webgl');
+        if (!gl) { canvas.style.background = '#0a0800'; return; }
+
+        var vs = `attribute vec2 a_pos; varying vec2 v_uv;
+          void main(){ v_uv=(a_pos+1.0)*0.5; gl_Position=vec4(a_pos,0,1); }`;
+
+        var fs = `precision mediump float;
+          varying vec2 v_uv;
+          uniform float u_t;
+          uniform vec2 u_res;
+
+          float hash(vec2 p){
+            p=fract(p*vec2(234.34,435.345));
+            p+=dot(p,p+34.23); return fract(p.x*p.y);
+          }
+          float noise(vec2 p){
+            vec2 i=floor(p), f=fract(p);
+            f=f*f*(3.0-2.0*f);
+            float a=hash(i), b=hash(i+vec2(1,0));
+            float c=hash(i+vec2(0,1)), d=hash(i+vec2(1,1));
+            return mix(mix(a,b,f.x),mix(c,d,f.x),f.y);
+          }
+          float fbm(vec2 p){
+            float v=0.0,a=0.5;
+            mat2 R=mat2(0.8,0.6,-0.6,0.8);
+            for(int i=0;i<4;i++){ v+=a*noise(p); p=R*p*2.1; a*=0.5; }
+            return v;
+          }
+
+          void main(){
+            vec2 uv=v_uv;
+            uv.y=1.0-uv.y;
+            uv.x*=u_res.x/u_res.y;
+
+            float t=u_t*0.18;
+            vec2 q=vec2(fbm(uv*2.0+t*0.4),fbm(uv*2.0+vec2(3.1,7.4)+t*0.3));
+            vec2 r=vec2(fbm(uv*2.0+q*3.0+vec2(1.7,9.2)+t*0.2),
+                        fbm(uv*2.0+q*3.0+vec2(8.3,2.8)+t*0.15));
+            float n=fbm(uv*2.0+r*1.5);
+
+            // Gold palette: deep black → dark amber → gold
+            vec3 dark=vec3(0.04,0.03,0.01);
+            vec3 mid=vec3(0.18,0.12,0.02);
+            vec3 gold=vec3(0.79,0.65,0.25);
+            vec3 bright=vec3(1.0,0.94,0.6);
+
+            vec3 col=mix(dark, mid, smoothstep(0.0,0.4,n));
+            col=mix(col, gold, smoothstep(0.35,0.65,n));
+            col=mix(col, bright, smoothstep(0.6,0.8,n)*0.4);
+
+            // Vignette
+            float vig=1.0-0.7*pow(length(v_uv-vec2(0.5,0.5))*1.3,2.0);
+            col*=vig;
+
+            gl_FragColor=vec4(col,1.0);
+          }`;
+
+        function mkShader(type, src) {
+          var s = gl.createShader(type);
+          gl.shaderSource(s, src); gl.compileShader(s); return s;
+        }
+        var prog = gl.createProgram();
+        gl.attachShader(prog, mkShader(gl.VERTEX_SHADER, vs));
+        gl.attachShader(prog, mkShader(gl.FRAGMENT_SHADER, fs));
+        gl.linkProgram(prog); gl.useProgram(prog);
+
+        var buf = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,1]), gl.STATIC_DRAW);
+        var aPos = gl.getAttribLocation(prog, 'a_pos');
+        gl.enableVertexAttribArray(aPos);
+        gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+
+        var uTime = gl.getUniformLocation(prog, 'u_t');
+        var uRes  = gl.getUniformLocation(prog, 'u_res');
+        gl.uniform2f(uRes, 1080, 1920);
+        gl.viewport(0, 0, 1080, 1920);
+
+        window.__shaderProxy01 = { t: 0.5 };
+        window.__shaderDraw01 = function(t) {
+          gl.uniform1f(uTime, t);
+          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        };
+        window.__shaderDraw01(0.5);
+      })();
+
+      // ── GSAP Timeline ─────────────────────────────────────────────────
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      // Drive WebGL shader from timeline
+      var sp = window.__shaderProxy01 || { t: 0 };
+      tl.to(sp, {
+        t: 4.0, duration: 3, ease: 'none',
+        onUpdate: function() {
+          if (window.__shaderDraw01) window.__shaderDraw01(sp.t);
+        }
+      }, 0);
+
+      // Corner brackets snap in
+      tl.fromTo(['#b-tl','#b-tr','#b-bl','#b-br'],
+        { opacity: 0, scale: 1.6 },
+        { opacity: 1, scale: 1, duration: 0.3, stagger: 0.06, ease: 'power3.out' }, 0);
+
+      // Block A: iris reveal (clip-path circle expand)
+      tl.to('#mask-a', {
+        clipPath: 'inset(0% 0% 0% 0% round 0%)',
+        duration: 0.5, ease: 'power3.out'
+      }, 0.1);
+      // Amount slams in from scale with blur
+      tl.fromTo('#amt-a',
+        { scale: 1.4, filter: 'blur(20px)', opacity: 0 },
+        { scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.45, ease: 'power4.out' }, 0.15);
+      tl.to('#desc-a', { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, 0.45)
+        .from('#desc-a', { y: 16 }, 0.45);
+
+      // Separator sweeps across
+      tl.to('#sep', { width: 400, opacity: 1, duration: 0.35, ease: 'power3.inOut' }, 0.55);
+
+      // Block B: iris reveal + impact
+      tl.to('#mask-b', {
+        clipPath: 'inset(0% 0% 0% 0% round 0%)',
+        duration: 0.5, ease: 'power3.out'
+      }, 0.75);
+      tl.fromTo('#amt-b',
+        { scale: 0.8, filter: 'blur(24px)', opacity: 0 },
+        { scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.5, ease: 'back.out(1.3)' }, 0.8);
+      tl.to('#desc-b', { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }, 1.1)
+        .from('#desc-b', { y: 16 }, 1.1);
+
+      window.__timelines['01-hook'] = tl;
+    </script>
+  </body>
+</html>

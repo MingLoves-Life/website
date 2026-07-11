@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Frame 03 — Mechanism</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      @font-face { font-family: 'Inter'; src: local('Inter'); }
+      body { background: #000; overflow: hidden; font-family: "Inter", system-ui, sans-serif; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+
+      #shader-bg3 { position: absolute; inset: 0; width: 1080px; height: 1920px; display: block; }
+
+      #overlay3 {
+        position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0.6) 100%);
+        pointer-events: none;
+      }
+
+      .clip { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: transparent; padding: 0 64px; }
+
+      /* Label */
+      .label {
+        font-size: 26px; color: #c9a84c;
+        letter-spacing: 8px; text-transform: uppercase;
+        margin-bottom: 36px; opacity: 0;
+        will-change: opacity, transform;
+      }
+
+      /* Intro text */
+      .intro {
+        font-size: 50px; font-weight: 300; text-align: center;
+        line-height: 1.5; color: rgba(255,255,255,0.8);
+        margin-bottom: 72px; opacity: 0;
+        will-change: transform, opacity, filter;
+      }
+      .intro strong { color: #fff; font-weight: 700; }
+
+      /* 3D card scene */
+      .cards-scene {
+        perspective: 1400px;
+        display: flex; gap: 32px; width: 100%;
+        margin-bottom: 72px;
+      }
+
+      .flip-card {
+        flex: 1; height: 480px;
+        perspective: 1400px;
+        opacity: 0;
+        will-change: transform, opacity;
+      }
+      .flip-inner {
+        position: relative; width: 100%; height: 100%;
+        transform-style: preserve-3d;
+        will-change: transform;
+      }
+      .flip-face {
+        position: absolute; inset: 0;
+        border-radius: 20px; padding: 48px 32px;
+        text-align: center;
+        backface-visibility: hidden;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+      }
+      /* Gold card */
+      .card-gold .flip-face {
+        background: linear-gradient(145deg, #1c1408 0%, #0e0b04 100%);
+        border: 1px solid rgba(201,168,76,0.45);
+        box-shadow: 0 0 80px rgba(201,168,76,0.18), 0 0 24px rgba(201,168,76,0.1), inset 0 1px 0 rgba(201,168,76,0.35);
+      }
+      /* Silver card */
+      .card-silver .flip-face {
+        background: linear-gradient(145deg, #111 0%, #080808 100%);
+        border: 1px solid rgba(255,255,255,0.12);
+        box-shadow: 0 0 40px rgba(0,0,0,0.8);
+      }
+
+      .card-icon { font-size: 72px; margin-bottom: 20px; }
+      .card-name { font-size: 40px; font-weight: 800; margin-bottom: 14px; }
+      .card-gold .card-name {
+        background: linear-gradient(135deg, #c9a84c, #fff0a0, #c9a84c);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      }
+      .card-silver .card-name { color: #bbb; }
+      .card-desc { font-size: 32px; color: #888; line-height: 1.5; }
+      .card-gold .card-desc strong { color: #c9a84c; }
+
+      /* SVG glow lines drawn around gold card border */
+      .card-border-svg {
+        position: absolute; inset: -1px;
+        pointer-events: none;
+        border-radius: 20px;
+        opacity: 0;
+        will-change: opacity;
+      }
+
+      /* Conclusion */
+      .conclusion {
+        font-size: 50px; font-weight: 700; text-align: center;
+        line-height: 1.45; opacity: 0;
+        will-change: transform, opacity, filter;
+        color: #fff;
+      }
+      .conclusion em {
+        font-style: normal;
+        background: linear-gradient(90deg, #c9a84c, #fff0a0, #c9a84c);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      }
+
+      .scanlines {
+        position: absolute; inset: 0;
+        background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px);
+        pointer-events: none; z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="03-mechanism"
+      data-width="1080"
+      data-height="1920"
+      data-duration="13"
+    >
+      <canvas id="shader-bg3"></canvas>
+      <div id="overlay3"></div>
+      <div class="scanlines"></div>
+
+      <!-- SVG border draw around gold card -->
+      <svg id="card-svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+          <filter id="gold-glow">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+      </svg>
+
+      <section id="scene-mech" class="clip" data-start="0" data-duration="13" data-track-index="1">
+
+        <div id="m-label" class="label">Chinese Astrology</div>
+        <div id="m-intro" class="intro">Your <strong>birth time</strong> determines<br>how energy flows through you</div>
+
+        <div class="cards-scene" data-layout-allow-overflow>
+          <!-- Gold card -->
+          <div class="flip-card card-gold" id="card-gold">
+            <div class="flip-inner" id="flip-gold">
+              <div class="flip-face">
+                <div class="card-icon">💰</div>
+                <div class="card-name">Accumulator</div>
+                <div class="card-desc">Money comes in<br>and <strong>stays</strong></div>
+              </div>
+            </div>
+          </div>
+          <!-- Silver card -->
+          <div class="flip-card card-silver" id="card-silver">
+            <div class="flip-inner" id="flip-silver">
+              <div class="flip-face">
+                <div class="card-icon">💸</div>
+                <div class="card-name">Circulator</div>
+                <div class="card-desc">Money flows in<br>and flows out</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="m-conclusion" class="conclusion">
+          Not knowing which one you are<br>means <em>working against yourself</em>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      // ── WebGL shader (same molten gold, slower, darker) ───────────────
+      (function() {
+        var canvas = document.getElementById('shader-bg3');
+        canvas.width = 1080; canvas.height = 1920;
+        var gl = canvas.getContext('webgl');
+        if (!gl) { canvas.style.background = '#060400'; return; }
+
+        var vs = `attribute vec2 a_pos; varying vec2 v_uv;
+          void main(){ v_uv=(a_pos+1.0)*0.5; gl_Position=vec4(a_pos,0,1); }`;
+        var fs = `precision mediump float;
+          varying vec2 v_uv; uniform float u_t; uniform vec2 u_res;
+          float hash(vec2 p){p=fract(p*vec2(234.34,435.345));p+=dot(p,p+34.23);return fract(p.x*p.y);}
+          float noise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.0-2.0*f);
+            return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),f.x),f.y);}
+          float fbm(vec2 p){float v=0.0,a=0.5;mat2 R=mat2(0.8,0.6,-0.6,0.8);
+            for(int i=0;i<4;i++){v+=a*noise(p);p=R*p*2.1;a*=0.5;}return v;}
+          void main(){
+            vec2 uv=v_uv; uv.y=1.0-uv.y; uv.x*=u_res.x/u_res.y;
+            float t=u_t*0.1;
+            vec2 q=vec2(fbm(uv*2.5+t*0.3),fbm(uv*2.5+vec2(5.2,1.3)+t*0.25));
+            vec2 r=vec2(fbm(uv*2.5+q*2.5+t*0.15),fbm(uv*2.5+q*2.5+vec2(8.3,2.8)+t*0.1));
+            float n=fbm(uv*2.5+r*1.2);
+            vec3 dark=vec3(0.02,0.015,0.004);
+            vec3 mid=vec3(0.12,0.08,0.015);
+            vec3 gold=vec3(0.6,0.48,0.18);
+            vec3 col=mix(dark,mid,smoothstep(0.0,0.45,n));
+            col=mix(col,gold,smoothstep(0.4,0.7,n)*0.6);
+            float vig=1.0-0.75*pow(length(v_uv-vec2(0.5,0.5))*1.4,2.0);
+            col*=vig;
+            gl_FragColor=vec4(col,1.0);
+          }`;
+        function mkShader(type, src){ var s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s); return s; }
+        var prog=gl.createProgram();
+        gl.attachShader(prog,mkShader(gl.VERTEX_SHADER,vs));
+        gl.attachShader(prog,mkShader(gl.FRAGMENT_SHADER,fs));
+        gl.linkProgram(prog); gl.useProgram(prog);
+        var buf=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+        gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+        var aPos=gl.getAttribLocation(prog,'a_pos');
+        gl.enableVertexAttribArray(aPos); gl.vertexAttribPointer(aPos,2,gl.FLOAT,false,0,0);
+        var uTime=gl.getUniformLocation(prog,'u_t');
+        var uRes=gl.getUniformLocation(prog,'u_res');
+        gl.uniform2f(uRes,1080,1920); gl.viewport(0,0,1080,1920);
+        window.__shader3Proxy={t:0.5};
+        window.__shader3Draw=function(t){gl.uniform1f(uTime,t);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);};
+        window.__shader3Draw(0.5);
+      })();
+
+      // ── GSAP Timeline ─────────────────────────────────────────────────
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+
+      var sp = window.__shader3Proxy || { t: 0 };
+      tl.to(sp, { t: 14, duration: 13, ease: 'none',
+        onUpdate: function(){ if(window.__shader3Draw) window.__shader3Draw(sp.t); }
+      }, 0);
+
+      // Label fades + rises
+      tl.fromTo('#m-label',
+        { opacity: 0, y: -20, letterSpacing: '14px' },
+        { opacity: 1, y: 0, letterSpacing: '8px', duration: 0.7, ease: 'power3.out' }, 0.3);
+
+      // Intro rises with blur
+      tl.fromTo('#m-intro',
+        { opacity: 0, y: 60, filter: 'blur(12px)' },
+        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.8, ease: 'power3.out' }, 1.1);
+
+      // Gold card: flip in from rotationY (3D card reveal)
+      tl.fromTo('#card-gold',
+        { opacity: 0 }, { opacity: 1, duration: 0.1 }, 2.8)
+        .fromTo('#flip-gold',
+          { rotationY: -90 },
+          { rotationY: 0, duration: 0.65, ease: 'back.out(1.2)' }, 2.8);
+
+      // Silver card: flip from opposite side, slight delay
+      tl.fromTo('#card-silver',
+        { opacity: 0 }, { opacity: 1, duration: 0.1 }, 3.2)
+        .fromTo('#flip-silver',
+          { rotationY: 90 },
+          { rotationY: 0, duration: 0.65, ease: 'back.out(1.2)' }, 3.2);
+
+      // Cards gently float in opposition (finite)
+      var floatDur = 13 - 4.2, cycle = 3.2;
+      tl.to('#flip-gold', {
+        rotationY: -4, y: -14, duration: cycle/2, ease: 'sine.inOut',
+        yoyo: true, repeat: Math.max(0, Math.floor(floatDur/(cycle/2)) - 1)
+      }, 4.2);
+      tl.to('#flip-silver', {
+        rotationY: 4, y: 14, duration: cycle/2, ease: 'sine.inOut',
+        yoyo: true, repeat: Math.max(0, Math.floor(floatDur/(cycle/2)) - 1)
+      }, 4.2);
+
+      // Conclusion: scale slam
+      tl.fromTo('#m-conclusion',
+        { opacity: 0, scale: 1.15, filter: 'blur(16px)' },
+        { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.65, ease: 'power4.out' }, 8.2);
+
+      window.__timelines['03-mechanism'] = tl;
+    </script>
+  </body>
+</html>
