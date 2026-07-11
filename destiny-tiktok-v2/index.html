@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1920">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #000;
+      }
+      @font-face { font-family: 'PingFang SC'; src: local('PingFang SC'); }
+      @font-face { font-family: 'Noto Sans SC'; src: local('Noto Sans SC'); }
+      body { font-family: "Noto Sans SC", "PingFang SC", system-ui, sans-serif; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+      #bg { position: absolute; inset: 0; background: #000; }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-ljx1" id="root" data-composition-id="destiny-tiktok-v1" data-start="0" data-width="1080" data-height="1920" data-duration="45">
+      <div data-hf-id="hf-2xc0" id="bg"></div>
+
+      <!-- Frame 1: Hook (0-3s) 月薪3千 vs 月薪3万 -->
+      <div data-hf-id="hf-i0hx" id="frame-01" class="clip" data-start="0" data-duration="3" data-track-index="1" data-composition-src="compositions/01-hook.html" data-composition-id="01-hook"></div>
+
+      <!-- Frame 2: 沉默解除 (3-12s) -->
+      <div data-hf-id="hf-jxdl" id="frame-02" class="clip" data-start="3" data-duration="9" data-track-index="1" data-composition-src="compositions/02-doubt.html" data-composition-id="02-doubt"></div>
+
+      <!-- Frame 3: 核心机制 (12-25s) -->
+      <div data-hf-id="hf-omsr" id="frame-03" class="clip" data-start="12" data-duration="13" data-track-index="1" data-composition-src="compositions/03-mechanism.html" data-composition-id="03-mechanism"></div>
+
+      <!-- Frame 4: 产品演示 (25-40s) — 真实网站录屏 -->
+      <div data-hf-id="hf-npjc" id="frame-04" class="clip" data-start="25" data-duration="15" data-track-index="1" data-composition-src="compositions/04-demo.html" data-composition-id="04-demo" style="z-index:3"></div>
+
+      <!-- Frame 4 录屏视频 — 必须是 #root 直接子级 -->
+      <video
+        id="demo-video"
+        class="clip"
+        src="assets/1990-02-05-f-6/en-clip-kf.mp4"
+        data-start="25"
+        data-duration="15"
+        data-track-index="2"
+        data-allow-occlusion="true"
+        muted
+        playsinline
+        preload="auto"
+        style="
+          position: absolute;
+          left: 281px; top: 277px;
+          width: 518px; height: 917px;
+          object-fit: cover;
+          border-radius: 50px;
+          z-index: 2;
+        "
+      ></video>
+
+      <!-- Frame 5: CTA (40-45s) -->
+      <div data-hf-id="hf-f2eb" id="frame-05" class="clip" data-start="40" data-duration="5" data-track-index="1" data-composition-src="compositions/05-cta.html" data-composition-id="05-cta"></div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      // 主时间线为空——每个子合成有自己独立的时间线
+      window.__timelines["destiny-tiktok-v1"] = tl;
+    </script>
+  </body>
+</html>
